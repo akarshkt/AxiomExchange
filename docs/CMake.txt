@@ -1,0 +1,18 @@
+This is the first time I am using CMake, it is very important for projects like this because it is a build system generator.
+What do I mean by it?
+It generates files required by the OS to compile the files.
+So why not use g++, because if we have 1 file then we can run 'g++ main.cpp -o app' but when we have multiple files, the command becomes complex, so we need CMake to make our lives easier.
+CMake also provides Cross-platform builds which means we don't have to write separate command for every type of OS.
+Dependency management is a lot easier because we can easily configure them in the CMakeLists.txt files rather than overloading the command.
+
+Simplest CMakeLists.txt looks something like this
+
+cmake_minimum_required(VERSION 3.20)
+
+project($projectName)
+
+add_executable($executable 
+
+	src/main.cpp
+)
+
