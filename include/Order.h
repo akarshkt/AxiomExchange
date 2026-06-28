@@ -32,8 +32,13 @@ struct Order{
 	Price price;
 	UserId userId;
 	AssetId assetId;
-	Quantity quantity;
+	Quantity originalQuantity;
+	Quantity remainingQuantity;
 	Timestamp timestamp;
-	Order(UserId userId,OrderType ordertype, AssetId assetId,Quantity quantity, Side side,Price price );
+	Order(UserId userId,OrderType ordertype, AssetId assetId,Quantity originalQuantity, Side side,Price price );
+	 bool operator==(const Order& other) const
+    {
+        return orderId == other.orderId;
+    }
 };
 #endif

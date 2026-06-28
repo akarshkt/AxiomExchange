@@ -9,7 +9,7 @@ Timestamp getTimestamp(){
 Order::Order(UserId userId,
              OrderType ordertype,
              AssetId assetId,
-             Quantity quantity,
+             Quantity originalQuantity,
              Side side,
              Price price
             )
@@ -17,7 +17,7 @@ Order::Order(UserId userId,
       userId(userId),
       orderType(ordertype),
       assetId(assetId),
-      quantity(quantity),
+      originalQuantity(originalQuantity),
       side(side),
       price(price)
 {
@@ -27,6 +27,7 @@ Order::Order(UserId userId,
     this->price=price;
     this->orderType = ordertype;
     this->assetId = assetId;
-    this->quantity = quantity;
+    this->originalQuantity = originalQuantity;
+    this->remainingQuantity = originalQuantity;
     this->side = side;
 }
