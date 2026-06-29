@@ -23,7 +23,6 @@ enum class OrderType{
 };
 
 
-
 struct Order{
 
 	OrderId orderId;
@@ -41,4 +40,10 @@ struct Order{
         return orderId == other.orderId;
     }
 };
+struct OrderLocation{
+	Side side;
+	Price price;
+	std::vector<Order> :: iterator it;
+};
+
 #endif

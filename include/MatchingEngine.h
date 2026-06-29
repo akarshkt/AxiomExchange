@@ -4,6 +4,7 @@
 class MatchingEngine{
     Orderbook orderbook;
     public:
+    void cancelOrder(OrderId orderId);
     void processOrder(Order &order);
     Orderbook getOrderbook();
 };
