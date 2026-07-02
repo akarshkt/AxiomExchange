@@ -83,65 +83,18 @@ CMakeFiles/simulator.dir/src/sim.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/simulator.dir/src/sim.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fnf/projects/exchange-simulator/src/sim.cpp -o CMakeFiles/simulator.dir/src/sim.cpp.s
 
-CMakeFiles/simulator.dir/src/MatchingEngine.cpp.o: CMakeFiles/simulator.dir/flags.make
-CMakeFiles/simulator.dir/src/MatchingEngine.cpp.o: /home/fnf/projects/exchange-simulator/src/MatchingEngine.cpp
-CMakeFiles/simulator.dir/src/MatchingEngine.cpp.o: CMakeFiles/simulator.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fnf/projects/exchange-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/simulator.dir/src/MatchingEngine.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/simulator.dir/src/MatchingEngine.cpp.o -MF CMakeFiles/simulator.dir/src/MatchingEngine.cpp.o.d -o CMakeFiles/simulator.dir/src/MatchingEngine.cpp.o -c /home/fnf/projects/exchange-simulator/src/MatchingEngine.cpp
-
-CMakeFiles/simulator.dir/src/MatchingEngine.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/simulator.dir/src/MatchingEngine.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fnf/projects/exchange-simulator/src/MatchingEngine.cpp > CMakeFiles/simulator.dir/src/MatchingEngine.cpp.i
-
-CMakeFiles/simulator.dir/src/MatchingEngine.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/simulator.dir/src/MatchingEngine.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fnf/projects/exchange-simulator/src/MatchingEngine.cpp -o CMakeFiles/simulator.dir/src/MatchingEngine.cpp.s
-
-CMakeFiles/simulator.dir/src/Order.cpp.o: CMakeFiles/simulator.dir/flags.make
-CMakeFiles/simulator.dir/src/Order.cpp.o: /home/fnf/projects/exchange-simulator/src/Order.cpp
-CMakeFiles/simulator.dir/src/Order.cpp.o: CMakeFiles/simulator.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fnf/projects/exchange-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/simulator.dir/src/Order.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/simulator.dir/src/Order.cpp.o -MF CMakeFiles/simulator.dir/src/Order.cpp.o.d -o CMakeFiles/simulator.dir/src/Order.cpp.o -c /home/fnf/projects/exchange-simulator/src/Order.cpp
-
-CMakeFiles/simulator.dir/src/Order.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/simulator.dir/src/Order.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fnf/projects/exchange-simulator/src/Order.cpp > CMakeFiles/simulator.dir/src/Order.cpp.i
-
-CMakeFiles/simulator.dir/src/Order.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/simulator.dir/src/Order.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fnf/projects/exchange-simulator/src/Order.cpp -o CMakeFiles/simulator.dir/src/Order.cpp.s
-
-CMakeFiles/simulator.dir/src/Orderbook.cpp.o: CMakeFiles/simulator.dir/flags.make
-CMakeFiles/simulator.dir/src/Orderbook.cpp.o: /home/fnf/projects/exchange-simulator/src/Orderbook.cpp
-CMakeFiles/simulator.dir/src/Orderbook.cpp.o: CMakeFiles/simulator.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fnf/projects/exchange-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/simulator.dir/src/Orderbook.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/simulator.dir/src/Orderbook.cpp.o -MF CMakeFiles/simulator.dir/src/Orderbook.cpp.o.d -o CMakeFiles/simulator.dir/src/Orderbook.cpp.o -c /home/fnf/projects/exchange-simulator/src/Orderbook.cpp
-
-CMakeFiles/simulator.dir/src/Orderbook.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/simulator.dir/src/Orderbook.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fnf/projects/exchange-simulator/src/Orderbook.cpp > CMakeFiles/simulator.dir/src/Orderbook.cpp.i
-
-CMakeFiles/simulator.dir/src/Orderbook.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/simulator.dir/src/Orderbook.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fnf/projects/exchange-simulator/src/Orderbook.cpp -o CMakeFiles/simulator.dir/src/Orderbook.cpp.s
-
 # Object files for target simulator
 simulator_OBJECTS = \
-"CMakeFiles/simulator.dir/src/sim.cpp.o" \
-"CMakeFiles/simulator.dir/src/MatchingEngine.cpp.o" \
-"CMakeFiles/simulator.dir/src/Order.cpp.o" \
-"CMakeFiles/simulator.dir/src/Orderbook.cpp.o"
+"CMakeFiles/simulator.dir/src/sim.cpp.o"
 
 # External object files for target simulator
 simulator_EXTERNAL_OBJECTS =
 
 simulator: CMakeFiles/simulator.dir/src/sim.cpp.o
-simulator: CMakeFiles/simulator.dir/src/MatchingEngine.cpp.o
-simulator: CMakeFiles/simulator.dir/src/Order.cpp.o
-simulator: CMakeFiles/simulator.dir/src/Orderbook.cpp.o
 simulator: CMakeFiles/simulator.dir/build.make
+simulator: libexchange_core.a
 simulator: CMakeFiles/simulator.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/fnf/projects/exchange-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable simulator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/fnf/projects/exchange-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable simulator"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/simulator.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

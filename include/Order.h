@@ -5,6 +5,7 @@
 #include <math.h>
 #include <time.h>
 #include <chrono>
+#include <list>
 using OrderId = uint64_t;
 using UserId = uint64_t;
 using AssetId = uint64_t;
@@ -43,7 +44,7 @@ struct Order{
 struct OrderLocation{
 	Side side;
 	Price price;
-	std::vector<Order> :: iterator it;
+	std::list<Order> :: iterator it;
 };
 
 #endif

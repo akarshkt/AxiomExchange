@@ -1,19 +1,21 @@
 #include "../include/Orderbook.h"
 #include <iostream>
 
-std::map<Price, std::vector<Order>> asks;
-std::map<Price, std::vector<Order>> bids;
+std::map<Price, std::list<Order>> asks;
+std::map<Price, std::list<Order>> bids;
 std::unordered_map<OrderId,OrderLocation> orderIndex;
 void Orderbook::addOrder(Order &order)
 {
-    if (order.side == Side::BUY)
+    Price price=order.price;
+    Side side=order.side;
+    if (side == Side::BUY)
     {
-        bids[order.price].push_back(order);
-        orderIndex[order.orderId]={order.side,order.price,  --(bids[order.price].end())};
+        bids[price].emplace_back(order);
+        orderIndex[order.orderId]={side,price,  --(bids[price].end())};
     }
     else{
-        asks[order.price].push_back(order);
-        orderIndex[order.orderId]={order.side,order.price,  --(asks[order.price].end())};
+        asks[price].push_back(order);
+        orderIndex[order.orderId]={side,price,  --(asks[price].end())};
     }
 }
 void Orderbook::removeOrder(OrderId orderId, Side side)
@@ -225,9 +227,10 @@ void Orderbook::matchOrderMarket(Order &order){
 // }
 void Orderbook::matchOrder(Order &order)
 {
-    if(order.orderType==OrderType::LIMIT)
+    OrderType tempOrderType=order.orderType;
+    if(tempOrderType==OrderType::LIMIT)
         matchOrderLimit(order);
-    else if(order.orderType==OrderType::MARKET)
+    else if(tempOrderType==OrderType::MARKET)
         matchOrderMarket(order);
     // else
     //     matchOrderStop(order);

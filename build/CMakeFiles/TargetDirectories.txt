@@ -1,3 +1,5 @@
+/home/fnf/projects/exchange-simulator/build/CMakeFiles/exchange_core.dir
 /home/fnf/projects/exchange-simulator/build/CMakeFiles/simulator.dir
+/home/fnf/projects/exchange-simulator/build/CMakeFiles/benchmark_matching.dir
 /home/fnf/projects/exchange-simulator/build/CMakeFiles/edit_cache.dir
 /home/fnf/projects/exchange-simulator/build/CMakeFiles/rebuild_cache.dir

@@ -3,6 +3,7 @@
 
 int32_t main(){
     MatchingEngine engine;
+    auto start = std::chrono::steady_clock::now();
     Order order1(1,OrderType::LIMIT,2,10,Side::BUY,20);
     Order order2(2,OrderType::LIMIT,2,10,Side::BUY,25);
     Order order3(3,OrderType::LIMIT,2,10,Side::BUY,30);
@@ -22,15 +23,19 @@ int32_t main(){
     engine.processOrder(order8);
     engine.processOrder(order9);
     engine.cancelOrder(order6.orderId);
-    Orderbook orderbook=engine.getOrderbook();
-    for(auto &it:orderbook.asks){
-        for(auto &ti:it.second){
-            std::cout<<it.first<<"  "<<ti.remainingQuantity<<"   "<<ti.originalQuantity<<"   "<<ti.userId<<std::endl;
-        }
-    }
-    for(auto &it:orderbook.bids){
-        for(auto &ti:it.second){
-             std::cout<<it.first<<"  "<<ti.remainingQuantity<<"   "<<ti.originalQuantity<<"   "<<ti.userId<<std::endl;
-        }
-    }
+
+
+auto end = std::chrono::steady_clock::now();
+    // std::cout<<(end-start)/10;
+    // Orderbook orderbook=engine.getOrderbook();
+    // for(auto &it:orderbook.asks){
+    //     for(auto &ti:it.second){
+    //         std::cout<<it.first<<"  "<<ti.remainingQuantity<<"   "<<ti.originalQuantity<<"   "<<ti.userId<<std::endl;
+    //     }
+    // }
+    // for(auto &it:orderbook.bids){
+    //     for(auto &ti:it.second){
+    //          std::cout<<it.first<<"  "<<ti.remainingQuantity<<"   "<<ti.originalQuantity<<"   "<<ti.userId<<std::endl;
+    //     }
+    // }
 }

@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named exchange_core
+
+# Build rule for target.
+exchange_core: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 exchange_core
+.PHONY : exchange_core
+
+# fast build rule for target.
+exchange_core/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_core.dir/build.make CMakeFiles/exchange_core.dir/build
+.PHONY : exchange_core/fast
+
+#=============================================================================
 # Target rules for targets named simulator
 
 # Build rule for target.
@@ -129,12 +142,49 @@ simulator/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/simulator.dir/build.make CMakeFiles/simulator.dir/build
 .PHONY : simulator/fast
 
+#=============================================================================
+# Target rules for targets named benchmark_matching
+
+# Build rule for target.
+benchmark_matching: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 benchmark_matching
+.PHONY : benchmark_matching
+
+# fast build rule for target.
+benchmark_matching/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_matching.dir/build.make CMakeFiles/benchmark_matching.dir/build
+.PHONY : benchmark_matching/fast
+
+benchmarks/MatchingBenchmark.o: benchmarks/MatchingBenchmark.cpp.o
+.PHONY : benchmarks/MatchingBenchmark.o
+
+# target to build an object file
+benchmarks/MatchingBenchmark.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_matching.dir/build.make CMakeFiles/benchmark_matching.dir/benchmarks/MatchingBenchmark.cpp.o
+.PHONY : benchmarks/MatchingBenchmark.cpp.o
+
+benchmarks/MatchingBenchmark.i: benchmarks/MatchingBenchmark.cpp.i
+.PHONY : benchmarks/MatchingBenchmark.i
+
+# target to preprocess a source file
+benchmarks/MatchingBenchmark.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_matching.dir/build.make CMakeFiles/benchmark_matching.dir/benchmarks/MatchingBenchmark.cpp.i
+.PHONY : benchmarks/MatchingBenchmark.cpp.i
+
+benchmarks/MatchingBenchmark.s: benchmarks/MatchingBenchmark.cpp.s
+.PHONY : benchmarks/MatchingBenchmark.s
+
+# target to generate assembly for a file
+benchmarks/MatchingBenchmark.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_matching.dir/build.make CMakeFiles/benchmark_matching.dir/benchmarks/MatchingBenchmark.cpp.s
+.PHONY : benchmarks/MatchingBenchmark.cpp.s
+
 src/MatchingEngine.o: src/MatchingEngine.cpp.o
 .PHONY : src/MatchingEngine.o
 
 # target to build an object file
 src/MatchingEngine.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simulator.dir/build.make CMakeFiles/simulator.dir/src/MatchingEngine.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_core.dir/build.make CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.o
 .PHONY : src/MatchingEngine.cpp.o
 
 src/MatchingEngine.i: src/MatchingEngine.cpp.i
@@ -142,7 +192,7 @@ src/MatchingEngine.i: src/MatchingEngine.cpp.i
 
 # target to preprocess a source file
 src/MatchingEngine.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simulator.dir/build.make CMakeFiles/simulator.dir/src/MatchingEngine.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_core.dir/build.make CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.i
 .PHONY : src/MatchingEngine.cpp.i
 
 src/MatchingEngine.s: src/MatchingEngine.cpp.s
@@ -150,7 +200,7 @@ src/MatchingEngine.s: src/MatchingEngine.cpp.s
 
 # target to generate assembly for a file
 src/MatchingEngine.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simulator.dir/build.make CMakeFiles/simulator.dir/src/MatchingEngine.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_core.dir/build.make CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.s
 .PHONY : src/MatchingEngine.cpp.s
 
 src/Order.o: src/Order.cpp.o
@@ -158,7 +208,7 @@ src/Order.o: src/Order.cpp.o
 
 # target to build an object file
 src/Order.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simulator.dir/build.make CMakeFiles/simulator.dir/src/Order.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_core.dir/build.make CMakeFiles/exchange_core.dir/src/Order.cpp.o
 .PHONY : src/Order.cpp.o
 
 src/Order.i: src/Order.cpp.i
@@ -166,7 +216,7 @@ src/Order.i: src/Order.cpp.i
 
 # target to preprocess a source file
 src/Order.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simulator.dir/build.make CMakeFiles/simulator.dir/src/Order.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_core.dir/build.make CMakeFiles/exchange_core.dir/src/Order.cpp.i
 .PHONY : src/Order.cpp.i
 
 src/Order.s: src/Order.cpp.s
@@ -174,7 +224,7 @@ src/Order.s: src/Order.cpp.s
 
 # target to generate assembly for a file
 src/Order.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simulator.dir/build.make CMakeFiles/simulator.dir/src/Order.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_core.dir/build.make CMakeFiles/exchange_core.dir/src/Order.cpp.s
 .PHONY : src/Order.cpp.s
 
 src/Orderbook.o: src/Orderbook.cpp.o
@@ -182,7 +232,7 @@ src/Orderbook.o: src/Orderbook.cpp.o
 
 # target to build an object file
 src/Orderbook.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simulator.dir/build.make CMakeFiles/simulator.dir/src/Orderbook.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_core.dir/build.make CMakeFiles/exchange_core.dir/src/Orderbook.cpp.o
 .PHONY : src/Orderbook.cpp.o
 
 src/Orderbook.i: src/Orderbook.cpp.i
@@ -190,7 +240,7 @@ src/Orderbook.i: src/Orderbook.cpp.i
 
 # target to preprocess a source file
 src/Orderbook.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simulator.dir/build.make CMakeFiles/simulator.dir/src/Orderbook.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_core.dir/build.make CMakeFiles/exchange_core.dir/src/Orderbook.cpp.i
 .PHONY : src/Orderbook.cpp.i
 
 src/Orderbook.s: src/Orderbook.cpp.s
@@ -198,7 +248,7 @@ src/Orderbook.s: src/Orderbook.cpp.s
 
 # target to generate assembly for a file
 src/Orderbook.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simulator.dir/build.make CMakeFiles/simulator.dir/src/Orderbook.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_core.dir/build.make CMakeFiles/exchange_core.dir/src/Orderbook.cpp.s
 .PHONY : src/Orderbook.cpp.s
 
 src/sim.o: src/sim.cpp.o
@@ -233,7 +283,12 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... benchmark_matching"
+	@echo "... exchange_core"
 	@echo "... simulator"
+	@echo "... benchmarks/MatchingBenchmark.o"
+	@echo "... benchmarks/MatchingBenchmark.i"
+	@echo "... benchmarks/MatchingBenchmark.s"
 	@echo "... src/MatchingEngine.o"
 	@echo "... src/MatchingEngine.i"
 	@echo "... src/MatchingEngine.s"

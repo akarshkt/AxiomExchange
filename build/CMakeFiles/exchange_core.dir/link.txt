@@ -1,0 +1,2 @@
+/usr/bin/ar qc libexchange_core.a CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.o CMakeFiles/exchange_core.dir/src/Order.cpp.o CMakeFiles/exchange_core.dir/src/Orderbook.cpp.o
+/usr/bin/ranlib libexchange_core.a
