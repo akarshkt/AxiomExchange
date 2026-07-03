@@ -229,6 +229,7 @@ CMakeFiles/exchange_core.dir/src/Logger.cpp.o: \
  /usr/include/c++/13/bits/ranges_algobase.h /usr/include/c++/13/list \
  /usr/include/c++/13/bits/stl_list.h /usr/include/c++/13/bits/list.tcc \
  /home/fnf/projects/exchange-simulator/src/../include/Ringbuffer.h \
+ /home/fnf/projects/exchange-simulator/src/../include/./utils/TimeUtils.h \
  /usr/include/c++/13/fstream \
  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \

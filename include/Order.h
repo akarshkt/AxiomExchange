@@ -22,8 +22,26 @@ enum class OrderType{
 	LIMIT,
 	STOP
 };
-
-
+enum class OrderStatus{
+	NEW,
+	PARTIALLY_FILLED,
+	FILLED,
+	CANCELLED,
+	EXPIRED,
+	REJECTED
+};
+inline std::ostream& operator<<(std::ostream& os, const OrderStatus& status) {
+    switch (status) {
+        case OrderStatus::NEW:              os << "NEW"; break;
+        case OrderStatus::PARTIALLY_FILLED: os << "PARTIALLY_FILLED"; break;
+        case OrderStatus::FILLED:           os << "FILLED"; break;
+        case OrderStatus::CANCELLED:        os << "CANCELLED"; break;
+        case OrderStatus::EXPIRED:          os << "EXPIRED"; break;
+        case OrderStatus::REJECTED:         os << "REJECTED"; break;
+        default:                            os << "UNKNOWN"; break;
+    }
+    return os;
+}
 struct Order{
 
 	OrderId orderId;
@@ -35,11 +53,13 @@ struct Order{
 	Quantity originalQuantity;
 	Quantity remainingQuantity;
 	Timestamp timestamp;
+	OrderStatus orderStatus;
 	Order(UserId userId,OrderType ordertype, AssetId assetId,Quantity originalQuantity, Side side,Price price );
 	 bool operator==(const Order& other) const
     {
         return orderId == other.orderId;
     }
+	void setOrderStatus(OrderStatus orderStatus);
 };
 struct OrderLocation{
 	Side side;

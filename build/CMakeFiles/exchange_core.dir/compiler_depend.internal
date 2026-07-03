@@ -4,6 +4,7 @@
 CMakeFiles/exchange_core.dir/src/Logger.cpp.o
  /home/fnf/projects/exchange-simulator/src/Logger.cpp
  /home/fnf/projects/exchange-simulator/include/Order.h
+ /home/fnf/projects/exchange-simulator/include/utils/TimeUtils.h
  /home/fnf/projects/exchange-simulator/include/Logger.h
  /home/fnf/projects/exchange-simulator/include/Order.h
  /home/fnf/projects/exchange-simulator/include/Ringbuffer.h
@@ -599,6 +600,7 @@ CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.o
 CMakeFiles/exchange_core.dir/src/Order.cpp.o
  /home/fnf/projects/exchange-simulator/src/Order.cpp
  /home/fnf/projects/exchange-simulator/include/Order.h
+ /home/fnf/projects/exchange-simulator/include/utils/TimeUtils.h
  /usr/include/alloca.h
  /usr/include/asm-generic/errno-base.h
  /usr/include/asm-generic/errno.h

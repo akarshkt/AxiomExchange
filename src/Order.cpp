@@ -1,11 +1,6 @@
 #include "../include/Order.h"
+#include "../include/utils/TimeUtils.h"
 
-Timestamp getTimestamp(){
-    return std::chrono::duration_cast<std::chrono::nanoseconds>(
-        std::chrono::system_clock::now().time_since_epoch()
-    ).count();
-    
-}
 Order::Order(UserId userId,
              OrderType ordertype,
              AssetId assetId,
@@ -30,4 +25,11 @@ Order::Order(UserId userId,
     this->originalQuantity = originalQuantity;
     this->remainingQuantity = originalQuantity;
     this->side = side;
+    this->orderStatus=OrderStatus::NEW;
+
+    
+}
+
+void Order::setOrderStatus(OrderStatus orderStatus){
+    this->orderStatus=orderStatus;
 }

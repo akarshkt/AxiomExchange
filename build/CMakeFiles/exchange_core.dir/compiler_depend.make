@@ -3,6 +3,7 @@
 
 CMakeFiles/exchange_core.dir/src/Logger.cpp.o: /home/fnf/projects/exchange-simulator/src/Logger.cpp \
   /home/fnf/projects/exchange-simulator/include/Order.h \
+  /home/fnf/projects/exchange-simulator/include/utils/TimeUtils.h \
   /home/fnf/projects/exchange-simulator/include/Logger.h \
   /home/fnf/projects/exchange-simulator/include/Order.h \
   /home/fnf/projects/exchange-simulator/include/Ringbuffer.h \
@@ -596,6 +597,7 @@ CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.o: /home/fnf/projects/exchan
 
 CMakeFiles/exchange_core.dir/src/Order.cpp.o: /home/fnf/projects/exchange-simulator/src/Order.cpp \
   /home/fnf/projects/exchange-simulator/include/Order.h \
+  /home/fnf/projects/exchange-simulator/include/utils/TimeUtils.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -1478,8 +1480,6 @@ CMakeFiles/exchange_core.dir/src/Trade.cpp.o: /home/fnf/projects/exchange-simula
 
 /home/fnf/projects/exchange-simulator/include/Orderbook.h:
 
-/home/fnf/projects/exchange-simulator/include/utils/TimeUtils.h:
-
 /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h:
@@ -1527,6 +1527,8 @@ CMakeFiles/exchange_core.dir/src/Trade.cpp.o: /home/fnf/projects/exchange-simula
 /usr/include/x86_64-linux-gnu/bits/wchar.h:
 
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
+
+/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
 /usr/include/c++/13/ext/type_traits.h:
 
@@ -1662,6 +1664,12 @@ CMakeFiles/exchange_core.dir/src/Trade.cpp.o: /home/fnf/projects/exchange-simula
 
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
 
+/usr/include/c++/13/bits/stl_heap.h:
+
+/usr/include/c++/13/bits/std_abs.h:
+
+/usr/include/c++/13/bits/parse_numbers.h:
+
 /usr/include/c++/13/bits/cxxabi_forced.h:
 
 /usr/include/c++/13/ostream:
@@ -1728,16 +1736,6 @@ CMakeFiles/exchange_core.dir/src/Trade.cpp.o: /home/fnf/projects/exchange-simula
 
 /usr/include/c++/13/backward/binders.h:
 
-/usr/include/c++/13/bits/locale_facets.h:
-
-/usr/include/c++/13/ext/aligned_buffer.h:
-
-/usr/include/locale.h:
-
-/usr/include/c++/13/bits/utility.h:
-
-/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
-
 /usr/include/c++/13/new:
 
 /usr/include/x86_64-linux-gnu/bits/long-double.h:
@@ -1770,6 +1768,8 @@ CMakeFiles/exchange_core.dir/src/Trade.cpp.o: /home/fnf/projects/exchange-simula
 
 /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
 
+/home/fnf/projects/exchange-simulator/include/utils/TimeUtils.h:
+
 /home/fnf/projects/exchange-simulator/include/Ringbuffer.h:
 
 /home/fnf/projects/exchange-simulator/include/Order.h:
@@ -1780,17 +1780,23 @@ CMakeFiles/exchange_core.dir/src/Trade.cpp.o: /home/fnf/projects/exchange-simula
 
 /usr/include/c++/13/bits/invoke.h:
 
+/usr/include/c++/13/ext/aligned_buffer.h:
+
+/usr/include/locale.h:
+
+/usr/include/c++/13/bits/utility.h:
+
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
+
 /usr/include/wchar.h:
 
 /usr/include/c++/13/bits/shared_ptr_base.h:
 
-/usr/include/c++/13/initializer_list:
-
-/usr/include/c++/13/tr1/bessel_function.tcc:
-
 /usr/include/c++/13/bits/basic_ios.h:
 
 /usr/include/x86_64-linux-gnu/bits/time64.h:
+
+/usr/include/c++/13/bits/locale_facets.h:
 
 /usr/include/c++/13/bits/basic_string.tcc:
 
@@ -1804,6 +1810,14 @@ CMakeFiles/exchange_core.dir/src/Trade.cpp.o: /home/fnf/projects/exchange-simula
 
 /usr/include/c++/13/cwchar:
 
+/home/fnf/projects/exchange-simulator/include/Logger.h:
+
+/usr/include/x86_64-linux-gnu/bits/locale.h:
+
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
+
+/usr/include/c++/13/bits/enable_special_members.h:
+
 /usr/include/c++/13/bits/localefwd.h:
 
 /usr/include/c++/13/bits/streambuf_iterator.h:
@@ -1813,14 +1827,6 @@ CMakeFiles/exchange_core.dir/src/Trade.cpp.o: /home/fnf/projects/exchange-simula
 /usr/include/x86_64-linux-gnu/bits/waitstatus.h:
 
 /usr/include/c++/13/bits/exception_defines.h:
-
-/home/fnf/projects/exchange-simulator/include/Logger.h:
-
-/usr/include/x86_64-linux-gnu/bits/locale.h:
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
-
-/usr/include/c++/13/bits/enable_special_members.h:
 
 /usr/include/c++/13/bits/cxxabi_init_exception.h:
 
@@ -1835,8 +1841,6 @@ CMakeFiles/exchange_core.dir/src/Trade.cpp.o: /home/fnf/projects/exchange-simula
 /usr/include/c++/13/streambuf:
 
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
-
-/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
 /usr/include/c++/13/bits/basic_ios.tcc:
 
@@ -1868,15 +1872,13 @@ CMakeFiles/exchange_core.dir/src/Trade.cpp.o: /home/fnf/projects/exchange-simula
 
 /usr/include/c++/13/bits/memoryfwd.h:
 
-/usr/include/c++/13/bits/stl_heap.h:
-
-/usr/include/c++/13/bits/std_abs.h:
-
-/usr/include/c++/13/bits/parse_numbers.h:
-
 /usr/include/c++/13/bits/ostream_insert.h:
 
 /usr/include/c++/13/math.h:
+
+/usr/include/c++/13/tr1/bessel_function.tcc:
+
+/usr/include/c++/13/initializer_list:
 
 /usr/include/c++/13/ios:
 

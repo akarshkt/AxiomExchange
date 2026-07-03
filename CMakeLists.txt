@@ -16,7 +16,6 @@ add_library(exchange_core
     src/Orderbook.cpp
     src/Trade.cpp
     src/Logger.cpp
-   
 )
 
 # Simulator executable

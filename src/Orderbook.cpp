@@ -13,7 +13,7 @@ void Orderbook::addOrder(Order &order)
     Price price = order.price;
 
     auto &book = (order.side == Side::BUY ? bids : asks);
-    book[price].emplace_back(order);
+    book[price].push_back(order);
     orderIndex[order.orderId] = {order.side, price, --(book[price].end())};
     logger.logOrder(order);
 }
@@ -42,6 +42,8 @@ void Orderbook::cancelOrder(OrderId orderId)
 
     auto loc = orderIndex[orderId];
     auto &book = loc.side == Side::BUY ? bids : asks;
+
+    loc.it->orderStatus = OrderStatus::CANCELLED;
     logger.logCancelOrder(*(loc.it));
     book[loc.price].erase(loc.it);
 }
@@ -97,23 +99,35 @@ void Orderbook::matchOrderLimit(Order &order)
                     logger.logTrade(newTrade);
                     if (orderIt->remainingQuantity == 0)
                     {
-                        orderIt = orders.erase(orderIt);
+                        orderIt->setOrderStatus(OrderStatus::FILLED);
+                        logger.logOrder(*orderIt);       // Log FIRST while memory is valid
+                        orderIt = orders.erase(orderIt); // Erase SECOND
                     }
                     else
                     {
-                        ++orderIt;
+                        orderIt->setOrderStatus(OrderStatus::PARTIALLY_FILLED);
+                        logger.logOrder(*orderIt); // Log FIRST
+                        ++orderIt;                 // Advance SECOND
                     }
-
                     if (order.remainingQuantity == 0)
                     {
+                        order.setOrderStatus(OrderStatus::FILLED);
                         val = false;
                         break;
+                    }
+                    else
+                    {
+                        order.setOrderStatus(OrderStatus::PARTIALLY_FILLED);
+                        logger.logOrder(order);
                     }
                 }
             }
         }
         if (val)
+        {
+
             addOrder(order);
+        }
     }
     else
     {
@@ -137,23 +151,35 @@ void Orderbook::matchOrderLimit(Order &order)
                     logger.logTrade(newTrade);
                     if (orderIt->remainingQuantity == 0)
                     {
-                        orderIt = orders.erase(orderIt);
+                        orderIt->setOrderStatus(OrderStatus::FILLED);
+                        logger.logOrder(*orderIt);       // Log FIRST while memory is valid
+                        orderIt = orders.erase(orderIt); // Erase SECOND
                     }
                     else
                     {
-                        ++orderIt;
+                        orderIt->setOrderStatus(OrderStatus::PARTIALLY_FILLED);
+                        logger.logOrder(*orderIt); // Log FIRST
+                        ++orderIt;                 // Advance SECOND
                     }
-
                     if (order.remainingQuantity == 0)
                     {
+                        order.setOrderStatus(OrderStatus::FILLED);
                         val = false;
                         break;
+                    }
+                    else
+                    {
+                        order.setOrderStatus(OrderStatus::PARTIALLY_FILLED);
+                        logger.logOrder(order);
                     }
                 }
             }
         }
         if (val)
+        {
+
             addOrder(order);
+        }
     }
 }
 
@@ -180,22 +206,37 @@ void Orderbook::matchOrderMarket(Order &order)
                 logger.logTrade(newTrade);
                 if (orderIt->remainingQuantity == 0)
                 {
-                    orderIt = orders.erase(orderIt);
+                    orderIt->setOrderStatus(OrderStatus::FILLED);
+                    logger.logOrder(*orderIt);       // Log FIRST while memory is valid
+                    orderIt = orders.erase(orderIt); // Erase SECOND
                 }
                 else
                 {
-                    ++orderIt;
+                    orderIt->setOrderStatus(OrderStatus::PARTIALLY_FILLED);
+                    logger.logOrder(*orderIt); // Log FIRST
+                    ++orderIt;                 // Advance SECOND
                 }
 
                 if (order.remainingQuantity == 0)
                 {
+                    order.orderStatus = OrderStatus::FILLED;
+                    logger.logOrder(order);
                     val = false;
                     break;
+                }
+                else
+                {
+                    order.orderStatus = OrderStatus::PARTIALLY_FILLED;
+                    logger.logOrder(order);
                 }
             }
         }
         if (val)
         {
+
+            // if(order.originalQuantity!=order.remainingQuantity)
+            // order.orderStatus=OrderStatus::PARTIALLY_FILLED;
+
             cancelOrder(order.orderId);
         }
     }
@@ -220,22 +261,34 @@ void Orderbook::matchOrderMarket(Order &order)
                 logger.logTrade(newTrade);
                 if (orderIt->remainingQuantity == 0)
                 {
-                    orderIt = orders.erase(orderIt);
+                    orderIt->setOrderStatus(OrderStatus::FILLED);
+                    logger.logOrder(*orderIt);       // Log FIRST while memory is valid
+                    orderIt = orders.erase(orderIt); // Erase SECOND
                 }
                 else
                 {
-                    ++orderIt;
+                    orderIt->setOrderStatus(OrderStatus::PARTIALLY_FILLED);
+                    logger.logOrder(*orderIt); // Log FIRST
+                    ++orderIt;                 // Advance SECOND
                 }
 
                 if (order.remainingQuantity == 0)
                 {
+                    order.orderStatus = OrderStatus::FILLED;
+                    logger.logOrder(order);
                     val = false;
                     break;
+                }
+                else
+                {
+                    order.orderStatus = OrderStatus::PARTIALLY_FILLED;
+                    logger.logOrder(order);
                 }
             }
         }
         if (val)
         {
+
             cancelOrder(order.orderId);
         }
     }
