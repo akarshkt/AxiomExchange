@@ -5,8 +5,13 @@
 #include <list>
 #include "Order.h"
 #include <algorithm>
+#include "Trade.h"
+#include "TradeLogs.h"
+#include "./utils/TimeUtils.h"
 class Orderbook{
+    TradeLogs tradeLogs;
     public:
+    Orderbook(size_t capacity);
     std::map<Price,std::list<Order>> asks;
     std::map<Price,std::list<Order>> bids;
     std::unordered_map<OrderId,OrderLocation> orderIndex;
@@ -16,7 +21,7 @@ class Orderbook{
     void matchOrderLimit(Order &order);
     void matchOrderMarket(Order &order);
     void matchOrderStop(Order &order);
-    public:
+    TradeLogs getTradeLogs();
     Order orderLookup(OrderId orderId);
     void removeOrder(OrderId orderId, Side side);
 

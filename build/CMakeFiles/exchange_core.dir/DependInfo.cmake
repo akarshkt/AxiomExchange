@@ -11,6 +11,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/fnf/projects/exchange-simulator/src/MatchingEngine.cpp" "CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.o" "gcc" "CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.o.d"
   "/home/fnf/projects/exchange-simulator/src/Order.cpp" "CMakeFiles/exchange_core.dir/src/Order.cpp.o" "gcc" "CMakeFiles/exchange_core.dir/src/Order.cpp.o.d"
   "/home/fnf/projects/exchange-simulator/src/Orderbook.cpp" "CMakeFiles/exchange_core.dir/src/Orderbook.cpp.o" "gcc" "CMakeFiles/exchange_core.dir/src/Orderbook.cpp.o.d"
+  "/home/fnf/projects/exchange-simulator/src/Trade.cpp" "CMakeFiles/exchange_core.dir/src/Trade.cpp.o" "gcc" "CMakeFiles/exchange_core.dir/src/Trade.cpp.o.d"
+  "/home/fnf/projects/exchange-simulator/src/TradeLogs.cpp" "CMakeFiles/exchange_core.dir/src/TradeLogs.cpp.o" "gcc" "CMakeFiles/exchange_core.dir/src/TradeLogs.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

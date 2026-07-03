@@ -3,7 +3,12 @@
 
 CMakeFiles/simulator.dir/src/sim.cpp.o: /home/fnf/projects/exchange-simulator/src/sim.cpp \
   /home/fnf/projects/exchange-simulator/include/Order.h \
+  /home/fnf/projects/exchange-simulator/include/utils/TimeUtils.h \
+  /home/fnf/projects/exchange-simulator/include/Order.h \
   /home/fnf/projects/exchange-simulator/include/Orderbook.h \
+  /home/fnf/projects/exchange-simulator/include/Ringbuffer.h \
+  /home/fnf/projects/exchange-simulator/include/Trade.h \
+  /home/fnf/projects/exchange-simulator/include/TradeLogs.h \
   /home/fnf/projects/exchange-simulator/include/MatchingEngine.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
@@ -35,6 +40,7 @@ CMakeFiles/simulator.dir/src/sim.cpp.o: /home/fnf/projects/exchange-simulator/sr
   /usr/include/c++/13/bits/exception.h \
   /usr/include/c++/13/bits/exception_defines.h \
   /usr/include/c++/13/bits/exception_ptr.h \
+  /usr/include/c++/13/bits/fstream.tcc \
   /usr/include/c++/13/bits/functexcept.h \
   /usr/include/c++/13/bits/functional_hash.h \
   /usr/include/c++/13/bits/hash_bytes.h \
@@ -44,6 +50,7 @@ CMakeFiles/simulator.dir/src/sim.cpp.o: /home/fnf/projects/exchange-simulator/sr
   /usr/include/c++/13/bits/ios_base.h \
   /usr/include/c++/13/bits/istream.tcc \
   /usr/include/c++/13/bits/iterator_concepts.h \
+  /usr/include/c++/13/bits/list.tcc \
   /usr/include/c++/13/bits/locale_classes.h \
   /usr/include/c++/13/bits/locale_classes.tcc \
   /usr/include/c++/13/bits/locale_conv.h \
@@ -88,6 +95,7 @@ CMakeFiles/simulator.dir/src/sim.cpp.o: /home/fnf/projects/exchange-simulator/sr
   /usr/include/c++/13/bits/stl_iterator.h \
   /usr/include/c++/13/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/13/bits/stl_iterator_base_types.h \
+  /usr/include/c++/13/bits/stl_list.h \
   /usr/include/c++/13/bits/stl_map.h \
   /usr/include/c++/13/bits/stl_multimap.h \
   /usr/include/c++/13/bits/stl_pair.h \
@@ -132,6 +140,7 @@ CMakeFiles/simulator.dir/src/sim.cpp.o: /home/fnf/projects/exchange-simulator/sr
   /usr/include/c++/13/ext/string_conversions.h \
   /usr/include/c++/13/ext/type_traits.h \
   /usr/include/c++/13/format \
+  /usr/include/c++/13/fstream \
   /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/iomanip \
   /usr/include/c++/13/ios \
@@ -139,6 +148,7 @@ CMakeFiles/simulator.dir/src/sim.cpp.o: /home/fnf/projects/exchange-simulator/sr
   /usr/include/c++/13/iostream \
   /usr/include/c++/13/istream \
   /usr/include/c++/13/limits \
+  /usr/include/c++/13/list \
   /usr/include/c++/13/locale \
   /usr/include/c++/13/map \
   /usr/include/c++/13/math.h \
@@ -274,8 +284,10 @@ CMakeFiles/simulator.dir/src/sim.cpp.o: /home/fnf/projects/exchange-simulator/sr
   /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
   /usr/include/x86_64-linux-gnu/bits/wordsize.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h \
   /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h \
@@ -329,6 +341,8 @@ CMakeFiles/simulator.dir/src/sim.cpp.o: /home/fnf/projects/exchange-simulator/sr
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h:
 
+/usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h:
+
 /usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h:
 
 /usr/include/x86_64-linux-gnu/bits/wordsize.h:
@@ -347,27 +361,15 @@ CMakeFiles/simulator.dir/src/sim.cpp.o: /home/fnf/projects/exchange-simulator/sr
 
 /usr/include/x86_64-linux-gnu/bits/types/time_t.h:
 
-/usr/include/c++/13/pstl/glue_algorithm_defs.h:
+/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
+/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
 
-/usr/include/c++/13/ext/atomicity.h:
-
-/usr/include/c++/13/cctype:
-
-/usr/include/c++/13/tr1/gamma.tcc:
-
-/usr/include/c++/13/debug/assertions.h:
-
-/usr/include/x86_64-linux-gnu/bits/select-decl.h:
-
-/usr/include/c++/13/cstdio:
+/usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 
 /usr/include/c++/13/concepts:
 
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
 
 /usr/include/c++/13/clocale:
 
@@ -375,17 +377,19 @@ CMakeFiles/simulator.dir/src/sim.cpp.o: /home/fnf/projects/exchange-simulator/sr
 
 /usr/include/c++/13/cstdlib:
 
+/usr/include/c++/13/cctype:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
+
+/usr/include/c++/13/ext/atomicity.h:
+
+/usr/include/c++/13/tr1/gamma.tcc:
+
 /home/fnf/projects/exchange-simulator/include/Orderbook.h:
 
 /usr/include/c++/13/variant:
 
 /usr/include/c++/13/bits/uses_allocator_args.h:
-
-/usr/include/c++/13/exception:
-
-/usr/include/c++/13/bits/stl_pair.h:
-
-/usr/include/x86_64-linux-gnu/bits/errno.h:
 
 /usr/include/c++/13/bits/uses_allocator.h:
 
@@ -395,9 +399,15 @@ CMakeFiles/simulator.dir/src/sim.cpp.o: /home/fnf/projects/exchange-simulator/sr
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
 
+/usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
+
+/usr/include/c++/13/bits/unique_ptr.h:
+
 /usr/include/c++/13/bits/align.h:
 
 /usr/include/c++/13/bits/max_size_type.h:
+
+/home/fnf/projects/exchange-simulator/include/TradeLogs.h:
 
 /usr/include/c++/13/bits/unordered_map.h:
 
@@ -425,6 +435,8 @@ CMakeFiles/simulator.dir/src/sim.cpp.o: /home/fnf/projects/exchange-simulator/sr
 
 /usr/include/c++/13/chrono:
 
+/home/fnf/projects/exchange-simulator/include/Trade.h:
+
 /usr/include/c++/13/bits/stl_algo.h:
 
 /usr/include/c++/13/cstddef:
@@ -440,10 +452,6 @@ CMakeFiles/simulator.dir/src/sim.cpp.o: /home/fnf/projects/exchange-simulator/sr
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
 /usr/include/c++/13/bits/locale_facets.tcc:
-
-/usr/include/c++/13/bits/refwrap.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
 
 /usr/include/c++/13/bits/stl_function.h:
 
@@ -469,25 +477,13 @@ CMakeFiles/simulator.dir/src/sim.cpp.o: /home/fnf/projects/exchange-simulator/sr
 
 /usr/include/c++/13/bits/parse_numbers.h:
 
-/usr/include/c++/13/bits/cxxabi_forced.h:
+/usr/include/c++/13/bits/ostream.tcc:
 
-/usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h:
+/usr/include/c++/13/numbers:
 
-/usr/include/c++/13/bits/ranges_util.h:
+/usr/include/c++/13/bits/move.h:
 
-/usr/include/c++/13/bits/stl_iterator_base_funcs.h:
-
-/usr/include/asm-generic/errno-base.h:
-
-/usr/include/c++/13/bits/ranges_cmp.h:
-
-/usr/include/c++/13/bits/predefined_ops.h:
-
-/usr/include/c++/13/iosfwd:
-
-/usr/include/x86_64-linux-gnu/bits/wchar2-decl.h:
-
-/usr/include/c++/13/bits/erase_if.h:
+/usr/include/c++/13/bits/memoryfwd.h:
 
 /usr/include/c++/13/bits/exception_ptr.h:
 
@@ -519,22 +515,6 @@ CMakeFiles/simulator.dir/src/sim.cpp.o: /home/fnf/projects/exchange-simulator/sr
 
 /usr/include/c++/13/bits/chrono_io.h:
 
-/usr/include/c++/13/bits/locale_facets.h:
-
-/home/fnf/projects/exchange-simulator/src/sim.cpp:
-
-/usr/include/c++/13/ext/aligned_buffer.h:
-
-/usr/include/locale.h:
-
-/usr/include/c++/13/bits/utility.h:
-
-/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
-
-/usr/include/c++/13/ext/alloc_traits.h:
-
-/usr/include/c++/13/new:
-
 /usr/include/c++/13/bits/alloc_traits.h:
 
 /usr/include/c++/13/bits/concept_check.h:
@@ -547,13 +527,41 @@ CMakeFiles/simulator.dir/src/sim.cpp.o: /home/fnf/projects/exchange-simulator/sr
 
 /usr/include/x86_64-linux-gnu/bits/fp-logb.h:
 
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
+
+/usr/include/c++/13/bits/node_handle.h:
+
 /usr/include/c++/13/cerrno:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-least.h:
 
-/usr/include/c++/13/bits/unique_ptr.h:
+/usr/include/c++/13/debug/assertions.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
+/usr/include/x86_64-linux-gnu/bits/select-decl.h:
+
+/usr/include/c++/13/bits/predefined_ops.h:
+
+/usr/include/c++/13/bits/ranges_cmp.h:
+
+/usr/include/c++/13/iosfwd:
+
+/home/fnf/projects/exchange-simulator/include/utils/TimeUtils.h:
+
+/usr/include/c++/13/bits/basic_ios.tcc:
+
+/usr/include/c++/13/pstl/execution_defs.h:
+
+/usr/include/c++/13/bits/basic_ios.h:
+
+/usr/include/x86_64-linux-gnu/bits/time64.h:
+
+/usr/include/c++/13/charconv:
+
+/usr/include/c++/13/backward/binders.h:
+
+/home/fnf/projects/exchange-simulator/src/sim.cpp:
+
+/usr/include/c++/13/bits/locale_facets.h:
 
 /usr/include/c++/13/bits/istream.tcc:
 
@@ -567,13 +575,57 @@ CMakeFiles/simulator.dir/src/sim.cpp.o: /home/fnf/projects/exchange-simulator/sr
 
 /usr/include/c++/13/bits/invoke.h:
 
-/usr/include/wchar.h:
-
 /usr/include/c++/13/bits/shared_ptr_base.h:
 
-/usr/include/c++/13/bits/basic_ios.h:
+/usr/include/wchar.h:
 
-/usr/include/x86_64-linux-gnu/bits/time64.h:
+/usr/include/c++/13/bits/allocated_ptr.h:
+
+/usr/include/c++/13/bit:
+
+/usr/include/c++/13/bits/basic_string.tcc:
+
+/usr/include/c++/13/cstdio:
+
+/usr/include/alloca.h:
+
+/usr/include/c++/13/bits/refwrap.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
+
+/usr/include/c++/13/bits/fstream.tcc:
+
+/usr/include/c++/13/algorithm:
+
+/home/fnf/projects/exchange-simulator/include/Ringbuffer.h:
+
+/usr/include/c++/13/bits/enable_special_members.h:
+
+/usr/include/c++/13/bits/stl_vector.h:
+
+/usr/include/c++/13/bits/stl_tempbuf.h:
+
+/usr/include/c++/13/ctime:
+
+/usr/include/c++/13/bits/locale_facets_nonio.h:
+
+/usr/include/c++/13/array:
+
+/usr/include/c++/13/bits/hash_bytes.h:
+
+/usr/include/x86_64-linux-gnu/bits/math-vector.h:
+
+/usr/include/c++/13/bits/stl_iterator_base_funcs.h:
+
+/usr/include/asm-generic/errno-base.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h:
+
+/usr/include/c++/13/bits/ranges_util.h:
+
+/usr/include/x86_64-linux-gnu/sys/select.h:
+
+/usr/include/c++/13/cwchar:
 
 /usr/include/c++/13/ostream:
 
@@ -583,45 +635,13 @@ CMakeFiles/simulator.dir/src/sim.cpp.o: /home/fnf/projects/exchange-simulator/sr
 
 /usr/include/x86_64-linux-gnu/bits/types.h:
 
-/usr/include/c++/13/bits/move.h:
+/usr/include/c++/13/bits/cxxabi_forced.h:
 
-/usr/include/alloca.h:
+/usr/include/x86_64-linux-gnu/bits/wchar2-decl.h:
 
-/usr/include/c++/13/bits/basic_string.tcc:
+/usr/include/c++/13/bits/stl_list.h:
 
-/usr/include/c++/13/bits/allocated_ptr.h:
-
-/usr/include/c++/13/bit:
-
-/usr/include/c++/13/algorithm:
-
-/usr/include/c++/13/bits/stl_vector.h:
-
-/usr/include/c++/13/bits/stl_tempbuf.h:
-
-/usr/include/c++/13/charconv:
-
-/usr/include/c++/13/backward/binders.h:
-
-/usr/include/c++/13/ctime:
-
-/usr/include/c++/13/ext/concurrence.h:
-
-/home/fnf/projects/exchange-simulator/include/MatchingEngine.h:
-
-/usr/include/c++/13/bits/locale_facets_nonio.h:
-
-/usr/include/c++/13/bits/enable_special_members.h:
-
-/usr/include/c++/13/bits/hash_bytes.h:
-
-/usr/include/x86_64-linux-gnu/bits/math-vector.h:
-
-/usr/include/c++/13/array:
-
-/usr/include/x86_64-linux-gnu/sys/select.h:
-
-/usr/include/c++/13/cwchar:
+/usr/include/c++/13/bits/erase_if.h:
 
 /usr/include/c++/13/bits/localefwd.h:
 
@@ -635,6 +655,8 @@ CMakeFiles/simulator.dir/src/sim.cpp.o: /home/fnf/projects/exchange-simulator/sr
 
 /usr/include/c++/13/bits/cxxabi_init_exception.h:
 
+/usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h:
+
 /usr/include/c++/13/typeinfo:
 
 /usr/include/c++/13/bits/exception.h:
@@ -645,19 +667,15 @@ CMakeFiles/simulator.dir/src/sim.cpp.o: /home/fnf/projects/exchange-simulator/sr
 
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
-/usr/include/c++/13/bits/basic_ios.tcc:
-
-/usr/include/c++/13/pstl/execution_defs.h:
-
 /usr/include/c++/13/bits/functional_hash.h:
 
 /usr/include/errno.h:
 
+/usr/include/x86_64-linux-gnu/bits/types/error_t.h:
+
+/usr/include/c++/13/bits/hashtable.h:
+
 /usr/include/c++/13/bits/ios_base.h:
-
-/usr/include/c++/13/bits/ostream.tcc:
-
-/usr/include/c++/13/numbers:
 
 /usr/include/c++/13/bits/codecvt.h:
 
@@ -673,11 +691,27 @@ CMakeFiles/simulator.dir/src/sim.cpp.o: /home/fnf/projects/exchange-simulator/sr
 
 /usr/include/c++/13/bits/locale_classes.tcc:
 
-/usr/include/c++/13/bits/memoryfwd.h:
+/usr/include/c++/13/exception:
 
-/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
+/usr/include/c++/13/bits/stl_pair.h:
 
-/usr/include/c++/13/bits/node_handle.h:
+/usr/include/x86_64-linux-gnu/bits/errno.h:
+
+/usr/include/c++/13/ext/aligned_buffer.h:
+
+/usr/include/locale.h:
+
+/usr/include/c++/13/bits/utility.h:
+
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
+
+/usr/include/c++/13/new:
+
+/home/fnf/projects/exchange-simulator/include/MatchingEngine.h:
+
+/usr/include/c++/13/ext/concurrence.h:
+
+/usr/include/c++/13/pstl/glue_algorithm_defs.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
 
@@ -685,11 +719,11 @@ CMakeFiles/simulator.dir/src/sim.cpp.o: /home/fnf/projects/exchange-simulator/sr
 
 /usr/include/c++/13/ext/numeric_traits.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
-
 /usr/include/c++/13/ext/string_conversions.h:
 
 /usr/include/c++/13/ext/type_traits.h:
+
+/usr/include/c++/13/fstream:
 
 /usr/include/c++/13/format:
 
@@ -717,9 +751,17 @@ CMakeFiles/simulator.dir/src/sim.cpp.o: /home/fnf/projects/exchange-simulator/sr
 
 /usr/include/c++/13/limits:
 
+/usr/include/c++/13/ext/alloc_traits.h:
+
+/usr/include/c++/13/list:
+
 /usr/include/c++/13/pstl/pstl_config.h:
 
 /usr/include/c++/13/span:
+
+/usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h:
+
+/usr/include/c++/13/sstream:
 
 /usr/include/c++/13/stdexcept:
 
@@ -750,6 +792,8 @@ CMakeFiles/simulator.dir/src/sim.cpp.o: /home/fnf/projects/exchange-simulator/sr
 /usr/include/c++/13/tr1/special_function_util.h:
 
 /usr/include/stdc-predef.h:
+
+/usr/include/c++/13/bits/list.tcc:
 
 /usr/include/c++/13/bits/nested_exception.h:
 
@@ -815,13 +859,13 @@ CMakeFiles/simulator.dir/src/sim.cpp.o: /home/fnf/projects/exchange-simulator/sr
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
 
-/usr/include/c++/13/bits/hashtable.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/error_t.h:
-
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
 /usr/include/x86_64-linux-gnu/bits/sched.h:
+
+/usr/include/x86_64-linux-gnu/bits/time.h:
+
+/usr/include/x86_64-linux-gnu/bits/select.h:
 
 /usr/include/c++/13/cmath:
 
@@ -846,10 +890,6 @@ CMakeFiles/simulator.dir/src/sim.cpp.o: /home/fnf/projects/exchange-simulator/sr
 /usr/include/x86_64-linux-gnu/bits/types/FILE.h:
 
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
-
-/usr/include/x86_64-linux-gnu/bits/select.h:
-
-/usr/include/x86_64-linux-gnu/bits/time.h:
 
 /usr/include/c++/13/bits/locale_classes.h:
 
@@ -878,9 +918,3 @@ CMakeFiles/simulator.dir/src/sim.cpp.o: /home/fnf/projects/exchange-simulator/sr
 /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
-
-/usr/include/c++/13/sstream:
-
-/usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/locale_t.h:

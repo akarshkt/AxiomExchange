@@ -5,6 +5,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/exchange_core.dir/src/Order.cpp.o.d"
   "CMakeFiles/exchange_core.dir/src/Orderbook.cpp.o"
   "CMakeFiles/exchange_core.dir/src/Orderbook.cpp.o.d"
+  "CMakeFiles/exchange_core.dir/src/Trade.cpp.o"
+  "CMakeFiles/exchange_core.dir/src/Trade.cpp.o.d"
+  "CMakeFiles/exchange_core.dir/src/TradeLogs.cpp.o"
+  "CMakeFiles/exchange_core.dir/src/TradeLogs.cpp.o.d"
   "libexchange_core.a"
   "libexchange_core.pdb"
 )

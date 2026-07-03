@@ -14,6 +14,9 @@ add_library(exchange_core
     src/MatchingEngine.cpp
     src/Order.cpp
     src/Orderbook.cpp
+    src/Trade.cpp
+    src/TradeLogs.cpp
+   
 )
 
 # Simulator executable

@@ -1,21 +1,27 @@
 #include "../include/Orderbook.h"
 #include <iostream>
 
-std::map<Price, std::list<Order>> asks;
-std::map<Price, std::list<Order>> bids;
-std::unordered_map<OrderId,OrderLocation> orderIndex;
+
+
+Orderbook::Orderbook(size_t capacity) : tradeLogs(capacity) {
+   
+}
+TradeLogs Orderbook::getTradeLogs(){
+    return tradeLogs;
+};
 void Orderbook::addOrder(Order &order)
 {
-    Price price=order.price;
-    Side side=order.side;
+    Price price = order.price;
+    Side side = order.side;
     if (side == Side::BUY)
     {
         bids[price].emplace_back(order);
-        orderIndex[order.orderId]={side,price,  --(bids[price].end())};
+        orderIndex[order.orderId] = {side, price, --(bids[price].end())};
     }
-    else{
+    else
+    {
         asks[price].push_back(order);
-        orderIndex[order.orderId]={side,price,  --(asks[price].end())};
+        orderIndex[order.orderId] = {side, price, --(asks[price].end())};
     }
 }
 void Orderbook::removeOrder(OrderId orderId, Side side)
@@ -41,8 +47,8 @@ void Orderbook::removeOrder(OrderId orderId, Side side)
 void Orderbook::cancelOrder(OrderId orderId)
 {
 
-    auto loc=orderIndex[orderId];
-    auto& book=loc.side==Side::BUY?bids:asks;
+    auto loc = orderIndex[orderId];
+    auto &book = loc.side == Side::BUY ? bids : asks;
     book[loc.price].erase(loc.it);
 }
 
@@ -72,7 +78,8 @@ Order Orderbook::orderLookup(OrderId orderId)
     Order order1(1, OrderType::MARKET, 2, 10, Side::BUY, 20);
     return order1;
 }
-void Orderbook::matchOrderLimit(Order &order){
+void Orderbook::matchOrderLimit(Order &order)
+{
     if (order.side == Side::BUY)
     {
         bool val = true;
@@ -91,7 +98,9 @@ void Orderbook::matchOrderLimit(Order &order){
 
                     order.remainingQuantity -= traded;
                     orderIt->remainingQuantity -= traded;
-
+                    // Timestamp currTimestamp=;
+                    Trade newTrade(order.orderId, orderIt->orderId, order.userId, orderIt->userId, it.first, traded, getTimestamp());
+                    tradeLogs.logTrade(newTrade);
                     if (orderIt->remainingQuantity == 0)
                     {
                         orderIt = orders.erase(orderIt);
@@ -102,7 +111,10 @@ void Orderbook::matchOrderLimit(Order &order){
                     }
 
                     if (order.remainingQuantity == 0)
-                      { val=false; break;}
+                    {
+                        val = false;
+                        break;
+                    }
                 }
             }
         }
@@ -127,7 +139,8 @@ void Orderbook::matchOrderLimit(Order &order){
 
                     order.remainingQuantity -= traded;
                     orderIt->remainingQuantity -= traded;
-
+                    Trade newTrade(order.orderId, orderIt->orderId, order.userId, orderIt->userId, it.first, traded, getTimestamp());
+                    tradeLogs.logTrade(newTrade);
                     if (orderIt->remainingQuantity == 0)
                     {
                         orderIt = orders.erase(orderIt);
@@ -138,88 +151,99 @@ void Orderbook::matchOrderLimit(Order &order){
                     }
 
                     if (order.remainingQuantity == 0)
-                      { val=false; break;}
+                    {
+                        val = false;
+                        break;
+                    }
                 }
             }
         }
         if (val)
             addOrder(order);
     }
-
 }
 
-void Orderbook::matchOrderMarket(Order &order){
-     if (order.side == Side::BUY)
+void Orderbook::matchOrderMarket(Order &order)
+{
+    if (order.side == Side::BUY)
     {
         bool val = true;
         for (auto &it : asks)
         {
-           
-                auto &orders = it.second;
 
-                for (auto orderIt = orders.begin();
-                     orderIt != orders.end();)
+            auto &orders = it.second;
+
+            for (auto orderIt = orders.begin();
+                 orderIt != orders.end();)
+            {
+                Quantity traded =
+                    std::min(order.remainingQuantity,
+                             orderIt->remainingQuantity);
+
+                order.remainingQuantity -= traded;
+                orderIt->remainingQuantity -= traded;
+                Trade newTrade(order.orderId, orderIt->orderId, order.userId, orderIt->userId, it.first, traded, getTimestamp());
+                tradeLogs.logTrade(newTrade);
+                if (orderIt->remainingQuantity == 0)
                 {
-                    Quantity traded =
-                        std::min(order.remainingQuantity,
-                                 orderIt->remainingQuantity);
-
-                    order.remainingQuantity -= traded;
-                    orderIt->remainingQuantity -= traded;
-
-                    if (orderIt->remainingQuantity == 0)
-                    {
-                        orderIt = orders.erase(orderIt);
-                    }
-                    else
-                    {
-                        ++orderIt;
-                    }
-
-                    if (order.remainingQuantity == 0)
-                      { val=false; break;}
+                    orderIt = orders.erase(orderIt);
                 }
-            
+                else
+                {
+                    ++orderIt;
+                }
+
+                if (order.remainingQuantity == 0)
+                {
+                    val = false;
+                    break;
+                }
+            }
         }
         if (val)
-           addOrder(order);
-          
+        {
+            cancelOrder(order.orderId);
+        }
     }
     else
     {
         bool val = true;
-        for (auto &it : bids)
+        for (auto it = bids.rbegin(); it != bids.rend(); it++)
         {
-          
-                auto &orders = it.second;
 
-                for (auto orderIt = orders.begin();
-                     orderIt != orders.end();)
+            auto &orders = it->second;
+
+            for (auto orderIt = orders.begin();
+                 orderIt != orders.end();)
+            {
+                Quantity traded =
+                    std::min(order.remainingQuantity,
+                             orderIt->remainingQuantity);
+
+                order.remainingQuantity -= traded;
+                orderIt->remainingQuantity -= traded;
+                Trade newTrade(order.orderId, orderIt->orderId, order.userId, orderIt->userId, it->first, traded, getTimestamp());
+                tradeLogs.logTrade(newTrade);
+                if (orderIt->remainingQuantity == 0)
                 {
-                    Quantity traded =
-                        std::min(order.remainingQuantity,
-                                 orderIt->remainingQuantity);
-
-                    order.remainingQuantity -= traded;
-                    orderIt->remainingQuantity -= traded;
-
-                    if (orderIt->remainingQuantity == 0)
-                    {
-                        orderIt = orders.erase(orderIt);
-                    }
-                    else
-                    {
-                        ++orderIt;
-                    }
-
-                    if (order.remainingQuantity == 0)
-                      { val=false; break;}
+                    orderIt = orders.erase(orderIt);
                 }
-            
+                else
+                {
+                    ++orderIt;
+                }
+
+                if (order.remainingQuantity == 0)
+                {
+                    val = false;
+                    break;
+                }
+            }
         }
         if (val)
-            addOrder(order);
-          
+        {
+            cancelOrder(order.orderId);
+        }
     }
 }
 // void Orderbook::matchOrderStop(Order &order){
@@ -227,10 +251,10 @@ void Orderbook::matchOrderMarket(Order &order){
 // }
 void Orderbook::matchOrder(Order &order)
 {
-    OrderType tempOrderType=order.orderType;
-    if(tempOrderType==OrderType::LIMIT)
+    OrderType tempOrderType = order.orderType;
+    if (tempOrderType == OrderType::LIMIT)
         matchOrderLimit(order);
-    else if(tempOrderType==OrderType::MARKET)
+    else if (tempOrderType == OrderType::MARKET)
         matchOrderMarket(order);
     // else
     //     matchOrderStop(order);

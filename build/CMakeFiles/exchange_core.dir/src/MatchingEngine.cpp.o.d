@@ -238,4 +238,10 @@ CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.o: \
  /usr/include/c++/13/variant /usr/include/c++/13/bits/ranges_algobase.h \
  /usr/include/c++/13/algorithm /usr/include/c++/13/bits/ranges_algo.h \
  /usr/include/c++/13/pstl/glue_algorithm_defs.h \
- /usr/include/c++/13/pstl/execution_defs.h
+ /usr/include/c++/13/pstl/execution_defs.h \
+ /home/fnf/projects/exchange-simulator/src/../include/./Trade.h \
+ /home/fnf/projects/exchange-simulator/src/../include/././Order.h \
+ /home/fnf/projects/exchange-simulator/src/../include/./TradeLogs.h \
+ /usr/include/c++/13/iostream \
+ /home/fnf/projects/exchange-simulator/src/../include/./Ringbuffer.h \
+ /home/fnf/projects/exchange-simulator/src/../include/././utils/TimeUtils.h

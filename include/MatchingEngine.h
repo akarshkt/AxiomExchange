@@ -4,6 +4,7 @@
 class MatchingEngine{
     Orderbook orderbook;
     public:
+    MatchingEngine(size_t capacity);
     void cancelOrder(OrderId orderId);
     void processOrder(Order &order);
     Orderbook getOrderbook();

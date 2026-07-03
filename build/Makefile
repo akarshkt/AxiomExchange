@@ -251,6 +251,54 @@ src/Orderbook.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_core.dir/build.make CMakeFiles/exchange_core.dir/src/Orderbook.cpp.s
 .PHONY : src/Orderbook.cpp.s
 
+src/Trade.o: src/Trade.cpp.o
+.PHONY : src/Trade.o
+
+# target to build an object file
+src/Trade.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_core.dir/build.make CMakeFiles/exchange_core.dir/src/Trade.cpp.o
+.PHONY : src/Trade.cpp.o
+
+src/Trade.i: src/Trade.cpp.i
+.PHONY : src/Trade.i
+
+# target to preprocess a source file
+src/Trade.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_core.dir/build.make CMakeFiles/exchange_core.dir/src/Trade.cpp.i
+.PHONY : src/Trade.cpp.i
+
+src/Trade.s: src/Trade.cpp.s
+.PHONY : src/Trade.s
+
+# target to generate assembly for a file
+src/Trade.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_core.dir/build.make CMakeFiles/exchange_core.dir/src/Trade.cpp.s
+.PHONY : src/Trade.cpp.s
+
+src/TradeLogs.o: src/TradeLogs.cpp.o
+.PHONY : src/TradeLogs.o
+
+# target to build an object file
+src/TradeLogs.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_core.dir/build.make CMakeFiles/exchange_core.dir/src/TradeLogs.cpp.o
+.PHONY : src/TradeLogs.cpp.o
+
+src/TradeLogs.i: src/TradeLogs.cpp.i
+.PHONY : src/TradeLogs.i
+
+# target to preprocess a source file
+src/TradeLogs.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_core.dir/build.make CMakeFiles/exchange_core.dir/src/TradeLogs.cpp.i
+.PHONY : src/TradeLogs.cpp.i
+
+src/TradeLogs.s: src/TradeLogs.cpp.s
+.PHONY : src/TradeLogs.s
+
+# target to generate assembly for a file
+src/TradeLogs.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_core.dir/build.make CMakeFiles/exchange_core.dir/src/TradeLogs.cpp.s
+.PHONY : src/TradeLogs.cpp.s
+
 src/sim.o: src/sim.cpp.o
 .PHONY : src/sim.o
 
@@ -298,6 +346,12 @@ help:
 	@echo "... src/Orderbook.o"
 	@echo "... src/Orderbook.i"
 	@echo "... src/Orderbook.s"
+	@echo "... src/Trade.o"
+	@echo "... src/Trade.i"
+	@echo "... src/Trade.s"
+	@echo "... src/TradeLogs.o"
+	@echo "... src/TradeLogs.i"
+	@echo "... src/TradeLogs.s"
 	@echo "... src/sim.o"
 	@echo "... src/sim.i"
 	@echo "... src/sim.s"

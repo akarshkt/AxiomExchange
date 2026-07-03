@@ -3,7 +3,7 @@
 
 static void BM_ProcessOrder(benchmark::State& state)
 {
-    MatchingEngine engine;
+    MatchingEngine engine(10000);
 
     Order order(
         1,
