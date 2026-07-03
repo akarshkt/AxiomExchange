@@ -241,7 +241,7 @@ CMakeFiles/simulator.dir/src/sim.cpp.o: \
  /usr/include/c++/13/pstl/execution_defs.h \
  /home/fnf/projects/exchange-simulator/src/../include/./Trade.h \
  /home/fnf/projects/exchange-simulator/src/../include/././Order.h \
- /home/fnf/projects/exchange-simulator/src/../include/./TradeLogs.h \
+ /home/fnf/projects/exchange-simulator/src/../include/./Logger.h \
  /usr/include/c++/13/iostream \
  /home/fnf/projects/exchange-simulator/src/../include/./Ringbuffer.h \
  /home/fnf/projects/exchange-simulator/src/../include/././utils/TimeUtils.h \

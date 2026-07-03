@@ -179,6 +179,30 @@ benchmarks/MatchingBenchmark.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_matching.dir/build.make CMakeFiles/benchmark_matching.dir/benchmarks/MatchingBenchmark.cpp.s
 .PHONY : benchmarks/MatchingBenchmark.cpp.s
 
+src/Logger.o: src/Logger.cpp.o
+.PHONY : src/Logger.o
+
+# target to build an object file
+src/Logger.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_core.dir/build.make CMakeFiles/exchange_core.dir/src/Logger.cpp.o
+.PHONY : src/Logger.cpp.o
+
+src/Logger.i: src/Logger.cpp.i
+.PHONY : src/Logger.i
+
+# target to preprocess a source file
+src/Logger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_core.dir/build.make CMakeFiles/exchange_core.dir/src/Logger.cpp.i
+.PHONY : src/Logger.cpp.i
+
+src/Logger.s: src/Logger.cpp.s
+.PHONY : src/Logger.s
+
+# target to generate assembly for a file
+src/Logger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_core.dir/build.make CMakeFiles/exchange_core.dir/src/Logger.cpp.s
+.PHONY : src/Logger.cpp.s
+
 src/MatchingEngine.o: src/MatchingEngine.cpp.o
 .PHONY : src/MatchingEngine.o
 
@@ -275,30 +299,6 @@ src/Trade.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_core.dir/build.make CMakeFiles/exchange_core.dir/src/Trade.cpp.s
 .PHONY : src/Trade.cpp.s
 
-src/TradeLogs.o: src/TradeLogs.cpp.o
-.PHONY : src/TradeLogs.o
-
-# target to build an object file
-src/TradeLogs.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_core.dir/build.make CMakeFiles/exchange_core.dir/src/TradeLogs.cpp.o
-.PHONY : src/TradeLogs.cpp.o
-
-src/TradeLogs.i: src/TradeLogs.cpp.i
-.PHONY : src/TradeLogs.i
-
-# target to preprocess a source file
-src/TradeLogs.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_core.dir/build.make CMakeFiles/exchange_core.dir/src/TradeLogs.cpp.i
-.PHONY : src/TradeLogs.cpp.i
-
-src/TradeLogs.s: src/TradeLogs.cpp.s
-.PHONY : src/TradeLogs.s
-
-# target to generate assembly for a file
-src/TradeLogs.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_core.dir/build.make CMakeFiles/exchange_core.dir/src/TradeLogs.cpp.s
-.PHONY : src/TradeLogs.cpp.s
-
 src/sim.o: src/sim.cpp.o
 .PHONY : src/sim.o
 
@@ -337,6 +337,9 @@ help:
 	@echo "... benchmarks/MatchingBenchmark.o"
 	@echo "... benchmarks/MatchingBenchmark.i"
 	@echo "... benchmarks/MatchingBenchmark.s"
+	@echo "... src/Logger.o"
+	@echo "... src/Logger.i"
+	@echo "... src/Logger.s"
 	@echo "... src/MatchingEngine.o"
 	@echo "... src/MatchingEngine.i"
 	@echo "... src/MatchingEngine.s"
@@ -349,9 +352,6 @@ help:
 	@echo "... src/Trade.o"
 	@echo "... src/Trade.i"
 	@echo "... src/Trade.s"
-	@echo "... src/TradeLogs.o"
-	@echo "... src/TradeLogs.i"
-	@echo "... src/TradeLogs.s"
 	@echo "... src/sim.o"
 	@echo "... src/sim.i"
 	@echo "... src/sim.s"

@@ -4,11 +4,11 @@
 CMakeFiles/simulator.dir/src/sim.cpp.o: /home/fnf/projects/exchange-simulator/src/sim.cpp \
   /home/fnf/projects/exchange-simulator/include/Order.h \
   /home/fnf/projects/exchange-simulator/include/utils/TimeUtils.h \
+  /home/fnf/projects/exchange-simulator/include/Logger.h \
   /home/fnf/projects/exchange-simulator/include/Order.h \
   /home/fnf/projects/exchange-simulator/include/Orderbook.h \
   /home/fnf/projects/exchange-simulator/include/Ringbuffer.h \
   /home/fnf/projects/exchange-simulator/include/Trade.h \
-  /home/fnf/projects/exchange-simulator/include/TradeLogs.h \
   /home/fnf/projects/exchange-simulator/include/MatchingEngine.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
@@ -407,8 +407,6 @@ CMakeFiles/simulator.dir/src/sim.cpp.o: /home/fnf/projects/exchange-simulator/sr
 
 /usr/include/c++/13/bits/max_size_type.h:
 
-/home/fnf/projects/exchange-simulator/include/TradeLogs.h:
-
 /usr/include/c++/13/bits/unordered_map.h:
 
 /usr/include/c++/13/bits/new_allocator.h:
@@ -627,6 +625,12 @@ CMakeFiles/simulator.dir/src/sim.cpp.o: /home/fnf/projects/exchange-simulator/sr
 
 /usr/include/c++/13/cwchar:
 
+/home/fnf/projects/exchange-simulator/include/Logger.h:
+
+/usr/include/x86_64-linux-gnu/bits/locale.h:
+
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
+
 /usr/include/c++/13/ostream:
 
 /usr/include/c++/13/tr1/riemann_zeta.tcc:
@@ -684,8 +688,6 @@ CMakeFiles/simulator.dir/src/sim.cpp.o: /home/fnf/projects/exchange-simulator/sr
 /usr/include/c++/13/bits/stringfwd.h:
 
 /usr/include/c++/13/bits/iterator_concepts.h:
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
 
 /usr/include/c++/13/bits/uniform_int_dist.h:
 
@@ -854,8 +856,6 @@ CMakeFiles/simulator.dir/src/sim.cpp.o: /home/fnf/projects/exchange-simulator/sr
 /usr/include/c++/13/string_view:
 
 /usr/include/x86_64-linux-gnu/bits/iscanonical.h:
-
-/usr/include/x86_64-linux-gnu/bits/locale.h:
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
 

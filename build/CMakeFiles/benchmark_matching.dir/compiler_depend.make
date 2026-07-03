@@ -4,11 +4,11 @@
 CMakeFiles/benchmark_matching.dir/benchmarks/MatchingBenchmark.cpp.o: /home/fnf/projects/exchange-simulator/benchmarks/MatchingBenchmark.cpp \
   /home/fnf/projects/exchange-simulator/include/Order.h \
   /home/fnf/projects/exchange-simulator/include/utils/TimeUtils.h \
+  /home/fnf/projects/exchange-simulator/include/Logger.h \
   /home/fnf/projects/exchange-simulator/include/Order.h \
   /home/fnf/projects/exchange-simulator/include/Orderbook.h \
   /home/fnf/projects/exchange-simulator/include/Ringbuffer.h \
   /home/fnf/projects/exchange-simulator/include/Trade.h \
-  /home/fnf/projects/exchange-simulator/include/TradeLogs.h \
   /home/fnf/projects/exchange-simulator/include/MatchingEngine.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
@@ -484,8 +484,6 @@ CMakeFiles/benchmark_matching.dir/benchmarks/MatchingBenchmark.cpp.o: /home/fnf/
 
 /usr/include/c++/13/bits/max_size_type.h:
 
-/home/fnf/projects/exchange-simulator/include/TradeLogs.h:
-
 /usr/include/c++/13/tr1/poly_hermite.tcc:
 
 /usr/include/c++/13/bits/stl_map.h:
@@ -606,6 +604,8 @@ CMakeFiles/benchmark_matching.dir/benchmarks/MatchingBenchmark.cpp.o: /home/fnf/
 
 /usr/include/c++/13/clocale:
 
+/usr/include/c++/13/bits/basic_ios.h:
+
 /usr/include/c++/13/bits/stringfwd.h:
 
 /usr/include/c++/13/bits/iterator_concepts.h:
@@ -621,8 +621,6 @@ CMakeFiles/benchmark_matching.dir/benchmarks/MatchingBenchmark.cpp.o: /home/fnf/
 /usr/include/c++/13/bit:
 
 /usr/include/c++/13/bits/basic_string.tcc:
-
-/usr/include/c++/13/bits/basic_ios.h:
 
 /usr/include/c++/13/charconv:
 
@@ -666,6 +664,18 @@ CMakeFiles/benchmark_matching.dir/benchmarks/MatchingBenchmark.cpp.o: /home/fnf/
 
 /usr/include/x86_64-linux-gnu/bits/environments.h:
 
+/home/fnf/projects/exchange-simulator/include/Logger.h:
+
+/usr/include/x86_64-linux-gnu/bits/locale.h:
+
+/usr/include/x86_64-linux-gnu/bits/timesize.h:
+
+/usr/include/c++/13/bits/locale_classes.h:
+
+/usr/include/c++/13/bits/stl_relops.h:
+
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
+
 /usr/include/benchmark/export.h:
 
 /usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
@@ -688,27 +698,25 @@ CMakeFiles/benchmark_matching.dir/benchmarks/MatchingBenchmark.cpp.o: /home/fnf/
 
 /usr/include/c++/13/bits/chrono.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
-
-/usr/include/asm-generic/errno.h:
-
-/usr/include/syscall.h:
-
-/usr/include/benchmark/benchmark.h:
-
 /usr/include/c++/13/array:
 
 /usr/include/c++/13/bits/hash_bytes.h:
 
 /usr/include/x86_64-linux-gnu/bits/math-vector.h:
 
-/usr/include/c++/13/bits/stl_iterator_base_funcs.h:
-
-/usr/include/asm-generic/errno-base.h:
-
 /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h:
 
 /usr/include/c++/13/bits/ranges_util.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
+
+/usr/include/asm-generic/errno.h:
+
+/usr/include/asm-generic/errno-base.h:
+
+/usr/include/c++/13/bits/stl_iterator_base_funcs.h:
+
+/usr/include/syscall.h:
 
 /usr/include/assert.h:
 
@@ -719,6 +727,8 @@ CMakeFiles/benchmark_matching.dir/benchmarks/MatchingBenchmark.cpp.o: /home/fnf/
 /usr/include/c++/13/bits/stl_tree.h:
 
 /usr/include/c++/13/bits/codecvt.h:
+
+/usr/include/benchmark/benchmark.h:
 
 /usr/include/alloca.h:
 
@@ -791,14 +801,6 @@ CMakeFiles/benchmark_matching.dir/benchmarks/MatchingBenchmark.cpp.o: /home/fnf/
 /usr/include/c++/13/bits/hashtable.h:
 
 /usr/include/c++/13/bits/ios_base.h:
-
-/usr/include/x86_64-linux-gnu/bits/timesize.h:
-
-/usr/include/c++/13/bits/locale_classes.h:
-
-/usr/include/c++/13/bits/stl_relops.h:
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
 
 /usr/include/c++/13/bits/uniform_int_dist.h:
 
@@ -1003,8 +1005,6 @@ CMakeFiles/benchmark_matching.dir/benchmarks/MatchingBenchmark.cpp.o: /home/fnf/
 /usr/include/x86_64-linux-gnu/bits/iscanonical.h:
 
 /usr/include/x86_64-linux-gnu/bits/local_lim.h:
-
-/usr/include/x86_64-linux-gnu/bits/locale.h:
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
 

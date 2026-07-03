@@ -269,7 +269,7 @@ CMakeFiles/benchmark_matching.dir/benchmarks/MatchingBenchmark.cpp.o: \
  /usr/include/c++/13/variant \
  /home/fnf/projects/exchange-simulator/benchmarks/../include/./Trade.h \
  /home/fnf/projects/exchange-simulator/benchmarks/../include/././Order.h \
- /home/fnf/projects/exchange-simulator/benchmarks/../include/./TradeLogs.h \
+ /home/fnf/projects/exchange-simulator/benchmarks/../include/./Logger.h \
  /usr/include/c++/13/iostream \
  /home/fnf/projects/exchange-simulator/benchmarks/../include/./Ringbuffer.h \
  /home/fnf/projects/exchange-simulator/benchmarks/../include/././utils/TimeUtils.h

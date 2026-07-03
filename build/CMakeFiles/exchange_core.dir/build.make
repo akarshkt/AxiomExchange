@@ -125,19 +125,19 @@ CMakeFiles/exchange_core.dir/src/Trade.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/exchange_core.dir/src/Trade.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fnf/projects/exchange-simulator/src/Trade.cpp -o CMakeFiles/exchange_core.dir/src/Trade.cpp.s
 
-CMakeFiles/exchange_core.dir/src/TradeLogs.cpp.o: CMakeFiles/exchange_core.dir/flags.make
-CMakeFiles/exchange_core.dir/src/TradeLogs.cpp.o: /home/fnf/projects/exchange-simulator/src/TradeLogs.cpp
-CMakeFiles/exchange_core.dir/src/TradeLogs.cpp.o: CMakeFiles/exchange_core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fnf/projects/exchange-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/exchange_core.dir/src/TradeLogs.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/exchange_core.dir/src/TradeLogs.cpp.o -MF CMakeFiles/exchange_core.dir/src/TradeLogs.cpp.o.d -o CMakeFiles/exchange_core.dir/src/TradeLogs.cpp.o -c /home/fnf/projects/exchange-simulator/src/TradeLogs.cpp
+CMakeFiles/exchange_core.dir/src/Logger.cpp.o: CMakeFiles/exchange_core.dir/flags.make
+CMakeFiles/exchange_core.dir/src/Logger.cpp.o: /home/fnf/projects/exchange-simulator/src/Logger.cpp
+CMakeFiles/exchange_core.dir/src/Logger.cpp.o: CMakeFiles/exchange_core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fnf/projects/exchange-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/exchange_core.dir/src/Logger.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/exchange_core.dir/src/Logger.cpp.o -MF CMakeFiles/exchange_core.dir/src/Logger.cpp.o.d -o CMakeFiles/exchange_core.dir/src/Logger.cpp.o -c /home/fnf/projects/exchange-simulator/src/Logger.cpp
 
-CMakeFiles/exchange_core.dir/src/TradeLogs.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/exchange_core.dir/src/TradeLogs.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fnf/projects/exchange-simulator/src/TradeLogs.cpp > CMakeFiles/exchange_core.dir/src/TradeLogs.cpp.i
+CMakeFiles/exchange_core.dir/src/Logger.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/exchange_core.dir/src/Logger.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fnf/projects/exchange-simulator/src/Logger.cpp > CMakeFiles/exchange_core.dir/src/Logger.cpp.i
 
-CMakeFiles/exchange_core.dir/src/TradeLogs.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/exchange_core.dir/src/TradeLogs.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fnf/projects/exchange-simulator/src/TradeLogs.cpp -o CMakeFiles/exchange_core.dir/src/TradeLogs.cpp.s
+CMakeFiles/exchange_core.dir/src/Logger.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/exchange_core.dir/src/Logger.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fnf/projects/exchange-simulator/src/Logger.cpp -o CMakeFiles/exchange_core.dir/src/Logger.cpp.s
 
 # Object files for target exchange_core
 exchange_core_OBJECTS = \
@@ -145,7 +145,7 @@ exchange_core_OBJECTS = \
 "CMakeFiles/exchange_core.dir/src/Order.cpp.o" \
 "CMakeFiles/exchange_core.dir/src/Orderbook.cpp.o" \
 "CMakeFiles/exchange_core.dir/src/Trade.cpp.o" \
-"CMakeFiles/exchange_core.dir/src/TradeLogs.cpp.o"
+"CMakeFiles/exchange_core.dir/src/Logger.cpp.o"
 
 # External object files for target exchange_core
 exchange_core_EXTERNAL_OBJECTS =
@@ -154,7 +154,7 @@ libexchange_core.a: CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.o
 libexchange_core.a: CMakeFiles/exchange_core.dir/src/Order.cpp.o
 libexchange_core.a: CMakeFiles/exchange_core.dir/src/Orderbook.cpp.o
 libexchange_core.a: CMakeFiles/exchange_core.dir/src/Trade.cpp.o
-libexchange_core.a: CMakeFiles/exchange_core.dir/src/TradeLogs.cpp.o
+libexchange_core.a: CMakeFiles/exchange_core.dir/src/Logger.cpp.o
 libexchange_core.a: CMakeFiles/exchange_core.dir/build.make
 libexchange_core.a: CMakeFiles/exchange_core.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/fnf/projects/exchange-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libexchange_core.a"

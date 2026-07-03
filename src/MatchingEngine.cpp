@@ -12,6 +12,7 @@ void MatchingEngine::cancelOrder(OrderId orderId)
 {
     orderbook.cancelOrder(orderId);
 }
+
 // public:
 Orderbook MatchingEngine::getOrderbook()
 {

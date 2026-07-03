@@ -15,7 +15,7 @@ add_library(exchange_core
     src/Order.cpp
     src/Orderbook.cpp
     src/Trade.cpp
-    src/TradeLogs.cpp
+    src/Logger.cpp
    
 )
 

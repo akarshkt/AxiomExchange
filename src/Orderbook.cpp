@@ -1,28 +1,21 @@
 #include "../include/Orderbook.h"
 #include <iostream>
 
-
-
-Orderbook::Orderbook(size_t capacity) : tradeLogs(capacity) {
-   
+Orderbook::Orderbook(size_t capacity) : logger(capacity)
+{
 }
-TradeLogs Orderbook::getTradeLogs(){
-    return tradeLogs;
+Logger Orderbook::getTradeLogs()
+{
+    return logger;
 };
 void Orderbook::addOrder(Order &order)
 {
     Price price = order.price;
-    Side side = order.side;
-    if (side == Side::BUY)
-    {
-        bids[price].emplace_back(order);
-        orderIndex[order.orderId] = {side, price, --(bids[price].end())};
-    }
-    else
-    {
-        asks[price].push_back(order);
-        orderIndex[order.orderId] = {side, price, --(asks[price].end())};
-    }
+
+    auto &book = (order.side == Side::BUY ? bids : asks);
+    book[price].emplace_back(order);
+    orderIndex[order.orderId] = {order.side, price, --(book[price].end())};
+    logger.logOrder(order);
 }
 void Orderbook::removeOrder(OrderId orderId, Side side)
 {
@@ -49,6 +42,7 @@ void Orderbook::cancelOrder(OrderId orderId)
 
     auto loc = orderIndex[orderId];
     auto &book = loc.side == Side::BUY ? bids : asks;
+    logger.logCancelOrder(*(loc.it));
     book[loc.price].erase(loc.it);
 }
 
@@ -100,7 +94,7 @@ void Orderbook::matchOrderLimit(Order &order)
                     orderIt->remainingQuantity -= traded;
                     // Timestamp currTimestamp=;
                     Trade newTrade(order.orderId, orderIt->orderId, order.userId, orderIt->userId, it.first, traded, getTimestamp());
-                    tradeLogs.logTrade(newTrade);
+                    logger.logTrade(newTrade);
                     if (orderIt->remainingQuantity == 0)
                     {
                         orderIt = orders.erase(orderIt);
@@ -140,7 +134,7 @@ void Orderbook::matchOrderLimit(Order &order)
                     order.remainingQuantity -= traded;
                     orderIt->remainingQuantity -= traded;
                     Trade newTrade(order.orderId, orderIt->orderId, order.userId, orderIt->userId, it.first, traded, getTimestamp());
-                    tradeLogs.logTrade(newTrade);
+                    logger.logTrade(newTrade);
                     if (orderIt->remainingQuantity == 0)
                     {
                         orderIt = orders.erase(orderIt);
@@ -183,7 +177,7 @@ void Orderbook::matchOrderMarket(Order &order)
                 order.remainingQuantity -= traded;
                 orderIt->remainingQuantity -= traded;
                 Trade newTrade(order.orderId, orderIt->orderId, order.userId, orderIt->userId, it.first, traded, getTimestamp());
-                tradeLogs.logTrade(newTrade);
+                logger.logTrade(newTrade);
                 if (orderIt->remainingQuantity == 0)
                 {
                     orderIt = orders.erase(orderIt);
@@ -223,7 +217,7 @@ void Orderbook::matchOrderMarket(Order &order)
                 order.remainingQuantity -= traded;
                 orderIt->remainingQuantity -= traded;
                 Trade newTrade(order.orderId, orderIt->orderId, order.userId, orderIt->userId, it->first, traded, getTimestamp());
-                tradeLogs.logTrade(newTrade);
+                logger.logTrade(newTrade);
                 if (orderIt->remainingQuantity == 0)
                 {
                     orderIt = orders.erase(orderIt);

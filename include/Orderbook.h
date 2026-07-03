@@ -6,25 +6,26 @@
 #include "Order.h"
 #include <algorithm>
 #include "Trade.h"
-#include "TradeLogs.h"
+#include "Logger.h"
 #include "./utils/TimeUtils.h"
-class Orderbook{
-    TradeLogs tradeLogs;
-    public:
+class Orderbook
+{
+    Logger logger;
+
+public:
     Orderbook(size_t capacity);
-    std::map<Price,std::list<Order>> asks;
-    std::map<Price,std::list<Order>> bids;
-    std::unordered_map<OrderId,OrderLocation> orderIndex;
+    std::map<Price, std::list<Order>> asks;
+    std::map<Price, std::list<Order>> bids;
+    std::unordered_map<OrderId, OrderLocation> orderIndex;
     void addOrder(Order &order);
     void cancelOrder(OrderId orderId);
     void matchOrder(Order &order);
     void matchOrderLimit(Order &order);
     void matchOrderMarket(Order &order);
     void matchOrderStop(Order &order);
-    TradeLogs getTradeLogs();
+    Logger getTradeLogs();
     Order orderLookup(OrderId orderId);
     void removeOrder(OrderId orderId, Side side);
-
 };
 
 #endif
