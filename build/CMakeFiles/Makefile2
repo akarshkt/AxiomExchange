@@ -66,6 +66,7 @@ CMAKE_BINARY_DIR = /home/fnf/projects/exchange-simulator/build
 all: CMakeFiles/exchange_core.dir/all
 all: CMakeFiles/simulator.dir/all
 all: CMakeFiles/benchmark_matching.dir/all
+all: CMakeFiles/exchange_tests.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -76,6 +77,7 @@ preinstall:
 clean: CMakeFiles/exchange_core.dir/clean
 clean: CMakeFiles/simulator.dir/clean
 clean: CMakeFiles/benchmark_matching.dir/clean
+clean: CMakeFiles/exchange_tests.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -111,7 +113,7 @@ CMakeFiles/exchange_core.dir/clean:
 CMakeFiles/simulator.dir/all: CMakeFiles/exchange_core.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/simulator.dir/build.make CMakeFiles/simulator.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/simulator.dir/build.make CMakeFiles/simulator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/fnf/projects/exchange-simulator/build/CMakeFiles --progress-num=9,10 "Built target simulator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/fnf/projects/exchange-simulator/build/CMakeFiles --progress-num=14,15 "Built target simulator"
 .PHONY : CMakeFiles/simulator.dir/all
 
 # Build rule for subdir invocation for target.
@@ -155,6 +157,32 @@ benchmark_matching: CMakeFiles/benchmark_matching.dir/rule
 CMakeFiles/benchmark_matching.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_matching.dir/build.make CMakeFiles/benchmark_matching.dir/clean
 .PHONY : CMakeFiles/benchmark_matching.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/exchange_tests.dir
+
+# All Build rule for target.
+CMakeFiles/exchange_tests.dir/all: CMakeFiles/exchange_core.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_tests.dir/build.make CMakeFiles/exchange_tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_tests.dir/build.make CMakeFiles/exchange_tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/fnf/projects/exchange-simulator/build/CMakeFiles --progress-num=9,10,11,12,13 "Built target exchange_tests"
+.PHONY : CMakeFiles/exchange_tests.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/exchange_tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fnf/projects/exchange-simulator/build/CMakeFiles 11
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/exchange_tests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fnf/projects/exchange-simulator/build/CMakeFiles 0
+.PHONY : CMakeFiles/exchange_tests.dir/rule
+
+# Convenience name for target.
+exchange_tests: CMakeFiles/exchange_tests.dir/rule
+.PHONY : exchange_tests
+
+# clean rule for target.
+CMakeFiles/exchange_tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_tests.dir/build.make CMakeFiles/exchange_tests.dir/clean
+.PHONY : CMakeFiles/exchange_tests.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

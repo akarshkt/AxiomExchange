@@ -1,26 +1,36 @@
 cmake_minimum_required(VERSION 3.20)
 
-
 project(ExchangeSimulator)
 
 set(CMAKE_CXX_STANDARD 20)
 
-include_directories(include)
-
 find_package(benchmark REQUIRED)
+find_package(GTest REQUIRED)
 
-# Create the library
+# ----------------------------
+# Core Library
+# ----------------------------
+
 add_library(exchange_core
-    src/MatchingEngine.cpp
+
     src/Order.cpp
     src/Orderbook.cpp
+    src/MatchingEngine.cpp
     src/Trade.cpp
     src/Logger.cpp
 )
 
-# Simulator executable
+target_include_directories(exchange_core
+    PUBLIC
+    include
+)
+
+# ----------------------------
+# Simulator
+# ----------------------------
+
 add_executable(simulator
-    src/sim.cpp
+    apps/sim.cpp
 )
 
 target_link_libraries(simulator
@@ -28,13 +38,40 @@ target_link_libraries(simulator
     exchange_core
 )
 
-# Benchmark executable
+# ----------------------------
+# Benchmarks
+# ----------------------------
+
 add_executable(benchmark_matching
+
     benchmarks/MatchingBenchmark.cpp
 )
 
-target_link_libraries(benchmark_matching
+target_link_libraries(
+    benchmark_matching
     PRIVATE
     exchange_core
     benchmark::benchmark
+)
+
+# ----------------------------
+# Tests
+# ----------------------------
+
+add_executable(exchange_tests
+
+    tests/mainTest.cpp
+    tests/OrderbookTest.cpp
+    tests/TradeBookTest.cpp
+    tests/TestUtils.cpp
+)
+target_include_directories(exchange_tests
+    PUBLIC
+    tests/utils
+)
+target_link_libraries(
+    exchange_tests
+    PRIVATE
+    exchange_core
+    GTest::gtest
 )

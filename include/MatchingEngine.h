@@ -7,7 +7,7 @@ class MatchingEngine{
     MatchingEngine(size_t capacity);
     void cancelOrder(OrderId orderId);
     void processOrder(Order &order);
-    Orderbook getOrderbook();
+    Orderbook& getOrderbook();
 };
 
 #endif

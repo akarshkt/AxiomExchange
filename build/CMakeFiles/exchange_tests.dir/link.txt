@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/exchange_tests.dir/tests/mainTest.cpp.o CMakeFiles/exchange_tests.dir/tests/OrderbookTest.cpp.o CMakeFiles/exchange_tests.dir/tests/TradeBookTest.cpp.o CMakeFiles/exchange_tests.dir/tests/TestUtils.cpp.o -o exchange_tests  libexchange_core.a /usr/lib/x86_64-linux-gnu/libgtest.a 

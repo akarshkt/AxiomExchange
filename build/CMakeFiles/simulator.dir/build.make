@@ -69,28 +69,28 @@ include CMakeFiles/simulator.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/simulator.dir/flags.make
 
-CMakeFiles/simulator.dir/src/sim.cpp.o: CMakeFiles/simulator.dir/flags.make
-CMakeFiles/simulator.dir/src/sim.cpp.o: /home/fnf/projects/exchange-simulator/src/sim.cpp
-CMakeFiles/simulator.dir/src/sim.cpp.o: CMakeFiles/simulator.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fnf/projects/exchange-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/simulator.dir/src/sim.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/simulator.dir/src/sim.cpp.o -MF CMakeFiles/simulator.dir/src/sim.cpp.o.d -o CMakeFiles/simulator.dir/src/sim.cpp.o -c /home/fnf/projects/exchange-simulator/src/sim.cpp
+CMakeFiles/simulator.dir/apps/sim.cpp.o: CMakeFiles/simulator.dir/flags.make
+CMakeFiles/simulator.dir/apps/sim.cpp.o: /home/fnf/projects/exchange-simulator/apps/sim.cpp
+CMakeFiles/simulator.dir/apps/sim.cpp.o: CMakeFiles/simulator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fnf/projects/exchange-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/simulator.dir/apps/sim.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/simulator.dir/apps/sim.cpp.o -MF CMakeFiles/simulator.dir/apps/sim.cpp.o.d -o CMakeFiles/simulator.dir/apps/sim.cpp.o -c /home/fnf/projects/exchange-simulator/apps/sim.cpp
 
-CMakeFiles/simulator.dir/src/sim.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/simulator.dir/src/sim.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fnf/projects/exchange-simulator/src/sim.cpp > CMakeFiles/simulator.dir/src/sim.cpp.i
+CMakeFiles/simulator.dir/apps/sim.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/simulator.dir/apps/sim.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fnf/projects/exchange-simulator/apps/sim.cpp > CMakeFiles/simulator.dir/apps/sim.cpp.i
 
-CMakeFiles/simulator.dir/src/sim.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/simulator.dir/src/sim.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fnf/projects/exchange-simulator/src/sim.cpp -o CMakeFiles/simulator.dir/src/sim.cpp.s
+CMakeFiles/simulator.dir/apps/sim.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/simulator.dir/apps/sim.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fnf/projects/exchange-simulator/apps/sim.cpp -o CMakeFiles/simulator.dir/apps/sim.cpp.s
 
 # Object files for target simulator
 simulator_OBJECTS = \
-"CMakeFiles/simulator.dir/src/sim.cpp.o"
+"CMakeFiles/simulator.dir/apps/sim.cpp.o"
 
 # External object files for target simulator
 simulator_EXTERNAL_OBJECTS =
 
-simulator: CMakeFiles/simulator.dir/src/sim.cpp.o
+simulator: CMakeFiles/simulator.dir/apps/sim.cpp.o
 simulator: CMakeFiles/simulator.dir/build.make
 simulator: libexchange_core.a
 simulator: CMakeFiles/simulator.dir/link.txt

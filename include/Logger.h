@@ -25,6 +25,8 @@ public:
     void logCancelOrder(Order &order);
     void writeToDisk(Trade &trade,EVENT event);
     void writeToDisk(Order &order,EVENT event);
+    Ringbuffer<Trade>& getRingBuffer();
+    size_t getSizeofRingbuffer();
     void print();
 };
 

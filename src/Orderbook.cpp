@@ -4,7 +4,7 @@
 Orderbook::Orderbook(size_t capacity) : logger(capacity)
 {
 }
-Logger Orderbook::getTradeLogs()
+Logger& Orderbook::getLogger()
 {
     return logger;
 };
@@ -147,7 +147,7 @@ void Orderbook::matchOrderLimit(Order &order)
 
                     order.remainingQuantity -= traded;
                     orderIt->remainingQuantity -= traded;
-                    Trade newTrade(order.orderId, orderIt->orderId, order.userId, orderIt->userId, it.first, traded, getTimestamp());
+                    Trade newTrade( orderIt->orderId,order.orderId, orderIt->userId, order.userId, it.first, traded, getTimestamp());
                     logger.logTrade(newTrade);
                     if (orderIt->remainingQuantity == 0)
                     {
@@ -234,9 +234,6 @@ void Orderbook::matchOrderMarket(Order &order)
         if (val)
         {
 
-            // if(order.originalQuantity!=order.remainingQuantity)
-            // order.orderStatus=OrderStatus::PARTIALLY_FILLED;
-
             cancelOrder(order.orderId);
         }
     }
@@ -257,7 +254,7 @@ void Orderbook::matchOrderMarket(Order &order)
 
                 order.remainingQuantity -= traded;
                 orderIt->remainingQuantity -= traded;
-                Trade newTrade(order.orderId, orderIt->orderId, order.userId, orderIt->userId, it->first, traded, getTimestamp());
+                Trade newTrade(orderIt->orderId, order.orderId, orderIt->userId, order.userId, it->first, traded, getTimestamp());
                 logger.logTrade(newTrade);
                 if (orderIt->remainingQuantity == 0)
                 {

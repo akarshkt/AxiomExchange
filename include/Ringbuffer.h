@@ -53,6 +53,13 @@ public:
         }
         std::cout << "\n";
     }
+
+    Trade returnTrade(){
+        return trades[tail-1];
+    }
+    size_t size(){
+        return count;
+    }
 };
 
 #endif

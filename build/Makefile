@@ -155,6 +155,43 @@ benchmark_matching/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_matching.dir/build.make CMakeFiles/benchmark_matching.dir/build
 .PHONY : benchmark_matching/fast
 
+#=============================================================================
+# Target rules for targets named exchange_tests
+
+# Build rule for target.
+exchange_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 exchange_tests
+.PHONY : exchange_tests
+
+# fast build rule for target.
+exchange_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_tests.dir/build.make CMakeFiles/exchange_tests.dir/build
+.PHONY : exchange_tests/fast
+
+apps/sim.o: apps/sim.cpp.o
+.PHONY : apps/sim.o
+
+# target to build an object file
+apps/sim.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simulator.dir/build.make CMakeFiles/simulator.dir/apps/sim.cpp.o
+.PHONY : apps/sim.cpp.o
+
+apps/sim.i: apps/sim.cpp.i
+.PHONY : apps/sim.i
+
+# target to preprocess a source file
+apps/sim.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simulator.dir/build.make CMakeFiles/simulator.dir/apps/sim.cpp.i
+.PHONY : apps/sim.cpp.i
+
+apps/sim.s: apps/sim.cpp.s
+.PHONY : apps/sim.s
+
+# target to generate assembly for a file
+apps/sim.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simulator.dir/build.make CMakeFiles/simulator.dir/apps/sim.cpp.s
+.PHONY : apps/sim.cpp.s
+
 benchmarks/MatchingBenchmark.o: benchmarks/MatchingBenchmark.cpp.o
 .PHONY : benchmarks/MatchingBenchmark.o
 
@@ -299,29 +336,101 @@ src/Trade.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_core.dir/build.make CMakeFiles/exchange_core.dir/src/Trade.cpp.s
 .PHONY : src/Trade.cpp.s
 
-src/sim.o: src/sim.cpp.o
-.PHONY : src/sim.o
+tests/OrderbookTest.o: tests/OrderbookTest.cpp.o
+.PHONY : tests/OrderbookTest.o
 
 # target to build an object file
-src/sim.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simulator.dir/build.make CMakeFiles/simulator.dir/src/sim.cpp.o
-.PHONY : src/sim.cpp.o
+tests/OrderbookTest.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_tests.dir/build.make CMakeFiles/exchange_tests.dir/tests/OrderbookTest.cpp.o
+.PHONY : tests/OrderbookTest.cpp.o
 
-src/sim.i: src/sim.cpp.i
-.PHONY : src/sim.i
+tests/OrderbookTest.i: tests/OrderbookTest.cpp.i
+.PHONY : tests/OrderbookTest.i
 
 # target to preprocess a source file
-src/sim.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simulator.dir/build.make CMakeFiles/simulator.dir/src/sim.cpp.i
-.PHONY : src/sim.cpp.i
+tests/OrderbookTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_tests.dir/build.make CMakeFiles/exchange_tests.dir/tests/OrderbookTest.cpp.i
+.PHONY : tests/OrderbookTest.cpp.i
 
-src/sim.s: src/sim.cpp.s
-.PHONY : src/sim.s
+tests/OrderbookTest.s: tests/OrderbookTest.cpp.s
+.PHONY : tests/OrderbookTest.s
 
 # target to generate assembly for a file
-src/sim.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simulator.dir/build.make CMakeFiles/simulator.dir/src/sim.cpp.s
-.PHONY : src/sim.cpp.s
+tests/OrderbookTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_tests.dir/build.make CMakeFiles/exchange_tests.dir/tests/OrderbookTest.cpp.s
+.PHONY : tests/OrderbookTest.cpp.s
+
+tests/TestUtils.o: tests/TestUtils.cpp.o
+.PHONY : tests/TestUtils.o
+
+# target to build an object file
+tests/TestUtils.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_tests.dir/build.make CMakeFiles/exchange_tests.dir/tests/TestUtils.cpp.o
+.PHONY : tests/TestUtils.cpp.o
+
+tests/TestUtils.i: tests/TestUtils.cpp.i
+.PHONY : tests/TestUtils.i
+
+# target to preprocess a source file
+tests/TestUtils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_tests.dir/build.make CMakeFiles/exchange_tests.dir/tests/TestUtils.cpp.i
+.PHONY : tests/TestUtils.cpp.i
+
+tests/TestUtils.s: tests/TestUtils.cpp.s
+.PHONY : tests/TestUtils.s
+
+# target to generate assembly for a file
+tests/TestUtils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_tests.dir/build.make CMakeFiles/exchange_tests.dir/tests/TestUtils.cpp.s
+.PHONY : tests/TestUtils.cpp.s
+
+tests/TradeBookTest.o: tests/TradeBookTest.cpp.o
+.PHONY : tests/TradeBookTest.o
+
+# target to build an object file
+tests/TradeBookTest.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_tests.dir/build.make CMakeFiles/exchange_tests.dir/tests/TradeBookTest.cpp.o
+.PHONY : tests/TradeBookTest.cpp.o
+
+tests/TradeBookTest.i: tests/TradeBookTest.cpp.i
+.PHONY : tests/TradeBookTest.i
+
+# target to preprocess a source file
+tests/TradeBookTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_tests.dir/build.make CMakeFiles/exchange_tests.dir/tests/TradeBookTest.cpp.i
+.PHONY : tests/TradeBookTest.cpp.i
+
+tests/TradeBookTest.s: tests/TradeBookTest.cpp.s
+.PHONY : tests/TradeBookTest.s
+
+# target to generate assembly for a file
+tests/TradeBookTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_tests.dir/build.make CMakeFiles/exchange_tests.dir/tests/TradeBookTest.cpp.s
+.PHONY : tests/TradeBookTest.cpp.s
+
+tests/mainTest.o: tests/mainTest.cpp.o
+.PHONY : tests/mainTest.o
+
+# target to build an object file
+tests/mainTest.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_tests.dir/build.make CMakeFiles/exchange_tests.dir/tests/mainTest.cpp.o
+.PHONY : tests/mainTest.cpp.o
+
+tests/mainTest.i: tests/mainTest.cpp.i
+.PHONY : tests/mainTest.i
+
+# target to preprocess a source file
+tests/mainTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_tests.dir/build.make CMakeFiles/exchange_tests.dir/tests/mainTest.cpp.i
+.PHONY : tests/mainTest.cpp.i
+
+tests/mainTest.s: tests/mainTest.cpp.s
+.PHONY : tests/mainTest.s
+
+# target to generate assembly for a file
+tests/mainTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_tests.dir/build.make CMakeFiles/exchange_tests.dir/tests/mainTest.cpp.s
+.PHONY : tests/mainTest.cpp.s
 
 # Help Target
 help:
@@ -333,7 +442,11 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... benchmark_matching"
 	@echo "... exchange_core"
+	@echo "... exchange_tests"
 	@echo "... simulator"
+	@echo "... apps/sim.o"
+	@echo "... apps/sim.i"
+	@echo "... apps/sim.s"
 	@echo "... benchmarks/MatchingBenchmark.o"
 	@echo "... benchmarks/MatchingBenchmark.i"
 	@echo "... benchmarks/MatchingBenchmark.s"
@@ -352,9 +465,18 @@ help:
 	@echo "... src/Trade.o"
 	@echo "... src/Trade.i"
 	@echo "... src/Trade.s"
-	@echo "... src/sim.o"
-	@echo "... src/sim.i"
-	@echo "... src/sim.s"
+	@echo "... tests/OrderbookTest.o"
+	@echo "... tests/OrderbookTest.i"
+	@echo "... tests/OrderbookTest.s"
+	@echo "... tests/TestUtils.o"
+	@echo "... tests/TestUtils.i"
+	@echo "... tests/TestUtils.s"
+	@echo "... tests/TradeBookTest.o"
+	@echo "... tests/TradeBookTest.i"
+	@echo "... tests/TradeBookTest.s"
+	@echo "... tests/mainTest.o"
+	@echo "... tests/mainTest.i"
+	@echo "... tests/mainTest.s"
 .PHONY : help
 
 

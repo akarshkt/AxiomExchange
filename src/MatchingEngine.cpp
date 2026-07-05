@@ -14,7 +14,7 @@ void MatchingEngine::cancelOrder(OrderId orderId)
 }
 
 // public:
-Orderbook MatchingEngine::getOrderbook()
+Orderbook& MatchingEngine::getOrderbook()
 {
     return orderbook;
 }

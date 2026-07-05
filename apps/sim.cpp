@@ -56,6 +56,6 @@ int32_t main()
     //          std::cout<<it.first<<"  "<<ti.remainingQuantity<<"   "<<ti.originalQuantity<<"   "<<ti.userId<<std::endl;
     //     }
     // }
-    Logger logger = engine.getOrderbook().getTradeLogs();
+    Logger& logger = engine.getOrderbook().getLogger();
     logger.print();
 }

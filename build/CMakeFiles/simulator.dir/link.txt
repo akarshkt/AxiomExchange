@@ -1,1 +1,1 @@
-/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/simulator.dir/src/sim.cpp.o -o simulator  libexchange_core.a 
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/simulator.dir/apps/sim.cpp.o -o simulator  libexchange_core.a 

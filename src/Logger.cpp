@@ -75,3 +75,9 @@ void Logger::logCancelOrder(Order &order)
 {
     writeToDisk(order, EVENT::CANCEL);
 }
+Ringbuffer<Trade>& Logger::getRingBuffer(){
+    return ringbuffer;
+}
+size_t Logger::getSizeofRingbuffer(){
+    return ringbuffer.size();
+}

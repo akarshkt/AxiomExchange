@@ -69,24 +69,10 @@ include CMakeFiles/exchange_core.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/exchange_core.dir/flags.make
 
-CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.o: CMakeFiles/exchange_core.dir/flags.make
-CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.o: /home/fnf/projects/exchange-simulator/src/MatchingEngine.cpp
-CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.o: CMakeFiles/exchange_core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fnf/projects/exchange-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.o -MF CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.o.d -o CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.o -c /home/fnf/projects/exchange-simulator/src/MatchingEngine.cpp
-
-CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fnf/projects/exchange-simulator/src/MatchingEngine.cpp > CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.i
-
-CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fnf/projects/exchange-simulator/src/MatchingEngine.cpp -o CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.s
-
 CMakeFiles/exchange_core.dir/src/Order.cpp.o: CMakeFiles/exchange_core.dir/flags.make
 CMakeFiles/exchange_core.dir/src/Order.cpp.o: /home/fnf/projects/exchange-simulator/src/Order.cpp
 CMakeFiles/exchange_core.dir/src/Order.cpp.o: CMakeFiles/exchange_core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fnf/projects/exchange-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/exchange_core.dir/src/Order.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fnf/projects/exchange-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/exchange_core.dir/src/Order.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/exchange_core.dir/src/Order.cpp.o -MF CMakeFiles/exchange_core.dir/src/Order.cpp.o.d -o CMakeFiles/exchange_core.dir/src/Order.cpp.o -c /home/fnf/projects/exchange-simulator/src/Order.cpp
 
 CMakeFiles/exchange_core.dir/src/Order.cpp.i: cmake_force
@@ -100,7 +86,7 @@ CMakeFiles/exchange_core.dir/src/Order.cpp.s: cmake_force
 CMakeFiles/exchange_core.dir/src/Orderbook.cpp.o: CMakeFiles/exchange_core.dir/flags.make
 CMakeFiles/exchange_core.dir/src/Orderbook.cpp.o: /home/fnf/projects/exchange-simulator/src/Orderbook.cpp
 CMakeFiles/exchange_core.dir/src/Orderbook.cpp.o: CMakeFiles/exchange_core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fnf/projects/exchange-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/exchange_core.dir/src/Orderbook.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fnf/projects/exchange-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/exchange_core.dir/src/Orderbook.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/exchange_core.dir/src/Orderbook.cpp.o -MF CMakeFiles/exchange_core.dir/src/Orderbook.cpp.o.d -o CMakeFiles/exchange_core.dir/src/Orderbook.cpp.o -c /home/fnf/projects/exchange-simulator/src/Orderbook.cpp
 
 CMakeFiles/exchange_core.dir/src/Orderbook.cpp.i: cmake_force
@@ -110,6 +96,20 @@ CMakeFiles/exchange_core.dir/src/Orderbook.cpp.i: cmake_force
 CMakeFiles/exchange_core.dir/src/Orderbook.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/exchange_core.dir/src/Orderbook.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fnf/projects/exchange-simulator/src/Orderbook.cpp -o CMakeFiles/exchange_core.dir/src/Orderbook.cpp.s
+
+CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.o: CMakeFiles/exchange_core.dir/flags.make
+CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.o: /home/fnf/projects/exchange-simulator/src/MatchingEngine.cpp
+CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.o: CMakeFiles/exchange_core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/fnf/projects/exchange-simulator/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.o -MF CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.o.d -o CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.o -c /home/fnf/projects/exchange-simulator/src/MatchingEngine.cpp
+
+CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fnf/projects/exchange-simulator/src/MatchingEngine.cpp > CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.i
+
+CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fnf/projects/exchange-simulator/src/MatchingEngine.cpp -o CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.s
 
 CMakeFiles/exchange_core.dir/src/Trade.cpp.o: CMakeFiles/exchange_core.dir/flags.make
 CMakeFiles/exchange_core.dir/src/Trade.cpp.o: /home/fnf/projects/exchange-simulator/src/Trade.cpp
@@ -141,18 +141,18 @@ CMakeFiles/exchange_core.dir/src/Logger.cpp.s: cmake_force
 
 # Object files for target exchange_core
 exchange_core_OBJECTS = \
-"CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.o" \
 "CMakeFiles/exchange_core.dir/src/Order.cpp.o" \
 "CMakeFiles/exchange_core.dir/src/Orderbook.cpp.o" \
+"CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.o" \
 "CMakeFiles/exchange_core.dir/src/Trade.cpp.o" \
 "CMakeFiles/exchange_core.dir/src/Logger.cpp.o"
 
 # External object files for target exchange_core
 exchange_core_EXTERNAL_OBJECTS =
 
-libexchange_core.a: CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.o
 libexchange_core.a: CMakeFiles/exchange_core.dir/src/Order.cpp.o
 libexchange_core.a: CMakeFiles/exchange_core.dir/src/Orderbook.cpp.o
+libexchange_core.a: CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.o
 libexchange_core.a: CMakeFiles/exchange_core.dir/src/Trade.cpp.o
 libexchange_core.a: CMakeFiles/exchange_core.dir/src/Logger.cpp.o
 libexchange_core.a: CMakeFiles/exchange_core.dir/build.make

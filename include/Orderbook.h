@@ -23,7 +23,7 @@ public:
     void matchOrderLimit(Order &order);
     void matchOrderMarket(Order &order);
     void matchOrderStop(Order &order);
-    Logger getTradeLogs();
+    Logger& getLogger();
     Order orderLookup(OrderId orderId);
     void removeOrder(OrderId orderId, Side side);
 };
