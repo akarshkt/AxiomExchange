@@ -4,12 +4,12 @@
 #include <vector>
 #include <iostream>
 #include <stdexcept>
+#include "./Trade.h"
 
-template <typename T>
 class Ringbuffer
 {
 private:
-    std::vector<T> trades;
+    std::vector<Trade> trades;
     size_t tail = 0;
     size_t head = 0;
     size_t capacity;
@@ -21,45 +21,15 @@ public:
         trades.resize(n);
     }
 
-    void push(T trade)
-    {
-        trades[tail] = trade;
-        tail = (tail + 1) % capacity;
-        if (count < capacity)
-        {
-            count++;
-        }
-        else
-        {
-            head = (head + 1) % capacity;
-        }
-        
-    }
+    void push(Trade trade);
+    void pushListOfTrades(std::vector<Trade>& trades);
+    void print();
 
-    void print()
-    {
-        std::cout<<"Printing Once"<<std::endl;
-        if (count == 0)
-        {
-            std::cout << "Buffer Empty\n";
-            return;
-        }
-        size_t current = head;
-        for (size_t i = 0; i < count; ++i)
-        {
 
-            std::cout << trades[current].getTradeId() << " " ;
-            current = (current + 1) % capacity;
-        }
-        std::cout << "\n";
-    }
-
-    Trade returnTrade(){
-        return trades[tail-1];
-    }
-    size_t size(){
-        return count;
-    }
+    Trade returnTrade();
+    size_t size();
+    std::vector<Trade>& getTrades();
+   
 };
 
 #endif

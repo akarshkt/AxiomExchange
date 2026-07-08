@@ -348,9 +348,16 @@ CMakeFiles/exchange_tests.dir/tests/TradeBookTest.cpp.o: \
  /home/fnf/projects/exchange-simulator/tests/../include/././Order.h \
  /home/fnf/projects/exchange-simulator/tests/../include/./Logger.h \
  /home/fnf/projects/exchange-simulator/tests/../include/./Ringbuffer.h \
+ /home/fnf/projects/exchange-simulator/tests/../include/././Trade.h \
  /home/fnf/projects/exchange-simulator/tests/../include/././utils/TimeUtils.h \
+ /home/fnf/projects/exchange-simulator/tests/../include/././ProcessResult.h \
+ /home/fnf/projects/exchange-simulator/tests/../include/./././Trade.h \
+ /home/fnf/projects/exchange-simulator/tests/../include/./././ExecutionReport.h \
+ /home/fnf/projects/exchange-simulator/tests/../include/././././Trade.h \
+ /home/fnf/projects/exchange-simulator/tests/../include/./Ringbuffer.h \
  /home/fnf/projects/exchange-simulator/tests/../include/Orderbook.h \
  /home/fnf/projects/exchange-simulator/tests/../include/Logger.h \
  /home/fnf/projects/exchange-simulator/tests/./utils/TestUtils.h \
  /home/fnf/projects/exchange-simulator/include/../include/Order.h \
- /home/fnf/projects/exchange-simulator/include/../include/Orderbook.h
+ /home/fnf/projects/exchange-simulator/include/../include/Orderbook.h \
+ /home/fnf/projects/exchange-simulator/tests/../include/Ringbuffer.h

@@ -245,4 +245,11 @@ CMakeFiles/exchange_tests.dir/tests/TestUtils.cpp.o: \
  /home/fnf/projects/exchange-simulator/include/../include/Logger.h \
  /usr/include/c++/13/iostream \
  /home/fnf/projects/exchange-simulator/include/../include/Ringbuffer.h \
- /home/fnf/projects/exchange-simulator/include/../include/./utils/TimeUtils.h
+ /home/fnf/projects/exchange-simulator/include/../include/./Trade.h \
+ /home/fnf/projects/exchange-simulator/include/../include/./utils/TimeUtils.h \
+ /home/fnf/projects/exchange-simulator/include/../include/./ProcessResult.h \
+ /home/fnf/projects/exchange-simulator/include/../include/././Trade.h \
+ /home/fnf/projects/exchange-simulator/include/../include/././ExecutionReport.h \
+ /home/fnf/projects/exchange-simulator/include/../include/./././Trade.h \
+ /usr/include/c++/13/mutex /usr/include/c++/13/bits/std_mutex.h \
+ /usr/include/c++/13/bits/unique_lock.h

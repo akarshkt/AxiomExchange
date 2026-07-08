@@ -312,6 +312,30 @@ src/Orderbook.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_core.dir/build.make CMakeFiles/exchange_core.dir/src/Orderbook.cpp.s
 .PHONY : src/Orderbook.cpp.s
 
+src/Ringbuffer.o: src/Ringbuffer.cpp.o
+.PHONY : src/Ringbuffer.o
+
+# target to build an object file
+src/Ringbuffer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_core.dir/build.make CMakeFiles/exchange_core.dir/src/Ringbuffer.cpp.o
+.PHONY : src/Ringbuffer.cpp.o
+
+src/Ringbuffer.i: src/Ringbuffer.cpp.i
+.PHONY : src/Ringbuffer.i
+
+# target to preprocess a source file
+src/Ringbuffer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_core.dir/build.make CMakeFiles/exchange_core.dir/src/Ringbuffer.cpp.i
+.PHONY : src/Ringbuffer.cpp.i
+
+src/Ringbuffer.s: src/Ringbuffer.cpp.s
+.PHONY : src/Ringbuffer.s
+
+# target to generate assembly for a file
+src/Ringbuffer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exchange_core.dir/build.make CMakeFiles/exchange_core.dir/src/Ringbuffer.cpp.s
+.PHONY : src/Ringbuffer.cpp.s
+
 src/Trade.o: src/Trade.cpp.o
 .PHONY : src/Trade.o
 
@@ -462,6 +486,9 @@ help:
 	@echo "... src/Orderbook.o"
 	@echo "... src/Orderbook.i"
 	@echo "... src/Orderbook.s"
+	@echo "... src/Ringbuffer.o"
+	@echo "... src/Ringbuffer.i"
+	@echo "... src/Ringbuffer.s"
 	@echo "... src/Trade.o"
 	@echo "... src/Trade.i"
 	@echo "... src/Trade.s"

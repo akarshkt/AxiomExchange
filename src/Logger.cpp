@@ -45,11 +45,8 @@ void appendOrderLogToFile(const std::string &filename, Order &order)
          << order.userId << "  "
          << order.orderStatus << "\n";
 }
-Logger::Logger(size_t capacity) : totalTradeLog(capacity), ringbuffer(capacity) {}
-void Logger::print()
-{
-    ringbuffer.print();
-}
+// Logger::Logger(){}
+
 void Logger::writeToDisk(Trade &trade, EVENT event)
 {
     appendTradesLogToFile("trades.txt", trade);
@@ -64,7 +61,7 @@ void Logger::writeToDisk(Order &order, EVENT event)
 
 void Logger::logTrade(Trade &trade)
 {
-    ringbuffer.push(trade);
+    // ringbuffer.push(trade);
     writeToDisk(trade, EVENT::TRADE);
 }
 void Logger::logOrder(Order &order)
@@ -75,9 +72,9 @@ void Logger::logCancelOrder(Order &order)
 {
     writeToDisk(order, EVENT::CANCEL);
 }
-Ringbuffer<Trade>& Logger::getRingBuffer(){
-    return ringbuffer;
-}
-size_t Logger::getSizeofRingbuffer(){
-    return ringbuffer.size();
-}
+// Ringbuffer<Trade>& Logger::getRingBuffer(){
+//     return ringbuffer;
+// }
+// size_t Logger::getSizeofRingbuffer(){
+//     return ringbuffer.size();
+// }

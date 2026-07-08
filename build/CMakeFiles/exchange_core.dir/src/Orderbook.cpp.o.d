@@ -243,4 +243,11 @@ CMakeFiles/exchange_core.dir/src/Orderbook.cpp.o: \
  /home/fnf/projects/exchange-simulator/src/../include/Logger.h \
  /usr/include/c++/13/iostream \
  /home/fnf/projects/exchange-simulator/src/../include/Ringbuffer.h \
- /home/fnf/projects/exchange-simulator/src/../include/./utils/TimeUtils.h
+ /home/fnf/projects/exchange-simulator/src/../include/./Trade.h \
+ /home/fnf/projects/exchange-simulator/src/../include/./utils/TimeUtils.h \
+ /home/fnf/projects/exchange-simulator/src/../include/./ProcessResult.h \
+ /home/fnf/projects/exchange-simulator/src/../include/././Trade.h \
+ /home/fnf/projects/exchange-simulator/src/../include/././ExecutionReport.h \
+ /home/fnf/projects/exchange-simulator/src/../include/./././Trade.h \
+ /usr/include/c++/13/mutex /usr/include/c++/13/bits/std_mutex.h \
+ /usr/include/c++/13/bits/unique_lock.h

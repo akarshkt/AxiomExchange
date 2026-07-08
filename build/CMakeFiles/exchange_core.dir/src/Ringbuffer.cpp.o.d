@@ -1,8 +1,8 @@
-CMakeFiles/exchange_core.dir/src/Logger.cpp.o: \
- /home/fnf/projects/exchange-simulator/src/Logger.cpp \
+CMakeFiles/exchange_core.dir/src/Ringbuffer.cpp.o: \
+ /home/fnf/projects/exchange-simulator/src/Ringbuffer.cpp \
  /usr/include/stdc-predef.h \
- /home/fnf/projects/exchange-simulator/src/../include/Logger.h \
- /usr/include/c++/13/cstddef \
+ /home/fnf/projects/exchange-simulator/src/../include/Ringbuffer.h \
+ /usr/include/c++/13/vector /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -14,8 +14,6 @@ CMakeFiles/exchange_core.dir/src/Logger.cpp.o: \
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h \
  /usr/include/c++/13/pstl/pstl_config.h \
- /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
- /usr/include/c++/13/vector /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/c++/13/bits/stl_algobase.h \
  /usr/include/c++/13/bits/functexcept.h \
  /usr/include/c++/13/bits/exception_defines.h \
@@ -54,7 +52,8 @@ CMakeFiles/exchange_core.dir/src/Logger.cpp.o: \
  /usr/include/c++/13/backward/binders.h \
  /usr/include/c++/13/bits/range_access.h \
  /usr/include/c++/13/bits/vector.tcc \
- /usr/include/c++/13/bits/memory_resource.h \
+ /usr/include/c++/13/bits/memory_resource.h /usr/include/c++/13/cstddef \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
  /usr/include/c++/13/bits/uses_allocator.h \
  /usr/include/c++/13/bits/uses_allocator_args.h /usr/include/c++/13/tuple \
  /usr/include/c++/13/bits/ranges_util.h \
@@ -170,8 +169,8 @@ CMakeFiles/exchange_core.dir/src/Logger.cpp.o: \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
- /home/fnf/projects/exchange-simulator/src/../include/Trade.h \
- /home/fnf/projects/exchange-simulator/src/../include/./Order.h \
+ /home/fnf/projects/exchange-simulator/src/../include/./Trade.h \
+ /home/fnf/projects/exchange-simulator/src/../include/././Order.h \
  /usr/include/c++/13/cstdint \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
@@ -227,12 +226,4 @@ CMakeFiles/exchange_core.dir/src/Logger.cpp.o: \
  /usr/include/c++/13/bits/enable_special_members.h \
  /usr/include/c++/13/span /usr/include/c++/13/variant \
  /usr/include/c++/13/bits/ranges_algobase.h /usr/include/c++/13/list \
- /usr/include/c++/13/bits/stl_list.h /usr/include/c++/13/bits/list.tcc \
- /home/fnf/projects/exchange-simulator/src/../include/Ringbuffer.h \
- /home/fnf/projects/exchange-simulator/src/../include/./Trade.h \
- /home/fnf/projects/exchange-simulator/src/../include/./utils/TimeUtils.h \
- /usr/include/c++/13/fstream \
- /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
- /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
- /usr/include/c++/13/bits/fstream.tcc \
- /home/fnf/projects/exchange-simulator/src/../include/Order.h
+ /usr/include/c++/13/bits/stl_list.h /usr/include/c++/13/bits/list.tcc

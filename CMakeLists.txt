@@ -17,6 +17,7 @@ add_library(exchange_core
     src/Orderbook.cpp
     src/MatchingEngine.cpp
     src/Trade.cpp
+    src/Ringbuffer.cpp
     src/Logger.cpp
 )
 

@@ -1,12 +1,15 @@
 #include "../include/MatchingEngine.h"
 
 // Orderbook orderbook;
-MatchingEngine::MatchingEngine(size_t capacity) : orderbook(capacity) {
+MatchingEngine::MatchingEngine(size_t capacity) : ringbuffer(capacity) {
    
 }
-void MatchingEngine::processOrder(Order &order)
+ProcessResult MatchingEngine::processOrder(Order &order)
 {
-    orderbook.matchOrder(order);
+   
+   ProcessResult res = orderbook.matchOrder(order);
+   ringbuffer.pushListOfTrades(res.trades);
+   return res;
 }
 void MatchingEngine::cancelOrder(OrderId orderId)
 {
@@ -17,5 +20,8 @@ void MatchingEngine::cancelOrder(OrderId orderId)
 Orderbook& MatchingEngine::getOrderbook()
 {
     return orderbook;
+}
+Ringbuffer& MatchingEngine::getRingbuffer(){
+    return ringbuffer;
 }
 // };

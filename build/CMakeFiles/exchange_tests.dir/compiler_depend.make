@@ -4,8 +4,14 @@
 CMakeFiles/exchange_tests.dir/tests/OrderbookTest.cpp.o: /home/fnf/projects/exchange-simulator/tests/OrderbookTest.cpp \
   /home/fnf/projects/exchange-simulator/include/Order.h \
   /home/fnf/projects/exchange-simulator/include/Orderbook.h \
+  /home/fnf/projects/exchange-simulator/include/Trade.h \
+  /home/fnf/projects/exchange-simulator/include/ExecutionReport.h \
+  /home/fnf/projects/exchange-simulator/include/Trade.h \
   /home/fnf/projects/exchange-simulator/include/Order.h \
   /home/fnf/projects/exchange-simulator/include/Orderbook.h \
+  /home/fnf/projects/exchange-simulator/include/ProcessResult.h \
+  /home/fnf/projects/exchange-simulator/include/Ringbuffer.h \
+  /home/fnf/projects/exchange-simulator/include/Trade.h \
   /home/fnf/projects/exchange-simulator/include/utils/TimeUtils.h \
   /home/fnf/projects/exchange-simulator/include/Logger.h \
   /home/fnf/projects/exchange-simulator/include/MatchingEngine.h \
@@ -442,7 +448,12 @@ CMakeFiles/exchange_tests.dir/tests/OrderbookTest.cpp.o: /home/fnf/projects/exch
   /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h
 
 CMakeFiles/exchange_tests.dir/tests/TestUtils.cpp.o: /home/fnf/projects/exchange-simulator/tests/TestUtils.cpp \
+  /home/fnf/projects/exchange-simulator/include/Trade.h \
+  /home/fnf/projects/exchange-simulator/include/ExecutionReport.h \
+  /home/fnf/projects/exchange-simulator/include/Trade.h \
   /home/fnf/projects/exchange-simulator/include/Order.h \
+  /home/fnf/projects/exchange-simulator/include/ProcessResult.h \
+  /home/fnf/projects/exchange-simulator/include/Trade.h \
   /home/fnf/projects/exchange-simulator/include/utils/TimeUtils.h \
   /home/fnf/projects/exchange-simulator/include/Logger.h \
   /home/fnf/projects/exchange-simulator/include/Order.h \
@@ -525,6 +536,7 @@ CMakeFiles/exchange_tests.dir/tests/TestUtils.cpp.o: /home/fnf/projects/exchange
   /usr/include/c++/13/bits/specfun.h \
   /usr/include/c++/13/bits/sstream.tcc \
   /usr/include/c++/13/bits/std_abs.h \
+  /usr/include/c++/13/bits/std_mutex.h \
   /usr/include/c++/13/bits/stl_algo.h \
   /usr/include/c++/13/bits/stl_algobase.h \
   /usr/include/c++/13/bits/stl_bvector.h \
@@ -547,6 +559,7 @@ CMakeFiles/exchange_tests.dir/tests/TestUtils.cpp.o: /home/fnf/projects/exchange
   /usr/include/c++/13/bits/string_view.tcc \
   /usr/include/c++/13/bits/stringfwd.h \
   /usr/include/c++/13/bits/uniform_int_dist.h \
+  /usr/include/c++/13/bits/unique_lock.h \
   /usr/include/c++/13/bits/unique_ptr.h \
   /usr/include/c++/13/bits/unordered_map.h \
   /usr/include/c++/13/bits/uses_allocator.h \
@@ -590,6 +603,7 @@ CMakeFiles/exchange_tests.dir/tests/TestUtils.cpp.o: /home/fnf/projects/exchange
   /usr/include/c++/13/locale \
   /usr/include/c++/13/map \
   /usr/include/c++/13/math.h \
+  /usr/include/c++/13/mutex \
   /usr/include/c++/13/new \
   /usr/include/c++/13/numbers \
   /usr/include/c++/13/optional \
@@ -747,7 +761,12 @@ CMakeFiles/exchange_tests.dir/tests/TestUtils.cpp.o: /home/fnf/projects/exchange
 CMakeFiles/exchange_tests.dir/tests/TradeBookTest.cpp.o: /home/fnf/projects/exchange-simulator/tests/TradeBookTest.cpp \
   /home/fnf/projects/exchange-simulator/include/Order.h \
   /home/fnf/projects/exchange-simulator/include/Orderbook.h \
+  /home/fnf/projects/exchange-simulator/include/Trade.h \
+  /home/fnf/projects/exchange-simulator/include/ExecutionReport.h \
+  /home/fnf/projects/exchange-simulator/include/Trade.h \
   /home/fnf/projects/exchange-simulator/include/Order.h \
+  /home/fnf/projects/exchange-simulator/include/ProcessResult.h \
+  /home/fnf/projects/exchange-simulator/include/Trade.h \
   /home/fnf/projects/exchange-simulator/include/utils/TimeUtils.h \
   /home/fnf/projects/exchange-simulator/include/Logger.h \
   /home/fnf/projects/exchange-simulator/include/Order.h \
@@ -757,6 +776,7 @@ CMakeFiles/exchange_tests.dir/tests/TradeBookTest.cpp.o: /home/fnf/projects/exch
   /home/fnf/projects/exchange-simulator/include/Logger.h \
   /home/fnf/projects/exchange-simulator/include/MatchingEngine.h \
   /home/fnf/projects/exchange-simulator/include/Orderbook.h \
+  /home/fnf/projects/exchange-simulator/include/Ringbuffer.h \
   /home/fnf/projects/exchange-simulator/tests/utils/TestUtils.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
@@ -1684,12 +1704,6 @@ CMakeFiles/exchange_tests.dir/tests/mainTest.cpp.o: /home/fnf/projects/exchange-
 
 /usr/include/x86_64-linux-gnu/bits/stdlib.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:
-
 /usr/include/x86_64-linux-gnu/bits/timex.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
@@ -1812,6 +1826,10 @@ CMakeFiles/exchange_tests.dir/tests/mainTest.cpp.o: /home/fnf/projects/exchange-
 
 /usr/include/math.h:
 
+/usr/include/locale.h:
+
+/usr/include/linux/types.h:
+
 /usr/include/c++/13/bits/max_size_type.h:
 
 /usr/include/stdint.h:
@@ -1875,10 +1893,6 @@ CMakeFiles/exchange_tests.dir/tests/mainTest.cpp.o: /home/fnf/projects/exchange-
 /usr/include/c++/13/bits/semaphore_base.h:
 
 /usr/include/c++/13/tr1/poly_hermite.tcc:
-
-/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
-
-/usr/include/c++/13/bits/string_view.tcc:
 
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
@@ -2032,13 +2046,9 @@ CMakeFiles/exchange_tests.dir/tests/mainTest.cpp.o: /home/fnf/projects/exchange-
 
 /usr/include/asm-generic/errno-base.h:
 
-/usr/include/c++/13/bits/stl_vector.h:
+/usr/include/c++/13/array:
 
-/usr/include/c++/13/bits/stl_tempbuf.h:
-
-/usr/include/c++/13/bits/stl_tree.h:
-
-/usr/include/c++/13/bits/codecvt.h:
+/usr/include/c++/13/bits/hash_bytes.h:
 
 /usr/include/gtest/internal/custom/gtest-port.h:
 
@@ -2046,15 +2056,31 @@ CMakeFiles/exchange_tests.dir/tests/mainTest.cpp.o: /home/fnf/projects/exchange-
 
 /usr/include/gtest/gtest-typed-test.h:
 
+/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:
+
+/home/fnf/projects/exchange-simulator/include/ExecutionReport.h:
+
+/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
+
+/usr/include/c++/13/bits/string_view.tcc:
+
 /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h:
 
 /usr/include/c++/13/bits/ranges_util.h:
 
 /usr/include/c++/13/any:
 
-/usr/include/c++/13/array:
+/usr/include/c++/13/bits/stl_vector.h:
 
-/usr/include/c++/13/bits/hash_bytes.h:
+/usr/include/c++/13/bits/stl_tempbuf.h:
+
+/usr/include/c++/13/bits/stl_tree.h:
+
+/usr/include/c++/13/bits/codecvt.h:
 
 /home/fnf/projects/exchange-simulator/include/Trade.h:
 
@@ -2080,11 +2106,7 @@ CMakeFiles/exchange_tests.dir/tests/mainTest.cpp.o: /home/fnf/projects/exchange-
 
 /usr/include/c++/13/variant:
 
-/usr/include/c++/13/bits/basic_ios.tcc:
-
-/usr/include/c++/13/pstl/execution_defs.h:
-
-/usr/include/linux/stddef.h:
+/home/fnf/projects/exchange-simulator/include/Ringbuffer.h:
 
 /usr/include/c++/13/bits/predefined_ops.h:
 
@@ -2142,8 +2164,6 @@ CMakeFiles/exchange_tests.dir/tests/mainTest.cpp.o: /home/fnf/projects/exchange-
 
 /home/fnf/projects/exchange-simulator/include/Logger.h:
 
-/home/fnf/projects/exchange-simulator/include/Ringbuffer.h:
-
 /home/fnf/projects/exchange-simulator/tests/utils/TestUtils.h:
 
 /usr/include/x86_64-linux-gnu/bits/waitstatus.h:
@@ -2172,17 +2192,27 @@ CMakeFiles/exchange_tests.dir/tests/mainTest.cpp.o: /home/fnf/projects/exchange-
 
 /usr/include/c++/13/bits/shared_ptr_base.h:
 
+/home/fnf/projects/exchange-simulator/include/ProcessResult.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
+
+/usr/include/c++/13/limits:
+
+/usr/include/gtest/gtest_prod.h:
+
 /usr/include/c++/13/bits/basic_ios.h:
+
+/usr/include/c++/13/bits/basic_ios.tcc:
+
+/usr/include/c++/13/pstl/execution_defs.h:
+
+/usr/include/linux/stddef.h:
 
 /usr/include/c++/13/bits/atomic_timed_wait.h:
 
 /usr/include/c++/13/tr1/exp_integral.tcc:
 
 /usr/include/alloca.h:
-
-/usr/include/x86_64-linux-gnu/bits/endianness.h:
-
-/usr/include/c++/13/bits/chrono.h:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h:
 
@@ -2194,15 +2224,9 @@ CMakeFiles/exchange_tests.dir/tests/mainTest.cpp.o: /home/fnf/projects/exchange-
 
 /usr/include/c++/13/bits/hashtable_policy.h:
 
-/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
+/usr/include/x86_64-linux-gnu/bits/endianness.h:
 
-/usr/include/c++/13/bits/streambuf_iterator.h:
-
-/usr/include/c++/13/ostream:
-
-/usr/include/x86_64-linux-gnu/asm/unistd.h:
-
-/usr/include/c++/13/tr1/riemann_zeta.tcc:
+/usr/include/c++/13/bits/chrono.h:
 
 /usr/include/c++/13/cassert:
 
@@ -2237,6 +2261,16 @@ CMakeFiles/exchange_tests.dir/tests/mainTest.cpp.o: /home/fnf/projects/exchange-
 /usr/include/x86_64-linux-gnu/bits/types/error_t.h:
 
 /usr/include/c++/13/bits/hashtable.h:
+
+/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
+
+/usr/include/c++/13/bits/streambuf_iterator.h:
+
+/usr/include/c++/13/ostream:
+
+/usr/include/x86_64-linux-gnu/asm/unistd.h:
+
+/usr/include/c++/13/tr1/riemann_zeta.tcc:
 
 /usr/include/c++/13/bits/iterator_concepts.h:
 
@@ -2282,8 +2316,6 @@ CMakeFiles/exchange_tests.dir/tests/mainTest.cpp.o: /home/fnf/projects/exchange-
 
 /usr/include/c++/13/ext/aligned_buffer.h:
 
-/usr/include/locale.h:
-
 /usr/include/c++/13/new:
 
 /home/fnf/projects/exchange-simulator/include/MatchingEngine.h:
@@ -2323,12 +2355,6 @@ CMakeFiles/exchange_tests.dir/tests/mainTest.cpp.o: /home/fnf/projects/exchange-
 /usr/include/c++/13/bits/ios_base.h:
 
 /usr/include/c++/13/iterator:
-
-/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
-
-/usr/include/c++/13/limits:
-
-/usr/include/gtest/gtest_prod.h:
 
 /usr/include/c++/13/ext/alloc_traits.h:
 
@@ -2451,5 +2477,3 @@ CMakeFiles/exchange_tests.dir/tests/mainTest.cpp.o: /home/fnf/projects/exchange-
 /usr/include/c++/13/bits/locale_facets.tcc:
 
 /usr/include/linux/stat.h:
-
-/usr/include/linux/types.h:

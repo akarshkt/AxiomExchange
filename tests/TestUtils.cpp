@@ -33,8 +33,8 @@ Order makeSell(
 }
 Order makeMarketBuy(
     int id,
-    int qty,
-    int price
+    int qty
+   
 )
 {
     return Order(
@@ -43,14 +43,13 @@ Order makeMarketBuy(
         1,
         qty,
         Side::BUY,
-        price
+        0
     );
 }
 
 Order makeMarketSell(
     int id,
-    int qty,
-    int price
+    int qty
 )
 {
     return Order(
@@ -59,6 +58,6 @@ Order makeMarketSell(
         1,
         qty,
         Side::SELL,
-        price
+        0
     );
 }

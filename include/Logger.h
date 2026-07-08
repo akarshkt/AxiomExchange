@@ -14,20 +14,20 @@ enum struct EVENT{
 };
 class Logger
 {
-private:
-    size_t totalTradeLog;
-    Ringbuffer<Trade> ringbuffer;
+// private:
+    
+    // Ringbuffer<Trade> ringbuffer;
 
 public:
-    Logger(size_t capacity);
+    // Logger();
     void logTrade(Trade &trade);
     void logOrder(Order &order);
     void logCancelOrder(Order &order);
     void writeToDisk(Trade &trade,EVENT event);
     void writeToDisk(Order &order,EVENT event);
-    Ringbuffer<Trade>& getRingBuffer();
-    size_t getSizeofRingbuffer();
-    void print();
+    // Ringbuffer<Trade>& getRingBuffer();
+    // size_t getSizeofRingbuffer();
+   
 };
 
 #endif
