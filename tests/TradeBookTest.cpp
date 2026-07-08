@@ -29,7 +29,7 @@ class TradeBookFixture : public :: testing :: Test {
 TEST_F(TradeBookFixture,CompleteMatchTradeOccurs_LIMIT){
     ProcessResult buyResult =engine.processOrder(buy);
     ProcessResult sellResult= engine.processOrder(sell);
-    std::cout<<sellResult.reports.size()<<std::endl;
+    // std::cout<<sellResult.reports.size()<<std::endl;
     EXPECT_EQ(buyResult.trades.size(),0);
     EXPECT_EQ(sellResult.trades.size(),1);
     
@@ -65,30 +65,27 @@ TEST_F(TradeBookFixture,CompleteMatchTradeOccurs_MARKET){
     EXPECT_EQ(curTrade.sellOrderId,Sell.orderId);
     EXPECT_EQ(curTrade.quantity,100);
 }
-// TEST_F(TradeBookFixture,PartialMatchTradeOccurs_MARKET){
-//     Order Buy=makeBuy(1,100,100);
-//     Order partialMarketSell=makeMarketSell(2,20);
-//     engine.processOrder(Buy);
-//     engine.processOrder(partialMarketSell);
-//     Trade curTrade=tradeLog.returnTrade();
-//     EXPECT_EQ(curTrade.buyer,1);
-//     EXPECT_EQ(curTrade.seller,2);
-//     EXPECT_EQ(curTrade.buyOrderId,Buy.orderId);
-//     EXPECT_EQ(curTrade.sellOrderId,partialMarketSell.orderId);
-//     EXPECT_EQ(curTrade.quantity,20);
-//     EXPECT_EQ(tradeLog.size(),2);
+TEST_F(TradeBookFixture,PartialMatchTradeOccurs_MARKET){
+    Order Buy=makeBuy(1,100,100);
+    Order partialMarketSell=makeMarketSell(2,20);
+    ProcessResult repBuy=engine.processOrder(Buy);
+    ProcessResult repMarketSell=engine.processOrder(partialMarketSell);
+    Trade curTrade=tradeLog.returnTrade();
+    EXPECT_EQ(curTrade.buyer,1);
+    EXPECT_EQ(curTrade.seller,2);
+    EXPECT_EQ(curTrade.buyOrderId,Buy.orderId);
+    EXPECT_EQ(curTrade.sellOrderId,partialMarketSell.orderId);
+    EXPECT_EQ(curTrade.quantity,20);
+    EXPECT_EQ(tradeLog.size(),1);
 
-// }
-
-// TEST_F(TradeBookFixture,NoOrdersAvailableToBuy_MARKET){
+}
+TEST_F(TradeBookFixture,NoOrdersAvailableToBuy_MARKET){
   
-//     Order marketBuy=makeMarketBuy(1,100);
-   
-//     MatchResult res=engine.processOrder(marketBuy);
-//     Trade curTrade=tradeLog.returnTrade();
-//     EXPECT_EQ(curTrade.buyer,1);
-//     EXPECT_EQ(curTrade.seller,2);
-//     EXPECT_EQ(curTrade.buyOrderId,marketBuy.orderId);
-//     EXPECT_EQ(curTrade.sellOrderId,Sell.orderId);
-//     EXPECT_EQ(curTrade.quantity,100);
-// }
+    Order marketBuy=makeMarketBuy(1,100);
+    ProcessResult repMarketBuy=engine.processOrder(marketBuy);
+    Trade curTrade=tradeLog.returnTrade();
+
+    EXPECT_EQ(curTrade,Trade{});
+    EXPECT_EQ(repMarketBuy.trades.size(),0);
+    EXPECT_EQ(repMarketBuy.reports.size(),1);
+}
