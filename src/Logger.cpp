@@ -68,6 +68,10 @@ void Logger::logOrder(Order &order)
 {
     writeToDisk(order, EVENT::ORDER);
 }
+void Logger::logTrades(std::vector<Trade> & trades){
+    for(auto &it:trades)
+    writeToDisk(it,EVENT::TRADE);
+}
 void Logger::logCancelOrder(Order &order)
 {
     writeToDisk(order, EVENT::CANCEL);

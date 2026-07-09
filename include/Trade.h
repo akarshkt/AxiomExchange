@@ -16,6 +16,11 @@ class Trade
 
 public:
     Trade() = default;
+    bool operator==(const Trade& other) const {
+        return tradeId == other.tradeId && 
+               quantity == other.quantity && 
+               executionPrice == other.executionPrice ;
+    }
 
 public:
     TradeId getTradeId();

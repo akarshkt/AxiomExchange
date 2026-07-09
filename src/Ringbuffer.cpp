@@ -38,7 +38,7 @@ void Ringbuffer::print()
 }
 Trade Ringbuffer::returnTrade()
 {
-    return trades[tail - 1];
+    return trades[((tail-1) % capacity + capacity) % capacity];
 }
 size_t Ringbuffer::size()
 {

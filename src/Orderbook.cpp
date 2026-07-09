@@ -1,12 +1,6 @@
 #include "../include/Orderbook.h"
 #include <iostream>
 
-// Orderbook::Orderbook(size_t capacity) : {}//logger(capacity)
-
-//logger& Orderbook::get//logger()
-// {
-//     return //logger;
-// };
 void Orderbook::addOrder(Order &order)
 {
     Price price = order.price;
@@ -43,35 +37,15 @@ void Orderbook::cancelOrder(OrderId orderId)
     auto &book = loc.side == Side::BUY ? bids : asks;
 
     loc.it->orderStatus = OrderStatus::CANCELLED;
-    // //logger.logCancelOrder(*(loc.it));
     book[loc.price].erase(loc.it);
 }
 
-Order Orderbook::orderLookup(OrderId orderId)
+Order& Orderbook::orderLookup(OrderId orderId)
 {
-    for (auto &it : bids)
-    {
-        for (auto &ti : it.second)
-        {
-            if (ti.orderId == orderId)
-            {
-                return ti;
-            }
-        }
-    }
-
-    for (auto &it : asks)
-    {
-        for (auto &ti : it.second)
-        {
-            if (ti.orderId == orderId)
-            {
-                return ti;
-            }
-        }
-    }
-    Order order1(1, OrderType::MARKET, 2, 10, Side::BUY, 20);
-    return order1;
+    auto loc=orderIndex[orderId];
+    auto &book = loc.side == Side::BUY ? bids : asks;
+    return *loc.it;
+    
 }
 ProcessResult Orderbook::matchOrderLimit(Order &order)
 {
@@ -95,22 +69,19 @@ ProcessResult Orderbook::matchOrderLimit(Order &order)
 
                     order.remainingQuantity -= traded;
                     orderIt->remainingQuantity -= traded;
-                    // Timestamp currTimestamp=;
                     Trade newTrade(order.orderId, orderIt->orderId, order.userId, orderIt->userId, it.first, traded, getTimestamp());
-                    //logger.logTrade(newTrade);
+                   
                     if (orderIt->remainingQuantity == 0)
                     {
                         orderIt->setOrderStatus(OrderStatus::FILLED);
-                        //logger.logOrder(*orderIt);       // Log FIRST while memory is valid
                         processResult.processTrade(newTrade,*orderIt,traded);
-                        orderIt = orders.erase(orderIt); // Erase SECOND
+                        orderIt = orders.erase(orderIt); 
                     }
                     else
                     {
                         orderIt->setOrderStatus(OrderStatus::PARTIALLY_FILLED);
-                        //logger.logOrder(*orderIt); // Log FIRST
                         processResult.processTrade(newTrade,*orderIt,traded);
-                        ++orderIt;                 // Advance SECOND
+                        ++orderIt;               
                     }
                    
                     if (order.remainingQuantity == 0)
@@ -123,7 +94,6 @@ ProcessResult Orderbook::matchOrderLimit(Order &order)
                     else
                     {
                         order.setOrderStatus(OrderStatus::PARTIALLY_FILLED);
-                        //logger.logOrder(order);
                     }
                 }
             }
@@ -134,6 +104,9 @@ ProcessResult Orderbook::matchOrderLimit(Order &order)
             processResult.processOriginalOrder(order,beforeMatchRemainingQuantity-order.remainingQuantity);
             addOrder(order);
         }
+         if(order.remainingQuantity==order.originalQuantity)
+        processResult.processOriginalOrder(order,beforeMatchRemainingQuantity);
+        
         return processResult;
     }
     else
@@ -155,20 +128,19 @@ ProcessResult Orderbook::matchOrderLimit(Order &order)
                     order.remainingQuantity -= traded;
                     orderIt->remainingQuantity -= traded;
                     Trade newTrade( orderIt->orderId,order.orderId, orderIt->userId, order.userId, it.first, traded, getTimestamp());
-                    // //logger.logTrade(newTrade);
                     if (orderIt->remainingQuantity == 0)
                     {
                         orderIt->setOrderStatus(OrderStatus::FILLED);
-                        //logger.logOrder(*orderIt);       // Log FIRST while memory is valid
-                        orderIt = orders.erase(orderIt); // Erase SECOND
+                        processResult.processTrade(newTrade,*orderIt,traded);
+                        orderIt = orders.erase(orderIt); 
                     }
                     else
                     {
                         orderIt->setOrderStatus(OrderStatus::PARTIALLY_FILLED);
-                        //logger.logOrder(*orderIt); // Log FIRST
-                        ++orderIt;                 // Advance SECOND
+                        processResult.processTrade(newTrade,*orderIt,traded);
+                        ++orderIt;                 
                     }
-                     processResult.processTrade(newTrade,*orderIt,traded);
+                    
                     if (order.remainingQuantity == 0)
                     {
                         order.setOrderStatus(OrderStatus::FILLED);
@@ -179,7 +151,6 @@ ProcessResult Orderbook::matchOrderLimit(Order &order)
                     else
                     {
                         order.setOrderStatus(OrderStatus::PARTIALLY_FILLED);
-                        // //logger.logOrder(order);
                     }
                 }
             }
@@ -190,6 +161,9 @@ ProcessResult Orderbook::matchOrderLimit(Order &order)
             processResult.processOriginalOrder(order,beforeMatchRemainingQuantity-order.remainingQuantity);
             addOrder(order);
         }
+         if(order.remainingQuantity==order.originalQuantity)
+        processResult.processOriginalOrder(order,beforeMatchRemainingQuantity);
+        
     }
     return processResult;
 }
@@ -253,8 +227,11 @@ ProcessResult Orderbook::matchOrderMarket(Order &order)
             processResult.processOriginalOrder(order,beforeMatchRemainingQuantity-order.remainingQuantity);
             
 
-            cancelOrder(order.orderId);
+            // cancelOrder(order.orderId);
         }
+        if(order.remainingQuantity==order.originalQuantity)
+        processResult.processOriginalOrder(order,beforeMatchRemainingQuantity);
+        return processResult;
     }
     else
     {
@@ -310,8 +287,12 @@ ProcessResult Orderbook::matchOrderMarket(Order &order)
          if(beforeMatchRemainingQuantity!=order.remainingQuantity)
             processResult.processOriginalOrder(order,beforeMatchRemainingQuantity-order.remainingQuantity);
             
-            cancelOrder(order.orderId);
+            // cancelOrder(order.orderId);
         }
+         if(order.remainingQuantity==order.originalQuantity)
+        processResult.processOriginalOrder(order,beforeMatchRemainingQuantity);
+        
+          return processResult;
     }
     return processResult;
 }
@@ -321,12 +302,14 @@ ProcessResult Orderbook::matchOrderMarket(Order &order)
 ProcessResult Orderbook::matchOrder(Order &order)
 {
     OrderType tempOrderType = order.orderType;
-    ProcessResult temp;
+    // ProcessResult temp;
+    
     if (tempOrderType == OrderType::LIMIT)
-        temp= matchOrderLimit(order);
+        return  matchOrderLimit(order);
     else if (tempOrderType == OrderType::MARKET)
         return matchOrderMarket(order);
     // else
     //     matchOrderStop(order);
-    return temp;
+    // std::cout<<temp.trades.size();
+    // return temp;
 }

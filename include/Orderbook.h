@@ -25,7 +25,7 @@ public:
     ProcessResult matchOrderMarket(Order &order);
     void matchOrderStop(Order &order);
     // Logger& getLogger();
-    Order orderLookup(OrderId orderId);
+    Order& orderLookup(OrderId orderId);
     void removeOrder(OrderId orderId, Side side);
 };
 
