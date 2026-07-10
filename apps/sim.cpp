@@ -23,15 +23,15 @@ int32_t main()
     // 2. Pass it down to the engine
     MatchingEngine engine(capacity);
     // auto start = std::chrono::steady_clock::now();
-    Order order1(1, OrderType::LIMIT, 2, 10, Side::BUY, 20);
-    Order order2(2, OrderType::LIMIT, 2, 10, Side::BUY, 25);
-    Order order3(3, OrderType::LIMIT, 2, 10, Side::BUY, 30);
-    Order order4(4, OrderType::LIMIT, 2, 10, Side::BUY, 35);
-    Order order5(5, OrderType::LIMIT, 2, 10, Side::BUY, 40);
-    Order order6(6, OrderType::LIMIT, 2, 81, Side::BUY, 40);
-    Order order7(7, OrderType::LIMIT, 2, 10, Side::SELL, 20);
-    Order order8(8, OrderType::LIMIT, 2, 10, Side::SELL, 25);
-    Order order9(9, OrderType::LIMIT, 2, 5, Side::SELL, 30);
+    Order order1(1, OrderType::LIMIT,TimeInForce::GTC, 2, 10, Side::BUY, 20);
+    Order order2(2, OrderType::LIMIT,TimeInForce::GTC, 2, 10, Side::BUY, 25);
+    Order order3(3, OrderType::LIMIT,TimeInForce::GTC, 2, 10, Side::BUY, 30);
+    Order order4(4, OrderType::LIMIT,TimeInForce::GTC, 2, 10, Side::BUY, 35);
+    Order order5(5, OrderType::LIMIT,TimeInForce::GTC, 2, 10, Side::BUY, 40);
+    Order order6(6, OrderType::LIMIT,TimeInForce::GTC, 2, 81, Side::BUY, 40);
+    Order order7(7, OrderType::LIMIT,TimeInForce::GTC, 2, 10, Side::SELL, 20);
+    Order order8(8, OrderType::LIMIT,TimeInForce::GTC, 2, 10, Side::SELL, 25);
+    Order order9(9, OrderType::LIMIT,TimeInForce::GTC, 2, 5, Side::SELL, 30);
     engine.processOrder(order1);
     engine.processOrder(order2);
     engine.processOrder(order3);

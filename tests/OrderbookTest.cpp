@@ -15,8 +15,8 @@ protected:
           book(engine.getOrderbook()) // Perfectly fast, completely safe link
     {}
 
-    Order  buy=makeBuy(1,100,100);
-    Order  sell=makeSell(2,100,100);
+    Order  buy=makeBuy(1,100,100,TimeInForce::GTC);
+    Order  sell=makeSell(2,100,100,TimeInForce::GTC);
     
 
     void SetUp() override
@@ -46,7 +46,7 @@ GTEST_SKIP() << "Market orders not implemented yet.";
 TEST_F(OrderBookFixture, PartialOrderFill)
 {
     GTEST_SKIP() << "Market orders not implemented yet.";
-    Order orderCounter=makeSell(2,20,100);
+    Order orderCounter=makeSell(2,20,100,TimeInForce::GTC);
     // Order order2=makeSell(2,20,100);
     engine.processOrder(buy);
     engine.processOrder(orderCounter);

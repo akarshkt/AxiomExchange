@@ -22,6 +22,13 @@ enum class OrderType{
 	LIMIT,
 	STOP
 };
+enum class TimeInForce
+{
+    GTC,
+    IOC,
+    FOK,
+    DAY
+};
 enum class OrderStatus{
 	NEW,
 	PARTIALLY_FILLED,
@@ -46,6 +53,7 @@ struct Order{
 
 	OrderId orderId;
 	OrderType orderType;
+	TimeInForce timeInForce;
 	Side side;
 	Price price;
 	UserId userId;
@@ -54,7 +62,7 @@ struct Order{
 	Quantity remainingQuantity;
 	Timestamp timestamp;
 	OrderStatus orderStatus;
-	Order(UserId userId,OrderType ordertype, AssetId assetId,Quantity originalQuantity, Side side,Price price );
+	Order(UserId userId,OrderType ordertype,TimeInForce timeInForce, AssetId assetId,Quantity originalQuantity, Side side,Price price );
 	 bool operator==(const Order& other) const
     {
         return orderId == other.orderId;

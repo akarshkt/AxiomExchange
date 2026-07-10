@@ -8,6 +8,7 @@ static void BM_ProcessOrder(benchmark::State& state)
     Order order(
         1,
         OrderType::LIMIT,
+        TimeInForce::GTC,
         1,
         10,
         Side::BUY,

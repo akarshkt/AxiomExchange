@@ -10,25 +10,12 @@ void Orderbook::addOrder(Order &order)
     orderIndex[order.orderId] = {order.side, price, --(book[price].end())};
     //logger.logOrder(order);
 }
-void Orderbook::removeOrder(OrderId orderId, Side side)
+void Orderbook::removeOrder(OrderId orderId)
 {
-    auto &book = (side == Side::BUY) ? bids : asks;
+    auto loc = orderIndex[orderId];
+    auto &book = loc.side == Side::BUY ? bids : asks;
 
-    for (auto &[price, orders] : book)
-    {
-        for (auto it = orders.begin(); it != orders.end(); ++it)
-        {
-
-            if (it->orderId == orderId)
-            {
-                std::cout << "ORDER REMOVED  " << std::endl;
-                std::cout << "DELETED :" << it->userId << "   " << it->price << "   " << it->originalQuantity << std::endl;
-
-                orders.erase(it);
-                return;
-            }
-        }
-    }
+    book[loc.price].erase(loc.it);
 }
 void Orderbook::cancelOrder(OrderId orderId)
 {
@@ -42,8 +29,16 @@ void Orderbook::cancelOrder(OrderId orderId)
 
 Order& Orderbook::orderLookup(OrderId orderId)
 {
-    auto loc=orderIndex[orderId];
-    auto &book = loc.side == Side::BUY ? bids : asks;
+    // auto loc=orderIndex[orderId];
+    // auto &book = loc.side == Side::BUY ? bids : asks;
+    // return *loc.it;
+    auto it = orderIndex.find(orderId);
+
+    if (it == orderIndex.end())
+    throw std::runtime_error("Order not found");
+        // return ;
+
+    auto &loc = it->second;
     return *loc.it;
     
 }
@@ -51,9 +46,10 @@ ProcessResult Orderbook::matchOrderLimit(Order &order)
 {
     ProcessResult processResult;
     size_t beforeMatchRemainingQuantity=order.remainingQuantity;
+     bool val = true;
     if (order.side == Side::BUY)
     {
-        bool val = true;
+     
         for (auto &it : asks)
         {
             if (it.first <= order.price)
@@ -98,20 +94,11 @@ ProcessResult Orderbook::matchOrderLimit(Order &order)
                 }
             }
         }
-        if (val)
-        {
-            if(beforeMatchRemainingQuantity!=order.remainingQuantity)
-            processResult.processOriginalOrder(order,beforeMatchRemainingQuantity-order.remainingQuantity);
-            addOrder(order);
-        }
-         if(order.remainingQuantity==order.originalQuantity)
-        processResult.processOriginalOrder(order,beforeMatchRemainingQuantity);
-        
-        return processResult;
+       
     }
     else
     {
-        bool val = true;
+       
         for (auto &it : bids)
         {
             if (it.first >= order.price)
@@ -155,26 +142,32 @@ ProcessResult Orderbook::matchOrderLimit(Order &order)
                 }
             }
         }
-        if (val)
+       
+        
+    }
+    if (val)
         {
             if(beforeMatchRemainingQuantity!=order.remainingQuantity)
             processResult.processOriginalOrder(order,beforeMatchRemainingQuantity-order.remainingQuantity);
+            if(order.timeInForce==TimeInForce::GTC)
             addOrder(order);
+            else if(order.timeInForce == TimeInForce::IOC)
+            order.orderStatus=OrderStatus::CANCELLED;
         }
          if(order.remainingQuantity==order.originalQuantity)
         processResult.processOriginalOrder(order,beforeMatchRemainingQuantity);
         
-    }
-    return processResult;
+        return processResult;
 }
 
 ProcessResult Orderbook::matchOrderMarket(Order &order)
 {
     ProcessResult processResult;
     size_t beforeMatchRemainingQuantity=order.remainingQuantity;
+      bool val = true;
     if (order.side == Side::BUY)
     {
-        bool val = true;
+      
         for (auto &it : asks)
         {
 
@@ -221,21 +214,11 @@ ProcessResult Orderbook::matchOrderMarket(Order &order)
                 }
             }
         }
-        if (val)
-        {
-             if(beforeMatchRemainingQuantity!=order.remainingQuantity)
-            processResult.processOriginalOrder(order,beforeMatchRemainingQuantity-order.remainingQuantity);
-            
-
-            // cancelOrder(order.orderId);
-        }
-        if(order.remainingQuantity==order.originalQuantity)
-        processResult.processOriginalOrder(order,beforeMatchRemainingQuantity);
-        return processResult;
+      
     }
     else
     {
-        bool val = true;
+     
         for (auto it = bids.rbegin(); it != bids.rend(); it++)
         {
 
@@ -282,32 +265,37 @@ ProcessResult Orderbook::matchOrderMarket(Order &order)
                 }
             }
         }
-        if (val)
+       
+    }
+     if (val)
         {
-         if(beforeMatchRemainingQuantity!=order.remainingQuantity)
+             if(beforeMatchRemainingQuantity!=order.remainingQuantity)
             processResult.processOriginalOrder(order,beforeMatchRemainingQuantity-order.remainingQuantity);
             
+
             // cancelOrder(order.orderId);
         }
-         if(order.remainingQuantity==order.originalQuantity)
+        if(order.remainingQuantity==order.originalQuantity)
         processResult.processOriginalOrder(order,beforeMatchRemainingQuantity);
-        
-          return processResult;
-    }
-    return processResult;
+        return processResult;
 }
 // void Orderbook::matchOrderStop(Order &order){
 
 // }
+
 ProcessResult Orderbook::matchOrder(Order &order)
 {
     OrderType tempOrderType = order.orderType;
+    TimeInForce timeInForce=order.timeInForce;
     // ProcessResult temp;
     
-    if (tempOrderType == OrderType::LIMIT)
-        return  matchOrderLimit(order);
-    else if (tempOrderType == OrderType::MARKET)
+    if (tempOrderType == OrderType::LIMIT )
+        return matchOrderLimit(order);
+    else if (tempOrderType == OrderType::MARKET )
         return matchOrderMarket(order);
+
+
+    
     // else
     //     matchOrderStop(order);
     // std::cout<<temp.trades.size();

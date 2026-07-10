@@ -14,7 +14,7 @@ class MatchingEngine{
     ProcessResult processOrder(Order &order);
     Orderbook& getOrderbook();
     Ringbuffer& getRingbuffer();
-
+    Logger& getLogger();
 };
 
 #endif

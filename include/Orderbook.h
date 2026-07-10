@@ -23,10 +23,11 @@ public:
     ProcessResult matchOrder(Order &order);
     ProcessResult matchOrderLimit(Order &order);
     ProcessResult matchOrderMarket(Order &order);
+ 
     void matchOrderStop(Order &order);
     // Logger& getLogger();
     Order& orderLookup(OrderId orderId);
-    void removeOrder(OrderId orderId, Side side);
+    void removeOrder(OrderId orderId);
 };
 
 #endif

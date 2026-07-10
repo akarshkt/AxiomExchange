@@ -3,12 +3,14 @@
 Order makeBuy(
     int id,
     int qty,
-    int price
+    int price,
+    TimeInForce timeInForce
 )
 {
     return Order(
         id,
         OrderType::LIMIT,
+        timeInForce,
         1,
         qty,
         Side::BUY,
@@ -19,12 +21,14 @@ Order makeBuy(
 Order makeSell(
     int id,
     int qty,
-    int price
+    int price,
+    TimeInForce timeInForce
 )
 {
     return Order(
         id,
         OrderType::LIMIT,
+        timeInForce,
         1,
         qty,
         Side::SELL,
@@ -40,6 +44,7 @@ Order makeMarketBuy(
     return Order(
         id,
         OrderType::MARKET,
+        TimeInForce::IOC,
         1,
         qty,
         Side::BUY,
@@ -55,6 +60,7 @@ Order makeMarketSell(
     return Order(
         id,
         OrderType::MARKET,
+        TimeInForce::IOC,
         1,
         qty,
         Side::SELL,

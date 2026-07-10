@@ -3,6 +3,7 @@
 
 Order::Order(UserId userId,
              OrderType ordertype,
+             TimeInForce timeInForce,
              AssetId assetId,
              Quantity originalQuantity,
              Side side,
@@ -11,6 +12,7 @@ Order::Order(UserId userId,
     : 
       userId(userId),
       orderType(ordertype),
+      timeInForce(timeInForce),
       assetId(assetId),
       originalQuantity(originalQuantity),
       side(side),
@@ -21,6 +23,7 @@ Order::Order(UserId userId,
     this->userId=userId;
     this->price=price;
     this->orderType = ordertype;
+    this->timeInForce = timeInForce;
     this->assetId = assetId;
     this->originalQuantity = originalQuantity;
     this->remainingQuantity = originalQuantity;
