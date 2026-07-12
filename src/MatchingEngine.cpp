@@ -20,6 +20,8 @@ ProcessResult MatchingEngine::processOrder(Order &order)
             Order logOrder = orderbook.orderLookup(it.orderId);
             // std::cout<<logOrder.orderId<<"   ";
             logger.logOrder(logOrder);
+            if(logOrder.remainingQuantity==0)
+            orderbook.removeOrder(logOrder.orderId);
         }
         // if(it.status==OrderStatus::FILLED && it.orderId!=order.orderId)
         // orderbook.removeOrder(it.orderId);

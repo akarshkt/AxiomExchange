@@ -16,6 +16,7 @@ void Orderbook::removeOrder(OrderId orderId)
     auto &book = loc.side == Side::BUY ? bids : asks;
 
     book[loc.price].erase(loc.it);
+    orderIndex.erase(orderId);
 }
 void Orderbook::cancelOrder(OrderId orderId)
 {
@@ -50,11 +51,11 @@ ProcessResult Orderbook::matchOrderLimit(Order &order)
     if (order.side == Side::BUY)
     {
      
-        for (auto &it : asks)
+        for (auto it = asks.begin();it!=asks.end();)
         {
-            if (it.first <= order.price)
+            if (it->first <= order.price)
             {
-                auto &orders = it.second;
+                auto &orders = it->second;
 
                 for (auto orderIt = orders.begin();
                      orderIt != orders.end();)
@@ -65,13 +66,15 @@ ProcessResult Orderbook::matchOrderLimit(Order &order)
 
                     order.remainingQuantity -= traded;
                     orderIt->remainingQuantity -= traded;
-                    Trade newTrade(order.orderId, orderIt->orderId, order.userId, orderIt->userId, it.first, traded, getTimestamp());
+                    Trade newTrade(order.orderId, orderIt->orderId, order.userId, orderIt->userId, it->first, traded, getTimestamp());
                    
                     if (orderIt->remainingQuantity == 0)
                     {
                         orderIt->setOrderStatus(OrderStatus::FILLED);
                         processResult.processTrade(newTrade,*orderIt,traded);
-                        orderIt = orders.erase(orderIt); 
+                            //    orderIndex.erase(orderIt->orderId);
+                        // orderIt = orders.erase(orderIt); 
+                        ++orderIt;
                     }
                     else
                     {
@@ -92,18 +95,24 @@ ProcessResult Orderbook::matchOrderLimit(Order &order)
                         order.setOrderStatus(OrderStatus::PARTIALLY_FILLED);
                     }
                 }
+           
+            if (orders.empty())
+             it = asks.erase(it);
+          else
+              ++it;
             }
+           
         }
        
     }
     else
     {
        
-        for (auto &it : bids)
+        for (auto it=bids.begin();it!=bids.end() && it->first>=order.price;)
         {
-            if (it.first >= order.price)
+            if (it->first >= order.price)
             {
-                auto &orders = it.second;
+                auto &orders = it->second;
 
                 for (auto orderIt = orders.begin();
                      orderIt != orders.end();)
@@ -114,12 +123,14 @@ ProcessResult Orderbook::matchOrderLimit(Order &order)
 
                     order.remainingQuantity -= traded;
                     orderIt->remainingQuantity -= traded;
-                    Trade newTrade( orderIt->orderId,order.orderId, orderIt->userId, order.userId, it.first, traded, getTimestamp());
+                    Trade newTrade( orderIt->orderId,order.orderId, orderIt->userId, order.userId, it->first, traded, getTimestamp());
                     if (orderIt->remainingQuantity == 0)
                     {
                         orderIt->setOrderStatus(OrderStatus::FILLED);
                         processResult.processTrade(newTrade,*orderIt,traded);
-                        orderIt = orders.erase(orderIt); 
+                        //        orderIndex.erase(orderIt->orderId);
+                        // orderIt = orders.erase(orderIt); 
+                    ++orderIt;
                     }
                     else
                     {
@@ -140,7 +151,12 @@ ProcessResult Orderbook::matchOrderLimit(Order &order)
                         order.setOrderStatus(OrderStatus::PARTIALLY_FILLED);
                     }
                 }
+                    if (orders.empty())
+            it = bids.erase(it);
+            else
+            ++it;
             }
+            
         }
        
         
@@ -164,14 +180,14 @@ ProcessResult Orderbook::matchOrderMarket(Order &order)
 {
     ProcessResult processResult;
     size_t beforeMatchRemainingQuantity=order.remainingQuantity;
-      bool val = true;
+     
     if (order.side == Side::BUY)
     {
       
-        for (auto &it : asks)
+        for (auto it = asks.begin();it!=asks.end();)
         {
 
-            auto &orders = it.second;
+            auto &orders = it->second;
 
             for (auto orderIt = orders.begin();
                  orderIt != orders.end();)
@@ -182,14 +198,16 @@ ProcessResult Orderbook::matchOrderMarket(Order &order)
 
                 order.remainingQuantity -= traded;
                 orderIt->remainingQuantity -= traded;
-                Trade newTrade(order.orderId, orderIt->orderId, order.userId, orderIt->userId, it.first, traded, getTimestamp());
+                Trade newTrade(order.orderId, orderIt->orderId, order.userId, orderIt->userId, it->first, traded, getTimestamp());
                 ////logger.logTrade(newTrade);
                 if (orderIt->remainingQuantity == 0)
                 {
                     orderIt->setOrderStatus(OrderStatus::FILLED);
                     ////logger.logOrder(*orderIt);       // Log FIRST while memory is valid
-                     processResult.processTrade(newTrade,*orderIt,traded);
-                    orderIt = orders.erase(orderIt); // Erase SECOND
+                    processResult.processTrade(newTrade,*orderIt,traded);
+                    //        orderIndex.erase(orderIt->orderId);
+                    // orderIt = orders.erase(orderIt); // Erase SECOND
+                    ++orderIt;
                 }
                 else
                 {
@@ -204,22 +222,27 @@ ProcessResult Orderbook::matchOrderMarket(Order &order)
                     order.orderStatus = OrderStatus::FILLED;
                     //logger.logOrder(order);
                     processResult.processOriginalOrder(order,traded);
-                    val = false;
-                    break;
+                   
+                    return processResult;
                 }
                 else
                 {
                     order.orderStatus = OrderStatus::PARTIALLY_FILLED;
                     //logger.logOrder(order);
                 }
+                // orderIt++;
             }
+            if (orders.empty())
+             it = asks.erase(it);
+          else
+              ++it;
         }
       
     }
     else
     {
      
-        for (auto it = bids.rbegin(); it != bids.rend(); it++)
+        for (auto it = bids.rbegin(); it != bids.rend();)
         {
 
             auto &orders = it->second;
@@ -240,7 +263,9 @@ ProcessResult Orderbook::matchOrderMarket(Order &order)
                     orderIt->setOrderStatus(OrderStatus::FILLED);
                     //logger.logOrder(*orderIt);       // Log FIRST while memory is valid
                      processResult.processTrade(newTrade,*orderIt,traded);
-                    orderIt = orders.erase(orderIt); // Erase SECOND
+                    //  orderIndex.erase(orderIt->orderId);
+                    // orderIt = orders.erase(orderIt); // Erase SECOND
+                    ++orderIt;
                 }
                 else
                 {
@@ -255,26 +280,32 @@ ProcessResult Orderbook::matchOrderMarket(Order &order)
                     order.orderStatus = OrderStatus::FILLED;
                     //logger.logOrder(order);
                     processResult.processOriginalOrder(order,traded);
-                    val = false;
-                    break;
+                  
+                   
+                        return processResult;
+                   
                 }
                 else
                 {
                     order.orderStatus = OrderStatus::PARTIALLY_FILLED;
                     //logger.logOrder(order);
                 }
+                
             }
-        }
-       
+              
+        if (orders.empty())
+           bids.erase(std::next(it).base()); 
+         else
+         ++it;
+       }
     }
-     if (val)
-        {
+     
              if(beforeMatchRemainingQuantity!=order.remainingQuantity)
             processResult.processOriginalOrder(order,beforeMatchRemainingQuantity-order.remainingQuantity);
             
 
             // cancelOrder(order.orderId);
-        }
+        
         if(order.remainingQuantity==order.originalQuantity)
         processResult.processOriginalOrder(order,beforeMatchRemainingQuantity);
         return processResult;

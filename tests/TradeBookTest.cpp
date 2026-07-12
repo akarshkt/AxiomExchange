@@ -186,10 +186,10 @@ TEST_F(TradeBookFixture,IOCOrdersDonotGoInBook){
      ProcessResult buyRep=engine.processOrder(buy);
      ProcessResult buyRep2=engine.processOrder(buy2);
      ProcessResult sellRep=engine.processOrder(sell);
-     std::cout<<buy.orderId<<"   ";
-     std::cout<<(book.orderLookup(buy.orderId).orderId);
+   
      EXPECT_THROW(book.orderLookup(buy.orderId),std::runtime_error);
      EXPECT_THROW(book.orderLookup(buy2.orderId),std::runtime_error);
      EXPECT_THROW(book.orderLookup(sell.orderId),std::runtime_error);
+     
      EXPECT_EQ(sellRep.trades.size(),2);
 }
