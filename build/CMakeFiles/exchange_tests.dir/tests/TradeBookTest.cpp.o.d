@@ -354,6 +354,8 @@ CMakeFiles/exchange_tests.dir/tests/TradeBookTest.cpp.o: \
  /home/fnf/projects/exchange-simulator/tests/../include/./././Trade.h \
  /home/fnf/projects/exchange-simulator/tests/../include/./././ExecutionReport.h \
  /home/fnf/projects/exchange-simulator/tests/../include/././././Trade.h \
+ /home/fnf/projects/exchange-simulator/tests/../include/././ExecutionPlan.h \
+ /home/fnf/projects/exchange-simulator/tests/../include/./././Order.h \
  /home/fnf/projects/exchange-simulator/tests/../include/./Ringbuffer.h \
  /home/fnf/projects/exchange-simulator/tests/../include/Orderbook.h \
  /home/fnf/projects/exchange-simulator/tests/../include/Logger.h \

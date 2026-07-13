@@ -21,7 +21,7 @@ public:
         trades.resize(n);
     }
 
-    void push(Trade trade);
+    void push(Trade& trade);
     void pushListOfTrades(std::vector<Trade>& trades);
     void print();
 

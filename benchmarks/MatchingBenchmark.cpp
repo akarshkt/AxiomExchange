@@ -5,7 +5,7 @@ static void BM_ProcessOrder(benchmark::State& state)
 {
     MatchingEngine engine(10000);
 
-    Order order(
+    Order buyOrder(
         1,
         OrderType::LIMIT,
         TimeInForce::GTC,
@@ -14,10 +14,19 @@ static void BM_ProcessOrder(benchmark::State& state)
         Side::BUY,
         100
     );
-
+    Order sellOrder(
+        2,
+        OrderType::LIMIT,
+        TimeInForce::GTC,
+        1,
+        20,
+        Side::SELL,
+        100 
+    );
     for (auto _ : state)
     {
-        engine.processOrder(order);
+        engine.processOrder(buyOrder);
+        engine.processOrder(sellOrder);
     }
 }
 

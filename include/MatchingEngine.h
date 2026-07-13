@@ -9,8 +9,9 @@ class MatchingEngine{
     Logger logger;
     Ringbuffer ringbuffer;
     public:
-     MatchingEngine(size_t capacity);
+    MatchingEngine(size_t capacity);
     void cancelOrder(OrderId orderId);
+    ProcessResult executePlan(ExecutionPlan & plan,Order& order);
     ProcessResult processOrder(Order &order);
     Orderbook& getOrderbook();
     Ringbuffer& getRingbuffer();

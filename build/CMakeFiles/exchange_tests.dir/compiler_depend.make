@@ -6,7 +6,9 @@ CMakeFiles/exchange_tests.dir/tests/OrderbookTest.cpp.o: /home/fnf/projects/exch
   /home/fnf/projects/exchange-simulator/include/Orderbook.h \
   /home/fnf/projects/exchange-simulator/include/Trade.h \
   /home/fnf/projects/exchange-simulator/include/ExecutionReport.h \
+  /home/fnf/projects/exchange-simulator/include/Order.h \
   /home/fnf/projects/exchange-simulator/include/Trade.h \
+  /home/fnf/projects/exchange-simulator/include/ExecutionPlan.h \
   /home/fnf/projects/exchange-simulator/include/Order.h \
   /home/fnf/projects/exchange-simulator/include/Orderbook.h \
   /home/fnf/projects/exchange-simulator/include/ProcessResult.h \
@@ -450,7 +452,9 @@ CMakeFiles/exchange_tests.dir/tests/OrderbookTest.cpp.o: /home/fnf/projects/exch
 CMakeFiles/exchange_tests.dir/tests/TestUtils.cpp.o: /home/fnf/projects/exchange-simulator/tests/TestUtils.cpp \
   /home/fnf/projects/exchange-simulator/include/Trade.h \
   /home/fnf/projects/exchange-simulator/include/ExecutionReport.h \
+  /home/fnf/projects/exchange-simulator/include/Order.h \
   /home/fnf/projects/exchange-simulator/include/Trade.h \
+  /home/fnf/projects/exchange-simulator/include/ExecutionPlan.h \
   /home/fnf/projects/exchange-simulator/include/Order.h \
   /home/fnf/projects/exchange-simulator/include/ProcessResult.h \
   /home/fnf/projects/exchange-simulator/include/Trade.h \
@@ -763,7 +767,9 @@ CMakeFiles/exchange_tests.dir/tests/TradeBookTest.cpp.o: /home/fnf/projects/exch
   /home/fnf/projects/exchange-simulator/include/Orderbook.h \
   /home/fnf/projects/exchange-simulator/include/Trade.h \
   /home/fnf/projects/exchange-simulator/include/ExecutionReport.h \
+  /home/fnf/projects/exchange-simulator/include/Order.h \
   /home/fnf/projects/exchange-simulator/include/Trade.h \
+  /home/fnf/projects/exchange-simulator/include/ExecutionPlan.h \
   /home/fnf/projects/exchange-simulator/include/Order.h \
   /home/fnf/projects/exchange-simulator/include/ProcessResult.h \
   /home/fnf/projects/exchange-simulator/include/Trade.h \
@@ -1830,21 +1836,13 @@ CMakeFiles/exchange_tests.dir/tests/mainTest.cpp.o: /home/fnf/projects/exchange-
 
 /usr/include/linux/types.h:
 
-/usr/include/c++/13/bits/max_size_type.h:
-
-/usr/include/stdint.h:
-
-/usr/include/endian.h:
+/usr/include/linux/stddef.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/sigval_t.h:
 
 /usr/include/c++/13/bits/stl_map.h:
 
 /usr/include/c++/13/locale:
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
-
-/usr/include/c++/13/bits/stl_relops.h:
 
 /usr/include/stdio.h:
 
@@ -1962,6 +1960,12 @@ CMakeFiles/exchange_tests.dir/tests/mainTest.cpp.o: /home/fnf/projects/exchange-
 
 /usr/include/c++/13/debug/assertions.h:
 
+/usr/include/c++/13/bits/max_size_type.h:
+
+/usr/include/stdint.h:
+
+/usr/include/endian.h:
+
 /usr/include/c++/13/bits/locale_facets_nonio.tcc:
 
 /usr/include/c++/13/bits/stl_heap.h:
@@ -1984,17 +1988,13 @@ CMakeFiles/exchange_tests.dir/tests/mainTest.cpp.o: /home/fnf/projects/exchange-
 
 /usr/include/c++/13/clocale:
 
-/usr/include/c++/13/bits/alloc_traits.h:
+/usr/include/c++/13/bits/this_thread_sleep.h:
 
-/usr/include/c++/13/bits/concept_check.h:
+/usr/include/c++/13/bits/ranges_algo.h:
 
-/usr/include/x86_64-linux-gnu/bits/long-double.h:
+/usr/include/c++/13/bits/invoke.h:
 
-/usr/include/c++/13/bits/algorithmfwd.h:
-
-/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
-
-/usr/include/c++/13/bits/node_handle.h:
+/usr/include/gtest/gtest_pred_impl.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h:
 
@@ -2040,6 +2040,18 @@ CMakeFiles/exchange_tests.dir/tests/mainTest.cpp.o: /home/fnf/projects/exchange-
 
 /usr/include/c++/13/algorithm:
 
+/usr/include/x86_64-linux-gnu/bits/long-double.h:
+
+/usr/include/c++/13/bits/algorithmfwd.h:
+
+/usr/include/c++/13/bits/alloc_traits.h:
+
+/usr/include/c++/13/bits/concept_check.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
+
+/usr/include/c++/13/bits/node_handle.h:
+
 /usr/include/x86_64-linux-gnu/sys/wait.h:
 
 /usr/include/c++/13/bits/stl_iterator_base_funcs.h:
@@ -2074,6 +2086,24 @@ CMakeFiles/exchange_tests.dir/tests/mainTest.cpp.o: /home/fnf/projects/exchange-
 
 /usr/include/c++/13/any:
 
+/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
+
+/usr/include/asm-generic/types.h:
+
+/usr/include/asm-generic/bitsperlong.h:
+
+/usr/include/c++/13/cctype:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
+
+/usr/include/c++/13/ext/atomicity.h:
+
+/usr/include/c++/13/tr1/gamma.tcc:
+
+/usr/include/c++/13/backward/auto_ptr.h:
+
+/usr/include/assert.h:
+
 /usr/include/c++/13/bits/stl_vector.h:
 
 /usr/include/c++/13/bits/stl_tempbuf.h:
@@ -2105,6 +2135,20 @@ CMakeFiles/exchange_tests.dir/tests/mainTest.cpp.o: /home/fnf/projects/exchange-
 /usr/include/c++/13/bits/vector.tcc:
 
 /usr/include/c++/13/variant:
+
+/usr/include/wchar.h:
+
+/usr/include/c++/13/bits/shared_ptr_base.h:
+
+/usr/include/c++/13/bits/basic_ios.h:
+
+/home/fnf/projects/exchange-simulator/include/ProcessResult.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
+
+/usr/include/c++/13/limits:
+
+/usr/include/gtest/gtest_prod.h:
 
 /home/fnf/projects/exchange-simulator/include/Ringbuffer.h:
 
@@ -2146,14 +2190,6 @@ CMakeFiles/exchange_tests.dir/tests/mainTest.cpp.o: /home/fnf/projects/exchange-
 
 /usr/include/c++/13/bits/chrono_io.h:
 
-/usr/include/c++/13/bits/this_thread_sleep.h:
-
-/usr/include/c++/13/bits/ranges_algo.h:
-
-/usr/include/c++/13/bits/invoke.h:
-
-/usr/include/gtest/gtest_pred_impl.h:
-
 /usr/include/c++/13/bits/ranges_cmp.h:
 
 /usr/include/asm-generic/int-ll64.h:
@@ -2166,47 +2202,17 @@ CMakeFiles/exchange_tests.dir/tests/mainTest.cpp.o: /home/fnf/projects/exchange-
 
 /home/fnf/projects/exchange-simulator/tests/utils/TestUtils.h:
 
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
+
+/usr/include/c++/13/bits/stl_relops.h:
+
 /usr/include/x86_64-linux-gnu/bits/waitstatus.h:
 
 /usr/include/c++/13/bits/exception_defines.h:
 
-/usr/include/assert.h:
-
-/usr/include/c++/13/backward/auto_ptr.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
-
-/usr/include/asm-generic/types.h:
-
-/usr/include/asm-generic/bitsperlong.h:
-
-/usr/include/c++/13/cctype:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
-
-/usr/include/c++/13/ext/atomicity.h:
-
-/usr/include/c++/13/tr1/gamma.tcc:
-
-/usr/include/wchar.h:
-
-/usr/include/c++/13/bits/shared_ptr_base.h:
-
-/home/fnf/projects/exchange-simulator/include/ProcessResult.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
-
-/usr/include/c++/13/limits:
-
-/usr/include/gtest/gtest_prod.h:
-
-/usr/include/c++/13/bits/basic_ios.h:
-
 /usr/include/c++/13/bits/basic_ios.tcc:
 
 /usr/include/c++/13/pstl/execution_defs.h:
-
-/usr/include/linux/stddef.h:
 
 /usr/include/c++/13/bits/atomic_timed_wait.h:
 
@@ -2236,6 +2242,16 @@ CMakeFiles/exchange_tests.dir/tests/mainTest.cpp.o: /home/fnf/projects/exchange-
 
 /usr/include/c++/13/bits/cxxabi_forced.h:
 
+/usr/include/c++/13/bits/exception.h:
+
+/usr/include/c++/13/bits/memory_resource.h:
+
+/usr/include/c++/13/streambuf:
+
+/usr/include/c++/13/bits/cxxabi_init_exception.h:
+
+/usr/include/c++/13/typeinfo:
+
 /usr/include/c++/13/bits/localefwd.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdio2-decl.h:
@@ -2243,16 +2259,6 @@ CMakeFiles/exchange_tests.dir/tests/mainTest.cpp.o: /home/fnf/projects/exchange-
 /usr/include/c++/13/bits/ptr_traits.h:
 
 /usr/include/linux/posix_types.h:
-
-/usr/include/c++/13/bits/cxxabi_init_exception.h:
-
-/usr/include/c++/13/typeinfo:
-
-/usr/include/c++/13/bits/exception.h:
-
-/usr/include/c++/13/bits/memory_resource.h:
-
-/usr/include/c++/13/streambuf:
 
 /usr/include/c++/13/bits/functional_hash.h:
 
@@ -2312,6 +2318,8 @@ CMakeFiles/exchange_tests.dir/tests/mainTest.cpp.o: /home/fnf/projects/exchange-
 
 /usr/include/x86_64-linux-gnu/sys/select.h:
 
+/home/fnf/projects/exchange-simulator/include/ExecutionPlan.h:
+
 /usr/include/c++/13/cwchar:
 
 /usr/include/c++/13/ext/aligned_buffer.h:
@@ -2338,9 +2346,9 @@ CMakeFiles/exchange_tests.dir/tests/mainTest.cpp.o: /home/fnf/projects/exchange-
 
 /usr/include/c++/13/functional:
 
-/usr/include/c++/13/bits/std_thread.h:
-
 /usr/include/c++/13/tr1/bessel_function.tcc:
+
+/usr/include/c++/13/bits/std_thread.h:
 
 /usr/include/limits.h:
 

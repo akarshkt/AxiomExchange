@@ -27,9 +27,8 @@ class TradeBookFixture : public :: testing :: Test {
 };
 
 TEST_F(TradeBookFixture,CompleteMatchTradeOccurs_LIMIT){
-    ProcessResult buyResult =engine.processOrder(buy);
+     ProcessResult buyResult =engine.processOrder(buy);
     ProcessResult sellResult= engine.processOrder(sell);
-    // std::cout<<sellResult.reports.size()<<std::endl;
     EXPECT_EQ(buyResult.trades.size(),0);
     EXPECT_EQ(sellResult.trades.size(),1);
     
@@ -105,7 +104,7 @@ TEST_F(TradeBookFixture,OneOrderExecutesManyTradesFirstBuy){
     Order sell3=makeSell(2,10,100,TimeInForce::GTC);
     Order sell4=makeSell(2,10,100,TimeInForce::GTC);
     Order sell5=makeSell(2,10,100,TimeInForce::GTC);
-    ProcessResult report=engine.processOrder(buy);    
+    ProcessResult report=engine.processOrder( buy);    
     ProcessResult report1=engine.processOrder(sell1);
     ProcessResult report2=engine.processOrder(sell2);
     ProcessResult report3=engine.processOrder(sell3);
@@ -138,7 +137,7 @@ TEST_F(TradeBookFixture,OneOrderExecutesManyTradesLastSell){
     ProcessResult report3=engine.processOrder(sell3);
     ProcessResult report4=engine.processOrder(sell4);
     ProcessResult report5=engine.processOrder(sell5);  
-    ProcessResult report=engine.processOrder(buy);    
+    ProcessResult report=engine.processOrder( buy);    
     
     EXPECT_EQ(report.trades.size(),5);
     EXPECT_EQ(report.reports.size(),6);
@@ -156,7 +155,7 @@ TEST_F(TradeBookFixture,OneOrderExecutesManyTradesLastSell){
 TEST_F(TradeBookFixture,TwoMarketOrdersCannotMatch){
     Order buyMarket=makeMarketBuy(1,100);
     Order sellMarket=makeMarketSell(2,100);
-    ProcessResult repBuy=engine.processOrder(buyMarket);
+    ProcessResult repBuy=engine.processOrder( buyMarket);
     ProcessResult repSell=engine.processOrder(sellMarket);
     EXPECT_EQ(repBuy.reports.size(),1);
     EXPECT_EQ(repSell.reports.size(),1);
@@ -168,7 +167,7 @@ TEST_F(TradeBookFixture,TwoMarketOrdersCannotMatch){
 TEST_F(TradeBookFixture,MarketOrderDonotGoInTheBooks){
     Order buyMarket=makeMarketBuy(1,100);
     Order sellMarket=makeMarketSell(2,100);
-    ProcessResult repBuy=engine.processOrder(buyMarket);
+    ProcessResult repBuy=engine.processOrder( buyMarket);
     ProcessResult repSell=engine.processOrder(sellMarket);
     EXPECT_EQ(repBuy.reports.size(),1);
     EXPECT_EQ(repSell.reports.size(),1);
@@ -183,7 +182,7 @@ TEST_F(TradeBookFixture,IOCOrdersDonotGoInBook){
      Order buy=makeBuy(1,100,100,TimeInForce::GTC);
      Order buy2=makeBuy(1,50,100,TimeInForce::GTC);
      Order sell=makeMarketSell(2,200);
-     ProcessResult buyRep=engine.processOrder(buy);
+     ProcessResult buyRep=engine.processOrder( buy);
      ProcessResult buyRep2=engine.processOrder(buy2);
      ProcessResult sellRep=engine.processOrder(sell);
    
@@ -192,4 +191,22 @@ TEST_F(TradeBookFixture,IOCOrdersDonotGoInBook){
      EXPECT_THROW(book.orderLookup(sell.orderId),std::runtime_error);
      
      EXPECT_EQ(sellRep.trades.size(),2);
+}
+TEST_F(TradeBookFixture,FOKDoesnotExecuteIfNotFill){
+     Order buy=makeBuy(1,100,100,TimeInForce::GTC);
+     Order buy2=makeBuy(1,50,100,TimeInForce::GTC);
+     Order sell=makeSell(2,200,100,TimeInForce::FOK);
+    //  sell.timeInForce=TimeInForce::FOK;
+    //  std::cout<<(sell.timeInForce==TimeInForce::FOK?"FOK":"Not FOK")<<std::endl;
+     ProcessResult buyRep=engine.processOrder( buy);
+     ProcessResult buyRep2=engine.processOrder(buy2);
+     ProcessResult sellRep=engine.processOrder(sell);
+   
+    //  EXPECT_THROW(book.orderLookup(buy.orderId),std::runtime_error);
+    //  EXPECT_THROW(book.orderLookup(buy2.orderId),std::runtime_error);
+     EXPECT_EQ(book.orderLookup(buy2.orderId).orderStatus,OrderStatus::NEW);
+     EXPECT_THROW(book.orderLookup(sell.orderId),std::runtime_error);
+     
+     EXPECT_EQ(sellRep.trades.size(),0);
+     EXPECT_EQ(sellRep.reports.size(),1);
 }

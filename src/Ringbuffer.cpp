@@ -1,6 +1,6 @@
 #include "../include/Ringbuffer.h"
 
-void Ringbuffer::push(Trade trade)
+void Ringbuffer::push(Trade& trade)
 {
     trades[tail] = trade;
     tail = (tail + 1) % capacity;

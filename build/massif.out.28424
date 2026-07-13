@@ -1,0 +1,991 @@
+desc: (none)
+cmd: ./benchmark_matching
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=2405551
+mem_heap_B=73728
+mem_heap_extra_B=8
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=4550228
+mem_heap_B=728303
+mem_heap_extra_B=913
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=7175793
+mem_heap_B=726734
+mem_heap_extra_B=698
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=9324660
+mem_heap_B=734023
+mem_heap_extra_B=1953
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=10917635
+mem_heap_B=739039
+mem_heap_extra_B=2865
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=12105088
+mem_heap_B=742823
+mem_heap_extra_B=3553
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=13581809
+mem_heap_B=746959
+mem_heap_extra_B=4369
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=15825384
+mem_heap_B=745822
+mem_heap_extra_B=5650
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=17946004
+mem_heap_B=761215
+mem_heap_extra_B=6897
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=20059345
+mem_heap_B=767302
+mem_heap_extra_B=8074
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=21411428
+mem_heap_B=772127
+mem_heap_extra_B=8881
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=23357087
+mem_heap_B=777686
+mem_heap_extra_B=9962
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=25495430
+mem_heap_B=775798
+mem_heap_extra_B=11170
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=27647346
+mem_heap_B=782574
+mem_heap_extra_B=12402
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=29070464
+mem_heap_B=796270
+mem_heap_extra_B=13274
+mem_stacks_B=0
+heap_tree=detailed
+n5: 796270 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 640000 0x10C84A: MatchingEngine::MatchingEngine(unsigned long) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+  n1: 640000 0x10C28B: BM_ProcessOrder(benchmark::State&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+   n1: 640000 0x488845F: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+    n1: 640000 0x4888DB9: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+     n1: 640000 0x486F600: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+      n1: 640000 0x4875C72: benchmark::RunSpecifiedBenchmarks(benchmark::BenchmarkReporter*, benchmark::BenchmarkReporter*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+       n1: 640000 0x48760BE: benchmark::RunSpecifiedBenchmarks() (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+        n0: 640000 0x10BC95: main (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+ n1: 73728 0x496438E: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x400571E: call_init.part.0 (dl-init.c:74)
+   n1: 73728 0x4005823: call_init (dl-init.c:120)
+    n1: 73728 0x4005823: _dl_init (dl-init.c:121)
+     n0: 73728 0x401F59F: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+ n1: 70840 0x110975: Orderbook::addOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+  n1: 70840 0x1122F6: Orderbook::matchOrderLimit(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+   n1: 70840 0x112D24: Orderbook::matchOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+    n2: 70840 0x10C932: MatchingEngine::processOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+     n1: 70840 0x10C4E1: BM_ProcessOrder(benchmark::State&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+      n1: 70840 0x488845F: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+       n1: 70840 0x4888DB9: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+        n1: 70840 0x486F600: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+         n1: 70840 0x4875C72: benchmark::RunSpecifiedBenchmarks(benchmark::BenchmarkReporter*, benchmark::BenchmarkReporter*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+          n1: 70840 0x48760BE: benchmark::RunSpecifiedBenchmarks() (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+           n0: 70840 0x10BC95: main (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 8192 0x49D7BC3: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)
+  n2: 8192 0x49DBF46: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)
+   n1: 8192 0x10CE65: appendOrderLogToFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+    n2: 8192 0x10D4B4: Logger::logOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+     n2: 8192 0x10C91C: MatchingEngine::processOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+      n1: 8192 0x10C499: BM_ProcessOrder(benchmark::State&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+       n1: 8192 0x488845F: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+        n1: 8192 0x4888DB9: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+         n1: 8192 0x486F600: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+          n1: 8192 0x4875C72: benchmark::RunSpecifiedBenchmarks(benchmark::BenchmarkReporter*, benchmark::BenchmarkReporter*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+           n1: 8192 0x48760BE: benchmark::RunSpecifiedBenchmarks() (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+            n0: 8192 0x10BC95: main (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+      n0: 0 in 1 place, below massif's threshold (1.00%)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+   n0: 0 in 4 places, all below massif's threshold (1.00%)
+ n0: 3510 in 45 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=16
+#-----------
+time=31250327
+mem_heap_B=803134
+mem_heap_extra_B=14522
+mem_stacks_B=0
+heap_tree=detailed
+n5: 803134 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 640000 0x10C84A: MatchingEngine::MatchingEngine(unsigned long) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+  n1: 640000 0x10C28B: BM_ProcessOrder(benchmark::State&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+   n1: 640000 0x488845F: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+    n1: 640000 0x4888DB9: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+     n1: 640000 0x486F600: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+      n1: 640000 0x4875C72: benchmark::RunSpecifiedBenchmarks(benchmark::BenchmarkReporter*, benchmark::BenchmarkReporter*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+       n1: 640000 0x48760BE: benchmark::RunSpecifiedBenchmarks() (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+        n0: 640000 0x10BC95: main (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+ n1: 77704 0x110975: Orderbook::addOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+  n1: 77704 0x1122F6: Orderbook::matchOrderLimit(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+   n1: 77704 0x112D24: Orderbook::matchOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+    n2: 77704 0x10C932: MatchingEngine::processOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+     n1: 77704 0x10C4E1: BM_ProcessOrder(benchmark::State&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+      n1: 77704 0x488845F: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+       n1: 77704 0x4888DB9: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+        n1: 77704 0x486F600: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+         n1: 77704 0x4875C72: benchmark::RunSpecifiedBenchmarks(benchmark::BenchmarkReporter*, benchmark::BenchmarkReporter*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+          n1: 77704 0x48760BE: benchmark::RunSpecifiedBenchmarks() (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+           n0: 77704 0x10BC95: main (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x496438E: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x400571E: call_init.part.0 (dl-init.c:74)
+   n1: 73728 0x4005823: call_init (dl-init.c:120)
+    n1: 73728 0x4005823: _dl_init (dl-init.c:121)
+     n0: 73728 0x401F59F: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+ n1: 8192 0x49D7BC3: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)
+  n2: 8192 0x49DBF46: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)
+   n1: 8192 0x10CE65: appendOrderLogToFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+    n2: 8192 0x10D4B4: Logger::logOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+     n2: 8192 0x10C91C: MatchingEngine::processOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+      n1: 8192 0x10C499: BM_ProcessOrder(benchmark::State&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+       n1: 8192 0x488845F: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+        n1: 8192 0x4888DB9: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+         n1: 8192 0x486F600: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+          n1: 8192 0x4875C72: benchmark::RunSpecifiedBenchmarks(benchmark::BenchmarkReporter*, benchmark::BenchmarkReporter*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+           n1: 8192 0x48760BE: benchmark::RunSpecifiedBenchmarks() (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+            n0: 8192 0x10BC95: main (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+      n0: 0 in 1 place, below massif's threshold (1.00%)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+   n0: 0 in 4 places, all below massif's threshold (1.00%)
+ n0: 3510 in 45 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=17
+#-----------
+time=33458135
+mem_heap_B=810086
+mem_heap_extra_B=15786
+mem_stacks_B=0
+heap_tree=detailed
+n4: 810086 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 640000 0x10C84A: MatchingEngine::MatchingEngine(unsigned long) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+  n1: 640000 0x10C28B: BM_ProcessOrder(benchmark::State&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+   n1: 640000 0x488845F: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+    n1: 640000 0x4888DB9: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+     n1: 640000 0x486F600: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+      n1: 640000 0x4875C72: benchmark::RunSpecifiedBenchmarks(benchmark::BenchmarkReporter*, benchmark::BenchmarkReporter*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+       n1: 640000 0x48760BE: benchmark::RunSpecifiedBenchmarks() (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+        n0: 640000 0x10BC95: main (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+ n1: 84656 0x110975: Orderbook::addOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+  n1: 84656 0x1122F6: Orderbook::matchOrderLimit(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+   n1: 84656 0x112D24: Orderbook::matchOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+    n2: 84656 0x10C932: MatchingEngine::processOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+     n1: 84656 0x10C4E1: BM_ProcessOrder(benchmark::State&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+      n1: 84656 0x488845F: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+       n1: 84656 0x4888DB9: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+        n1: 84656 0x486F600: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+         n1: 84656 0x4875C72: benchmark::RunSpecifiedBenchmarks(benchmark::BenchmarkReporter*, benchmark::BenchmarkReporter*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+          n1: 84656 0x48760BE: benchmark::RunSpecifiedBenchmarks() (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+           n0: 84656 0x10BC95: main (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x496438E: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x400571E: call_init.part.0 (dl-init.c:74)
+   n1: 73728 0x4005823: call_init (dl-init.c:120)
+    n1: 73728 0x4005823: _dl_init (dl-init.c:121)
+     n0: 73728 0x401F59F: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+ n0: 11702 in 46 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=18
+#-----------
+time=35730676
+mem_heap_B=728039
+mem_heap_extra_B=929
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=37149935
+mem_heap_B=732542
+mem_heap_extra_B=1754
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=38516970
+mem_heap_B=737367
+mem_heap_extra_B=2561
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=39887057
+mem_heap_B=741679
+mem_heap_extra_B=3345
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=41257145
+mem_heap_B=745991
+mem_heap_extra_B=4129
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=42627232
+mem_heap_B=750303
+mem_heap_extra_B=4913
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=43997317
+mem_heap_B=754615
+mem_heap_extra_B=5697
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=45367407
+mem_heap_B=758927
+mem_heap_extra_B=6481
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=46737494
+mem_heap_B=763239
+mem_heap_extra_B=7265
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=48107582
+mem_heap_B=767551
+mem_heap_extra_B=8049
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=49477669
+mem_heap_B=771863
+mem_heap_extra_B=8833
+mem_stacks_B=0
+heap_tree=detailed
+n5: 771863 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 640000 0x10C84A: MatchingEngine::MatchingEngine(unsigned long) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+  n1: 640000 0x10C28B: BM_ProcessOrder(benchmark::State&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+   n1: 640000 0x488845F: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+    n1: 640000 0x4888DB9: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+     n1: 640000 0x486F600: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+      n1: 640000 0x4875C72: benchmark::RunSpecifiedBenchmarks(benchmark::BenchmarkReporter*, benchmark::BenchmarkReporter*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+       n1: 640000 0x48760BE: benchmark::RunSpecifiedBenchmarks() (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+        n0: 640000 0x10BC95: main (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+ n1: 73728 0x496438E: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x400571E: call_init.part.0 (dl-init.c:74)
+   n1: 73728 0x4005823: call_init (dl-init.c:120)
+    n1: 73728 0x4005823: _dl_init (dl-init.c:121)
+     n0: 73728 0x401F59F: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+ n1: 46464 0x110975: Orderbook::addOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+  n1: 46464 0x1122F6: Orderbook::matchOrderLimit(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+   n1: 46464 0x112D24: Orderbook::matchOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+    n2: 46464 0x10C932: MatchingEngine::processOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+     n1: 46464 0x10C4E1: BM_ProcessOrder(benchmark::State&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+      n1: 46464 0x488845F: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+       n1: 46464 0x4888DB9: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+        n1: 46464 0x486F600: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+         n1: 46464 0x4875C72: benchmark::RunSpecifiedBenchmarks(benchmark::BenchmarkReporter*, benchmark::BenchmarkReporter*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+          n1: 46464 0x48760BE: benchmark::RunSpecifiedBenchmarks() (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+           n0: 46464 0x10BC95: main (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 8192 0x49D7BC3: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)
+  n2: 8192 0x49DBF46: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)
+   n1: 8192 0x10CE65: appendOrderLogToFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+    n2: 8192 0x10D4B4: Logger::logOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+     n2: 8192 0x10C91C: MatchingEngine::processOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+      n1: 8192 0x10C499: BM_ProcessOrder(benchmark::State&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+       n1: 8192 0x488845F: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+        n1: 8192 0x4888DB9: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+         n1: 8192 0x486F600: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+          n1: 8192 0x4875C72: benchmark::RunSpecifiedBenchmarks(benchmark::BenchmarkReporter*, benchmark::BenchmarkReporter*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+           n1: 8192 0x48760BE: benchmark::RunSpecifiedBenchmarks() (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+            n0: 8192 0x10BC95: main (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+      n0: 0 in 1 place, below massif's threshold (1.00%)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+   n0: 0 in 4 places, all below massif's threshold (1.00%)
+ n0: 3479 in 45 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=29
+#-----------
+time=50847757
+mem_heap_B=776175
+mem_heap_extra_B=9617
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=52217844
+mem_heap_B=780487
+mem_heap_extra_B=10401
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=53587929
+mem_heap_B=784799
+mem_heap_extra_B=11185
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=54958019
+mem_heap_B=789111
+mem_heap_extra_B=11969
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=56328106
+mem_heap_B=793423
+mem_heap_extra_B=12753
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=57698194
+mem_heap_B=797735
+mem_heap_extra_B=13537
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=60326525
+mem_heap_B=806007
+mem_heap_extra_B=15041
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=62214176
+mem_heap_B=811903
+mem_heap_extra_B=16113
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=63472422
+mem_heap_B=815863
+mem_heap_extra_B=16833
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=65737260
+mem_heap_B=822991
+mem_heap_extra_B=18129
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=68002099
+mem_heap_B=830119
+mem_heap_extra_B=19425
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=70294898
+mem_heap_B=837335
+mem_heap_extra_B=20737
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=72587695
+mem_heap_B=844551
+mem_heap_extra_B=22049
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=74908458
+mem_heap_B=851855
+mem_heap_extra_B=23377
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=77257179
+mem_heap_B=859247
+mem_heap_extra_B=24721
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=79633861
+mem_heap_B=866727
+mem_heap_extra_B=26081
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=82038505
+mem_heap_B=874295
+mem_heap_extra_B=27457
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=84471109
+mem_heap_B=881951
+mem_heap_extra_B=28849
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=86274303
+mem_heap_B=887671
+mem_heap_extra_B=29889
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=87478190
+mem_heap_B=891486
+mem_heap_extra_B=30586
+mem_stacks_B=0
+heap_tree=detailed
+n4: 891486 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 640000 0x10C84A: MatchingEngine::MatchingEngine(unsigned long) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+  n1: 640000 0x10C28B: BM_ProcessOrder(benchmark::State&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+   n1: 640000 0x488845F: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+    n1: 640000 0x4888DB9: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+     n1: 640000 0x486F600: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+      n1: 640000 0x4875C72: benchmark::RunSpecifiedBenchmarks(benchmark::BenchmarkReporter*, benchmark::BenchmarkReporter*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+       n1: 640000 0x48760BE: benchmark::RunSpecifiedBenchmarks() (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+        n0: 640000 0x10BC95: main (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+ n1: 166056 0x110975: Orderbook::addOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+  n1: 166056 0x1122F6: Orderbook::matchOrderLimit(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+   n1: 166056 0x112D24: Orderbook::matchOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+    n2: 166056 0x10C932: MatchingEngine::processOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+     n1: 166056 0x10C4E1: BM_ProcessOrder(benchmark::State&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+      n1: 166056 0x488845F: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+       n1: 166056 0x4888DB9: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+        n1: 166056 0x486F600: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+         n1: 166056 0x4875C72: benchmark::RunSpecifiedBenchmarks(benchmark::BenchmarkReporter*, benchmark::BenchmarkReporter*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+          n1: 166056 0x48760BE: benchmark::RunSpecifiedBenchmarks() (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+           n0: 166056 0x10BC95: main (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x496438E: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x400571E: call_init.part.0 (dl-init.c:74)
+   n1: 73728 0x4005823: call_init (dl-init.c:120)
+    n1: 73728 0x4005823: _dl_init (dl-init.c:121)
+     n0: 73728 0x401F59F: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+ n0: 11702 in 46 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=49
+#-----------
+time=88734868
+mem_heap_B=895415
+mem_heap_extra_B=31297
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=89923495
+mem_heap_B=899111
+mem_heap_extra_B=31969
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=89966714
+mem_heap_B=899318
+mem_heap_extra_B=32010
+mem_stacks_B=0
+heap_tree=detailed
+n4: 899318 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 640000 0x10C84A: MatchingEngine::MatchingEngine(unsigned long) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+  n1: 640000 0x10C28B: BM_ProcessOrder(benchmark::State&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+   n1: 640000 0x488845F: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+    n1: 640000 0x4888DB9: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+     n1: 640000 0x486F600: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+      n1: 640000 0x4875C72: benchmark::RunSpecifiedBenchmarks(benchmark::BenchmarkReporter*, benchmark::BenchmarkReporter*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+       n1: 640000 0x48760BE: benchmark::RunSpecifiedBenchmarks() (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+        n0: 640000 0x10BC95: main (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+ n1: 173888 0x110975: Orderbook::addOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+  n1: 173888 0x1122F6: Orderbook::matchOrderLimit(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+   n1: 173888 0x112D24: Orderbook::matchOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+    n2: 173888 0x10C932: MatchingEngine::processOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+     n1: 173888 0x10C4E1: BM_ProcessOrder(benchmark::State&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+      n1: 173888 0x488845F: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+       n1: 173888 0x4888DB9: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+        n1: 173888 0x486F600: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+         n1: 173888 0x4875C72: benchmark::RunSpecifiedBenchmarks(benchmark::BenchmarkReporter*, benchmark::BenchmarkReporter*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+          n1: 173888 0x48760BE: benchmark::RunSpecifiedBenchmarks() (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+           n0: 173888 0x10BC95: main (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x496438E: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x400571E: call_init.part.0 (dl-init.c:74)
+   n1: 73728 0x4005823: call_init (dl-init.c:120)
+    n1: 73728 0x4005823: _dl_init (dl-init.c:121)
+     n0: 73728 0x401F59F: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+ n0: 11702 in 46 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=52
+#-----------
+time=91155248
+mem_heap_B=903014
+mem_heap_extra_B=32682
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=92343301
+mem_heap_B=906798
+mem_heap_extra_B=33370
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=92483204
+mem_heap_B=907238
+mem_heap_extra_B=33450
+mem_stacks_B=0
+heap_tree=detailed
+n4: 907238 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 640000 0x10C84A: MatchingEngine::MatchingEngine(unsigned long) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+  n1: 640000 0x10C28B: BM_ProcessOrder(benchmark::State&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+   n1: 640000 0x488845F: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+    n1: 640000 0x4888DB9: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+     n1: 640000 0x486F600: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+      n1: 640000 0x4875C72: benchmark::RunSpecifiedBenchmarks(benchmark::BenchmarkReporter*, benchmark::BenchmarkReporter*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+       n1: 640000 0x48760BE: benchmark::RunSpecifiedBenchmarks() (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+        n0: 640000 0x10BC95: main (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+ n1: 181808 0x110975: Orderbook::addOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+  n1: 181808 0x1122F6: Orderbook::matchOrderLimit(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+   n1: 181808 0x112D24: Orderbook::matchOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+    n2: 181808 0x10C932: MatchingEngine::processOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+     n1: 181808 0x10C4E1: BM_ProcessOrder(benchmark::State&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+      n1: 181808 0x488845F: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+       n1: 181808 0x4888DB9: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+        n1: 181808 0x486F600: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+         n1: 181808 0x4875C72: benchmark::RunSpecifiedBenchmarks(benchmark::BenchmarkReporter*, benchmark::BenchmarkReporter*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+          n1: 181808 0x48760BE: benchmark::RunSpecifiedBenchmarks() (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+           n0: 181808 0x10BC95: main (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x496438E: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x400571E: call_init.part.0 (dl-init.c:74)
+   n1: 73728 0x4005823: call_init (dl-init.c:120)
+    n1: 73728 0x4005823: _dl_init (dl-init.c:121)
+     n0: 73728 0x401F59F: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+ n0: 11702 in 46 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=55
+#-----------
+time=93671735
+mem_heap_B=910934
+mem_heap_extra_B=34122
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=94859788
+mem_heap_B=914718
+mem_heap_extra_B=34810
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=95027652
+mem_heap_B=915246
+mem_heap_extra_B=34906
+mem_stacks_B=0
+heap_tree=detailed
+n4: 915246 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 640000 0x10C84A: MatchingEngine::MatchingEngine(unsigned long) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+  n1: 640000 0x10C28B: BM_ProcessOrder(benchmark::State&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+   n1: 640000 0x488845F: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+    n1: 640000 0x4888DB9: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+     n1: 640000 0x486F600: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+      n1: 640000 0x4875C72: benchmark::RunSpecifiedBenchmarks(benchmark::BenchmarkReporter*, benchmark::BenchmarkReporter*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+       n1: 640000 0x48760BE: benchmark::RunSpecifiedBenchmarks() (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+        n0: 640000 0x10BC95: main (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+ n1: 189816 0x110975: Orderbook::addOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+  n1: 189816 0x1122F6: Orderbook::matchOrderLimit(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+   n1: 189816 0x112D24: Orderbook::matchOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+    n2: 189816 0x10C932: MatchingEngine::processOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+     n1: 189816 0x10C4E1: BM_ProcessOrder(benchmark::State&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+      n1: 189816 0x488845F: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+       n1: 189816 0x4888DB9: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+        n1: 189816 0x486F600: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+         n1: 189816 0x4875C72: benchmark::RunSpecifiedBenchmarks(benchmark::BenchmarkReporter*, benchmark::BenchmarkReporter*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+          n1: 189816 0x48760BE: benchmark::RunSpecifiedBenchmarks() (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+           n0: 189816 0x10BC95: main (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x496438E: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x400571E: call_init.part.0 (dl-init.c:74)
+   n1: 73728 0x4005823: call_init (dl-init.c:120)
+    n1: 73728 0x4005823: _dl_init (dl-init.c:121)
+     n0: 73728 0x401F59F: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+ n0: 11702 in 46 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=58
+#-----------
+time=96216183
+mem_heap_B=918942
+mem_heap_extra_B=35578
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=97404236
+mem_heap_B=922726
+mem_heap_extra_B=36266
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=97600061
+mem_heap_B=923342
+mem_heap_extra_B=36378
+mem_stacks_B=0
+heap_tree=detailed
+n4: 923342 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 640000 0x10C84A: MatchingEngine::MatchingEngine(unsigned long) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+  n1: 640000 0x10C28B: BM_ProcessOrder(benchmark::State&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+   n1: 640000 0x488845F: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+    n1: 640000 0x4888DB9: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+     n1: 640000 0x486F600: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+      n1: 640000 0x4875C72: benchmark::RunSpecifiedBenchmarks(benchmark::BenchmarkReporter*, benchmark::BenchmarkReporter*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+       n1: 640000 0x48760BE: benchmark::RunSpecifiedBenchmarks() (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+        n0: 640000 0x10BC95: main (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+ n1: 197912 0x110975: Orderbook::addOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+  n1: 197912 0x1122F6: Orderbook::matchOrderLimit(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+   n1: 197912 0x112D24: Orderbook::matchOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+    n2: 197912 0x10C932: MatchingEngine::processOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+     n1: 197912 0x10C4E1: BM_ProcessOrder(benchmark::State&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+      n1: 197912 0x488845F: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+       n1: 197912 0x4888DB9: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+        n1: 197912 0x486F600: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+         n1: 197912 0x4875C72: benchmark::RunSpecifiedBenchmarks(benchmark::BenchmarkReporter*, benchmark::BenchmarkReporter*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+          n1: 197912 0x48760BE: benchmark::RunSpecifiedBenchmarks() (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+           n0: 197912 0x10BC95: main (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x496438E: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x400571E: call_init.part.0 (dl-init.c:74)
+   n1: 73728 0x4005823: call_init (dl-init.c:120)
+    n1: 73728 0x4005823: _dl_init (dl-init.c:121)
+     n0: 73728 0x401F59F: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+ n0: 11702 in 46 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=61
+#-----------
+time=98788592
+mem_heap_B=927038
+mem_heap_extra_B=37050
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=99976645
+mem_heap_B=930822
+mem_heap_extra_B=37738
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=100200431
+mem_heap_B=931526
+mem_heap_extra_B=37866
+mem_stacks_B=0
+heap_tree=detailed
+n4: 931526 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 640000 0x10C84A: MatchingEngine::MatchingEngine(unsigned long) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+  n1: 640000 0x10C28B: BM_ProcessOrder(benchmark::State&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+   n1: 640000 0x488845F: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+    n1: 640000 0x4888DB9: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+     n1: 640000 0x486F600: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+      n1: 640000 0x4875C72: benchmark::RunSpecifiedBenchmarks(benchmark::BenchmarkReporter*, benchmark::BenchmarkReporter*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+       n1: 640000 0x48760BE: benchmark::RunSpecifiedBenchmarks() (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+        n0: 640000 0x10BC95: main (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+ n1: 206096 0x110975: Orderbook::addOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+  n1: 206096 0x1122F6: Orderbook::matchOrderLimit(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+   n1: 206096 0x112D24: Orderbook::matchOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+    n2: 206096 0x10C932: MatchingEngine::processOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+     n1: 206096 0x10C4E1: BM_ProcessOrder(benchmark::State&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+      n1: 206096 0x488845F: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+       n1: 206096 0x4888DB9: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+        n1: 206096 0x486F600: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+         n1: 206096 0x4875C72: benchmark::RunSpecifiedBenchmarks(benchmark::BenchmarkReporter*, benchmark::BenchmarkReporter*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+          n1: 206096 0x48760BE: benchmark::RunSpecifiedBenchmarks() (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+           n0: 206096 0x10BC95: main (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x496438E: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x400571E: call_init.part.0 (dl-init.c:74)
+   n1: 73728 0x4005823: call_init (dl-init.c:120)
+    n1: 73728 0x4005823: _dl_init (dl-init.c:121)
+     n0: 73728 0x401F59F: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+ n0: 11702 in 46 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=64
+#-----------
+time=101388962
+mem_heap_B=935222
+mem_heap_extra_B=38538
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=65
+#-----------
+time=102577015
+mem_heap_B=939006
+mem_heap_extra_B=39226
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=102828762
+mem_heap_B=939798
+mem_heap_extra_B=39370
+mem_stacks_B=0
+heap_tree=detailed
+n4: 939798 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 640000 0x10C84A: MatchingEngine::MatchingEngine(unsigned long) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+  n1: 640000 0x10C28B: BM_ProcessOrder(benchmark::State&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+   n1: 640000 0x488845F: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+    n1: 640000 0x4888DB9: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+     n1: 640000 0x486F600: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+      n1: 640000 0x4875C72: benchmark::RunSpecifiedBenchmarks(benchmark::BenchmarkReporter*, benchmark::BenchmarkReporter*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+       n1: 640000 0x48760BE: benchmark::RunSpecifiedBenchmarks() (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+        n0: 640000 0x10BC95: main (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+ n1: 214368 0x110975: Orderbook::addOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+  n1: 214368 0x1122F6: Orderbook::matchOrderLimit(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+   n1: 214368 0x112D24: Orderbook::matchOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+    n2: 214368 0x10C932: MatchingEngine::processOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+     n1: 214368 0x10C4E1: BM_ProcessOrder(benchmark::State&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+      n1: 214368 0x488845F: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+       n1: 214368 0x4888DB9: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+        n1: 214368 0x486F600: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+         n1: 214368 0x4875C72: benchmark::RunSpecifiedBenchmarks(benchmark::BenchmarkReporter*, benchmark::BenchmarkReporter*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+          n1: 214368 0x48760BE: benchmark::RunSpecifiedBenchmarks() (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+           n0: 214368 0x10BC95: main (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x496438E: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x400571E: call_init.part.0 (dl-init.c:74)
+   n1: 73728 0x4005823: call_init (dl-init.c:120)
+    n1: 73728 0x4005823: _dl_init (dl-init.c:121)
+     n0: 73728 0x401F59F: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+ n0: 11702 in 46 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=67
+#-----------
+time=104017293
+mem_heap_B=943494
+mem_heap_extra_B=40042
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=68
+#-----------
+time=105205346
+mem_heap_B=947278
+mem_heap_extra_B=40730
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=105485054
+mem_heap_B=948158
+mem_heap_extra_B=40890
+mem_stacks_B=0
+heap_tree=detailed
+n4: 948158 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 640000 0x10C84A: MatchingEngine::MatchingEngine(unsigned long) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+  n1: 640000 0x10C28B: BM_ProcessOrder(benchmark::State&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+   n1: 640000 0x488845F: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+    n1: 640000 0x4888DB9: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+     n1: 640000 0x486F600: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+      n1: 640000 0x4875C72: benchmark::RunSpecifiedBenchmarks(benchmark::BenchmarkReporter*, benchmark::BenchmarkReporter*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+       n1: 640000 0x48760BE: benchmark::RunSpecifiedBenchmarks() (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+        n0: 640000 0x10BC95: main (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+ n1: 222728 0x110975: Orderbook::addOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+  n1: 222728 0x1122F6: Orderbook::matchOrderLimit(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+   n1: 222728 0x112D24: Orderbook::matchOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+    n2: 222728 0x10C932: MatchingEngine::processOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+     n1: 222728 0x10C4E1: BM_ProcessOrder(benchmark::State&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+      n1: 222728 0x488845F: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+       n1: 222728 0x4888DB9: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+        n1: 222728 0x486F600: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+         n1: 222728 0x4875C72: benchmark::RunSpecifiedBenchmarks(benchmark::BenchmarkReporter*, benchmark::BenchmarkReporter*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+          n1: 222728 0x48760BE: benchmark::RunSpecifiedBenchmarks() (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+           n0: 222728 0x10BC95: main (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x496438E: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x400571E: call_init.part.0 (dl-init.c:74)
+   n1: 73728 0x4005823: call_init (dl-init.c:120)
+    n1: 73728 0x4005823: _dl_init (dl-init.c:121)
+     n0: 73728 0x401F59F: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+ n0: 11702 in 46 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=70
+#-----------
+time=106673585
+mem_heap_B=951854
+mem_heap_extra_B=41562
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=71
+#-----------
+time=107861638
+mem_heap_B=955638
+mem_heap_extra_B=42250
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=72
+#-----------
+time=108169304
+mem_heap_B=956606
+mem_heap_extra_B=42426
+mem_stacks_B=0
+heap_tree=peak
+n4: 956606 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 640000 0x10C84A: MatchingEngine::MatchingEngine(unsigned long) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+  n1: 640000 0x10C28B: BM_ProcessOrder(benchmark::State&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+   n1: 640000 0x488845F: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+    n1: 640000 0x4888DB9: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+     n1: 640000 0x486F600: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+      n1: 640000 0x4875C72: benchmark::RunSpecifiedBenchmarks(benchmark::BenchmarkReporter*, benchmark::BenchmarkReporter*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+       n1: 640000 0x48760BE: benchmark::RunSpecifiedBenchmarks() (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+        n0: 640000 0x10BC95: main (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+ n1: 231176 0x110975: Orderbook::addOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+  n1: 231176 0x1122F6: Orderbook::matchOrderLimit(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+   n1: 231176 0x112D24: Orderbook::matchOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+    n2: 231176 0x10C932: MatchingEngine::processOrder(Order&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+     n1: 231176 0x10C4E1: BM_ProcessOrder(benchmark::State&) (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+      n1: 231176 0x488845F: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+       n1: 231176 0x4888DB9: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+        n1: 231176 0x486F600: ??? (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+         n1: 231176 0x4875C72: benchmark::RunSpecifiedBenchmarks(benchmark::BenchmarkReporter*, benchmark::BenchmarkReporter*, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+          n1: 231176 0x48760BE: benchmark::RunSpecifiedBenchmarks() (in /usr/lib/x86_64-linux-gnu/libbenchmark.so.1.8.3)
+           n0: 231176 0x10BC95: main (in /home/fnf/projects/exchange-simulator/build/benchmark_matching)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 73728 0x496438E: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x400571E: call_init.part.0 (dl-init.c:74)
+   n1: 73728 0x4005823: call_init (dl-init.c:120)
+    n1: 73728 0x4005823: _dl_init (dl-init.c:121)
+     n0: 73728 0x401F59F: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+ n0: 11702 in 46 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=73
+#-----------
+time=109357838
+mem_heap_B=960302
+mem_heap_extra_B=43098
+mem_stacks_B=0
+heap_tree=empty

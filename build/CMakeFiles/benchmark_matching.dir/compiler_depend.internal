@@ -5,7 +5,9 @@ CMakeFiles/benchmark_matching.dir/benchmarks/MatchingBenchmark.cpp.o
  /home/fnf/projects/exchange-simulator/benchmarks/MatchingBenchmark.cpp
  /home/fnf/projects/exchange-simulator/include/Trade.h
  /home/fnf/projects/exchange-simulator/include/ExecutionReport.h
+ /home/fnf/projects/exchange-simulator/include/Order.h
  /home/fnf/projects/exchange-simulator/include/Trade.h
+ /home/fnf/projects/exchange-simulator/include/ExecutionPlan.h
  /home/fnf/projects/exchange-simulator/include/Order.h
  /home/fnf/projects/exchange-simulator/include/ProcessResult.h
  /home/fnf/projects/exchange-simulator/include/Trade.h

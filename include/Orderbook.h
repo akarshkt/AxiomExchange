@@ -9,6 +9,7 @@
 #include "Logger.h"
 #include "./utils/TimeUtils.h"
 #include "./ProcessResult.h"
+#include "./ExecutionPlan.h"
 class Orderbook
 {
     // Logger logger;
@@ -18,16 +19,17 @@ public:
     std::map<Price, std::list<Order>> asks;
     std::map<Price, std::list<Order>> bids;
     std::unordered_map<OrderId, OrderLocation> orderIndex;
-    void addOrder(Order &order);
+    void addOrder(Order& order);
     void cancelOrder(OrderId orderId);
-    ProcessResult matchOrder(Order &order);
-    ProcessResult matchOrderLimit(Order &order);
-    ProcessResult matchOrderMarket(Order &order);
+    ExecutionPlan matchOrder(Order &order);
+    ExecutionPlan matchOrderLimit(Order &order);
+    ExecutionPlan matchOrderMarket(Order &order);
  
     void matchOrderStop(Order &order);
     // Logger& getLogger();
     Order& orderLookup(OrderId orderId);
     void removeOrder(OrderId orderId);
+    // void removeOrder(Order* order);
 };
 
 #endif

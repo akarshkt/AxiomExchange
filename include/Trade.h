@@ -24,7 +24,15 @@ public:
 
 public:
     TradeId getTradeId();
-    Trade(OrderId buyOrderId, OrderId sellOrderId, UserId buyer, UserId seller, Price executionPrice, Quantity quantity, Timestamp timestamp);
+    Trade(
+         OrderId buyOrderId,
+         OrderId sellOrderId,
+         UserId buyer, 
+         UserId seller, 
+         Price executionPrice, 
+         Quantity quantity, 
+         Timestamp timestamp
+        );
 };
 
 #endif

@@ -296,7 +296,9 @@ CMakeFiles/exchange_core.dir/src/Logger.cpp.o: /home/fnf/projects/exchange-simul
 CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.o: /home/fnf/projects/exchange-simulator/src/MatchingEngine.cpp \
   /home/fnf/projects/exchange-simulator/include/Trade.h \
   /home/fnf/projects/exchange-simulator/include/ExecutionReport.h \
+  /home/fnf/projects/exchange-simulator/include/Order.h \
   /home/fnf/projects/exchange-simulator/include/Trade.h \
+  /home/fnf/projects/exchange-simulator/include/ExecutionPlan.h \
   /home/fnf/projects/exchange-simulator/include/Order.h \
   /home/fnf/projects/exchange-simulator/include/ProcessResult.h \
   /home/fnf/projects/exchange-simulator/include/Trade.h \
@@ -306,6 +308,7 @@ CMakeFiles/exchange_core.dir/src/MatchingEngine.cpp.o: /home/fnf/projects/exchan
   /home/fnf/projects/exchange-simulator/include/Orderbook.h \
   /home/fnf/projects/exchange-simulator/include/Ringbuffer.h \
   /home/fnf/projects/exchange-simulator/include/Trade.h \
+  /home/fnf/projects/exchange-simulator/include/ExecutionPlan.h \
   /home/fnf/projects/exchange-simulator/include/MatchingEngine.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
@@ -889,7 +892,9 @@ CMakeFiles/exchange_core.dir/src/Order.cpp.o: /home/fnf/projects/exchange-simula
 CMakeFiles/exchange_core.dir/src/Orderbook.cpp.o: /home/fnf/projects/exchange-simulator/src/Orderbook.cpp \
   /home/fnf/projects/exchange-simulator/include/Trade.h \
   /home/fnf/projects/exchange-simulator/include/ExecutionReport.h \
+  /home/fnf/projects/exchange-simulator/include/Order.h \
   /home/fnf/projects/exchange-simulator/include/Trade.h \
+  /home/fnf/projects/exchange-simulator/include/ExecutionPlan.h \
   /home/fnf/projects/exchange-simulator/include/Order.h \
   /home/fnf/projects/exchange-simulator/include/ProcessResult.h \
   /home/fnf/projects/exchange-simulator/include/Trade.h \
@@ -2114,6 +2119,8 @@ CMakeFiles/exchange_core.dir/src/Trade.cpp.o: /home/fnf/projects/exchange-simula
 /usr/include/c++/13/bit:
 
 /usr/include/alloca.h:
+
+/home/fnf/projects/exchange-simulator/include/ExecutionPlan.h:
 
 /usr/include/x86_64-linux-gnu/sys/select.h:
 
